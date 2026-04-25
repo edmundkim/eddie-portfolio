@@ -75,6 +75,12 @@ function WorkProject({
                 <p className="homepage-type-subhead text-[color:var(--foreground)]">
                   {project.summary}
                 </p>
+                <p className="homepage-type-metadata mt-5 max-w-xl text-[color:var(--color-muted)]">
+                  <span className="font-medium text-[color:var(--foreground)]">
+                    Surface:
+                  </span>{" "}
+                  {project.surface}
+                </p>
                 <p className="homepage-type-body mt-6 text-[color:var(--color-muted)]">
                   {project.description}
                 </p>
@@ -83,6 +89,7 @@ function WorkProject({
               <div>
                 <Link
                   href={project.href}
+                  aria-label={project.ctaLabel}
                   className="homepage-type-cta inline-flex items-center gap-3 text-[color:var(--accent)] transition-colors duration-200 hover:text-[color:var(--foreground)] focus-visible:text-[color:var(--foreground)] focus-visible:outline-none"
                 >
                   <span>{projectCta}</span>
@@ -104,9 +111,20 @@ export default function Work() {
       aria-labelledby="work-heading"
       className="homepage-surface--light"
     >
-      <h2 id="work-heading" className="sr-only">
-        Selected works
-      </h2>
+      <div className="homepage-shell homepage-core homepage-core--hero py-16 sm:py-20 lg:py-24">
+        <div className="max-w-3xl">
+          <h2
+            id="work-heading"
+            className="homepage-type-section-heading text-[color:var(--foreground)]"
+          >
+            Selected Work
+          </h2>
+          <p className="homepage-type-subhead mt-6 max-w-2xl text-[color:var(--color-muted)]">
+            Selected work across marketplace search, vehicle browsing, AI
+            product standards, subscription journeys, and connected mobility.
+          </p>
+        </div>
+      </div>
 
       <ol className="m-0 list-none p-0">
         {featuredProjects.map((project, index) => (

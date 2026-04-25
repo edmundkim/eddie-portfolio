@@ -290,7 +290,6 @@ export default function NewSearchPage() {
 
           <CaseStudyFigure
             fullBleed
-            caption="Working board used to align search structure, rollout sequencing, and dependencies before execution."
             className="mt-10"
           >
             <div className="relative aspect-[4/3] overflow-hidden bg-[color:var(--color-panel)] sm:aspect-[16/10] lg:aspect-[3/1]">
@@ -303,6 +302,10 @@ export default function NewSearchPage() {
               />
             </div>
           </CaseStudyFigure>
+          <p className="homepage-type-metadata max-w-3xl text-[color:var(--color-muted)]">
+            Working board used to align search structure, rollout sequencing,
+            and dependencies before execution.
+          </p>
         </CaseStudySection>
 
         <CaseStudySection

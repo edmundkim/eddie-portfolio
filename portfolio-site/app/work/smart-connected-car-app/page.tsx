@@ -144,6 +144,7 @@ export default function SmartConnectedCarAppPage() {
           fullBleed
           priority
           className="h-[clamp(18rem,34vw,38rem)] bg-[#1f1f1f]"
+          mediaClassName="h-full"
           imageClassName="h-full w-full object-cover object-right"
         />
 
@@ -176,9 +177,14 @@ export default function SmartConnectedCarAppPage() {
         >
           <BulletList items={researchSignals} />
 
-          <CaseStudyCard title="What research changed">
-            <BulletList items={researchDirection} />
-          </CaseStudyCard>
+          <div className="max-w-[50rem] border-t border-[color:var(--color-line)] pt-6">
+            <h3 className="homepage-type-item-title text-[color:var(--foreground)]">
+              What research changed
+            </h3>
+            <div className="mt-5">
+              <BulletList items={researchDirection} />
+            </div>
+          </div>
 
           <CaseStudyFigure
             label="Prioritization evidence"
@@ -202,13 +208,25 @@ export default function SmartConnectedCarAppPage() {
           title="Key Product Decisions"
           intro="The central design move was to make the app navigable around the driver's recurring jobs while giving product, engineering, and QA enough structure to discuss states, dependencies, and implementation risk."
         >
-          <div className="grid gap-5 md:grid-cols-2">
-            {productDecisionCards.map((card) => (
-              <CaseStudyCard key={card.title} title={card.title}>
-                <p className="homepage-type-body text-[color:var(--color-muted)]">
-                  {card.body}
+          <div className="overflow-hidden border-y border-[color:var(--color-line)]">
+            {productDecisionCards.map((card, index) => (
+              <div
+                key={card.title}
+                className="grid gap-4 border-b border-[color:var(--color-line)] py-7 last:border-b-0 sm:grid-cols-[4rem_minmax(0,1fr)] sm:gap-6"
+              >
+                <p className="homepage-type-eyebrow text-[color:var(--color-muted)]">
+                  {String(index + 1).padStart(2, "0")}
                 </p>
-              </CaseStudyCard>
+
+                <div className="space-y-3">
+                  <h3 className="homepage-type-item-title max-w-2xl text-[color:var(--foreground)]">
+                    {card.title}
+                  </h3>
+                  <p className="homepage-type-body max-w-3xl text-[color:var(--color-muted)]">
+                    {card.body}
+                  </p>
+                </div>
+              </div>
             ))}
           </div>
 
@@ -236,7 +254,7 @@ export default function SmartConnectedCarAppPage() {
             ))}
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-2">
+          <div className="grid gap-8">
             <CaseStudyFigure
               label="Pairing flow"
               image={vehiclePairingFlow}

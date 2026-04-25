@@ -50,7 +50,7 @@ export function CaseStudyHeader({
 }) {
   return (
     <header className="border-b border-[color:var(--color-line)]">
-      <div className="homepage-shell homepage-core homepage-core--hero flex items-center justify-between gap-6 py-5 sm:py-6">
+      <div className="homepage-shell case-study-core flex items-center justify-between gap-6 py-5 sm:py-6">
         <Link
           href="/"
           className="homepage-type-utility text-[color:var(--foreground)] hover:text-[color:var(--accent)] focus-visible:text-[color:var(--accent)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:[outline-color:var(--accent)]"
@@ -79,7 +79,7 @@ export function CaseStudyArticle({
   return (
     <article
       className={joinClassNames(
-        "homepage-shell homepage-core homepage-core--hero py-14 sm:py-20 lg:py-24",
+        "homepage-shell case-study-core py-14 sm:py-20 lg:py-24",
         className,
       )}
     >
@@ -301,13 +301,13 @@ export function CaseStudyFigure({
     return (
       <figure
         className={joinClassNames(
-          "relative left-1/2 w-screen max-w-none -translate-x-1/2 overflow-hidden",
+          "case-study-full-bleed overflow-hidden",
           className,
         )}
       >
         <div className={mediaClassName}>{media}</div>
         {caption ? (
-          <figcaption className="homepage-shell homepage-core homepage-core--hero homepage-type-metadata mt-4 text-[color:var(--color-muted)]">
+          <figcaption className="homepage-shell case-study-core homepage-type-metadata mt-4 text-[color:var(--color-muted)]">
             {caption}
           </figcaption>
         ) : null}

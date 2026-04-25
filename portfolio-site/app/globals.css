@@ -198,8 +198,25 @@ body {
   padding-inline: var(--homepage-content-rail);
 }
 
+.case-study-core {
+  padding-inline: var(--homepage-content-rail);
+}
+
 .homepage-content-width {
   width: 100%;
+}
+
+.case-study-full-bleed {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  max-width: none;
+}
+
+@supports (width: 100dvw) {
+  .case-study-full-bleed {
+    margin-left: calc(50% - 50dvw);
+    margin-right: calc(50% - 50dvw);
+  }
 }
 
 .homepage-zone--light {
@@ -423,6 +440,13 @@ body {
     );
     padding-right: calc(
       var(--homepage-content-rail) - var(--homepage-edge-gap)
+    );
+  }
+
+  .case-study-core {
+    padding-inline: calc(
+      var(--homepage-content-rail) - var(--homepage-edge-gap) -
+        ((var(--homepage-nav-width) + var(--homepage-nav-gap)) / 2)
     );
   }
 }

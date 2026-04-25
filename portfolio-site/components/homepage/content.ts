@@ -3,6 +3,7 @@ import type { StaticImageData } from "next/image";
 import declutterHeroMockupWide from "@/content/case-studies/declutter-LP/assets/declutter-hero-mockup-wide.png";
 import newSearchHeroMockupWide from "@/content/case-studies/new-search/assets/new-search-hero-mockup-wide.png";
 import daimlerSubscriptionMockup from "@/content/legacy-projects/daimler-subscription/assets/Clay_Mockup___7_.png";
+import smartConnectedCarMockupWide from "@/content/legacy-projects/smart-connected-car-app/assets/smart-connected-car-mockup-wide.png";
 
 export type FeaturedProjectImage = {
   src: StaticImageData;
@@ -17,8 +18,10 @@ export type FeaturedProject = {
   navTitle: string;
   href: string;
   context: string;
+  surface: string;
   summary: string;
   description: string;
+  ctaLabel: string;
   image?: FeaturedProjectImage;
 };
 
@@ -51,10 +54,12 @@ export const featuredProjects: FeaturedProject[] = [
     navTitle: "Declutter the List Page",
     href: "/work/declutter-list-page",
     context: "AutoScout24",
+    surface: "Desktop web, mobile web, iOS, and Android",
+    ctaLabel: "Open Declutter the List Page project",
     summary:
-      "Simplified a high-leverage browse surface across web and app so buyers could make faster, clearer decisions.",
+      "Reworked the vehicle list card so buyers could compare key vehicle signals more clearly.",
     description:
-      "Simplified the list page card across web and app to improve buyer decision-making on a high-leverage browse surface, with the first mobile-web test increasing dealer leads by 12%.",
+      "Clarified hierarchy, reduced visual noise, and helped align product tradeoffs around what belongs on the browsing surface.",
     image: {
       src: declutterHeroMockupWide,
       alt: "Handheld AutoScout24 mobile web mockup previewing the Declutter case study on the homepage.",
@@ -63,15 +68,17 @@ export const featuredProjects: FeaturedProject[] = [
   },
   {
     id: "new-search",
-    label: "Cross-platform reset",
+    label: "Search redesign",
     title: "New Search",
     navTitle: "New Search",
     href: "/work/new-search",
     context: "AutoScout24",
+    surface: "iOS, Android, desktop web, and mobile web",
+    ctaLabel: "Open New Search project",
     summary:
-      "Reset search and filters across app and web after a weaker earlier direction had started to lose confidence.",
+      "Redesigned search and filters to create a clearer product baseline.",
     description:
-      "Reset search and filters across app and web after a weaker earlier direction, with the clearest validation on iOS, narrower Android evidence, and a later web baseline launch.",
+      "Restructured filter navigation, applied states, and make-model selection so buyers could refine searches with less ambiguity.",
     image: {
       src: newSearchHeroMockupWide,
       alt: "AutoScout24 search-filter mockup previewing the New Search case study on the homepage.",
@@ -80,15 +87,17 @@ export const featuredProjects: FeaturedProject[] = [
   },
   {
     id: "strategic-ai-design-leadership",
-    label: "AI leadership",
+    label: "AI design standards",
     title: "Strategic AI Design Leadership",
     navTitle: "Strategic AI",
     href: "/work/strategic-ai-design-leadership",
     context: "AutoScout24",
+    surface: "AI product standards, early concepts, and internal guidance",
+    ctaLabel: "Open Strategic AI Design Leadership project",
     summary:
-      "Built a reusable standard for how AI should be signalled, explained, and controlled inside product experiences.",
+      "Built reusable standards for how AI should be signalled, explained, reviewed, and controlled in product experiences.",
     description:
-      "Owned the Visual AI Framework and internal AI guidance while shaping early product concepts, helping teams make AI interactions more legible, safer, and easier to scale.",
+      "Owned the Visual AI Framework and internal AI guidance while shaping early product concepts before ad hoc patterns spread.",
   },
   {
     id: "daimler-subscription-concept",
@@ -97,18 +106,39 @@ export const featuredProjects: FeaturedProject[] = [
     navTitle: "Daimler Concept",
     href: "/work/daimler-subscription-concept",
     context: "Daimler Mercedes-Benz · Deloitte Digital",
+    surface: "Desktop and mobile web",
+    ctaLabel: "Open Daimler Vehicle Subscription Concept project",
     summary:
-      "A two-month concept engagement to make a new vehicle subscription model easier to understand, configure, and manage across the full web journey.",
+      "Defined a subscription journey for an unfamiliar service model, from selection to account management.",
     description:
-      "Led UX definition for a greenfield subscription concept spanning acquisition and lifecycle management across desktop and mobile web, turning an unfamiliar service model into a clearer, testable end-to-end journey.",
+      "Led UX definition for acquisition, configuration, checkout, and lifecycle management.",
     image: {
       src: daimlerSubscriptionMockup,
       alt: "Daimler vehicle subscription concept mockup previewing the homepage case study.",
     },
   },
+  {
+    id: "smart-connected-car-app",
+    label: "Connected mobility",
+    title: "Smart Connected Car App",
+    navTitle: "Smart App",
+    href: "/work/smart-connected-car-app",
+    context: "smart · Deloitte Digital",
+    surface: "Native iOS and Android EV companion app",
+    ctaLabel: "Open Smart Connected Car App project",
+    summary:
+      "Shaped the core EV companion experience for access, status, charging, climate, and remote controls.",
+    description:
+      "Structured the core app model through research synthesis, flows, prototypes, testing, and delivery support while requirements were still moving.",
+    image: {
+      src: smartConnectedCarMockupWide,
+      alt: "Wide smart connected-car app mockup previewing the homepage case study.",
+      objectPosition: "52% 50%",
+    },
+  },
 ];
 
-export const projectCta = "Open case study";
+export const projectCta = "Open project";
 
 export const speakingTopics: SpeakingTopic[] = [
   {
