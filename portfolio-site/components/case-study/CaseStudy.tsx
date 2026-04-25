@@ -16,6 +16,7 @@ export type CaseStudyFigureGridItem = {
   imageClassName?: string;
   priority?: boolean;
   preserveWidthOnSmallScreens?: boolean;
+  preservedWidthClassName?: string;
 };
 
 function joinClassNames(
@@ -267,6 +268,7 @@ export function CaseStudyFigure({
   className,
   mediaClassName,
   imageClassName,
+  preservedWidthClassName = "min-w-[52rem]",
 }: {
   label?: string;
   image?: StaticImageData;
@@ -281,6 +283,7 @@ export function CaseStudyFigure({
   className?: string;
   mediaClassName?: string;
   imageClassName?: string;
+  preservedWidthClassName?: string;
 }) {
   const media = children ?? (
     image ? (
@@ -328,7 +331,12 @@ export function CaseStudyFigure({
             mediaClassName,
           )}
         >
-          <div className={joinClassNames("min-w-[52rem]", framed ? "p-3 sm:p-4" : "")}>
+          <div
+            className={joinClassNames(
+              preservedWidthClassName,
+              framed ? "p-3 sm:p-4" : "",
+            )}
+          >
             {media}
           </div>
         </div>

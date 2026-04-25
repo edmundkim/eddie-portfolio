@@ -108,6 +108,7 @@ export default function DaimlerSubscriptionConceptPage() {
             alt="High-level Daimler subscription flow showing the acquisition journey, checkout steps, lifecycle management, Mercedes Me management, and dealer management touchpoints."
             caption="This flow made the acquisition path, lifecycle management, and dealer handoffs concrete enough to evaluate as one service model."
             preserveWidthOnSmallScreens
+            preservedWidthClassName="min-w-0 sm:min-w-[52rem]"
           />
         </CaseStudySection>
 
@@ -199,7 +200,10 @@ export default function DaimlerSubscriptionConceptPage() {
           imageClassName="h-auto w-full"
         />
 
-        <CaseStudyEndNav currentSlug="daimler-subscription-concept" />
+        <CaseStudyEndNav
+          currentSlug="daimler-subscription-concept"
+          showDivider={false}
+        />
       </CaseStudyArticle>
     </CaseStudyShell>
   );

@@ -26,8 +26,8 @@ export default function Hero() {
             id="hero-heading"
             className="homepage-hero-theme-text homepage-type-display mt-10 max-w-[82rem] text-[color:var(--hero-heading)] sm:mt-12"
           >
-            I lead product design for search, discovery, and AI at marketplace
-            scale.
+            I lead product design work across search, discovery, and AI at
+            marketplace scale.
           </h1>
         </header>
 
@@ -41,10 +41,10 @@ export default function Hero() {
               id="hero-summary"
               className="homepage-hero-theme-text homepage-type-subhead mt-12 max-w-[42rem] text-[color:var(--hero-summary)] sm:mt-14"
             >
-              At AutoScout24, I shape buyer experience across web and app,
-              improving how over 30M monthly users search, compare, and
-              enquire, while helping teams build clearer, more effective
-              product experiences.
+              At AutoScout24, I shape buyer journeys across web and app for a
+              marketplace with over 30M monthly users, helping people search,
+              compare, and enquire with more clarity while helping teams ship
+              clearer, more effective product experiences.
             </p>
           </div>
 

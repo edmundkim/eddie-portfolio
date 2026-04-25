@@ -4,6 +4,7 @@ import BulletList from "@/components/BulletList";
 import {
   CaseStudyArticle,
   CaseStudyCard,
+  CaseStudyFigure,
   CaseStudyHeader,
   CaseStudyHero,
   CaseStudyProse,
@@ -12,10 +13,12 @@ import {
 } from "@/components/case-study/CaseStudy";
 import CaseStudyEndNav from "@/components/CaseStudyEndNav";
 
+import strategicAiMockupHero from "../../../content/case-studies/strategic-AI/assets/strategic-ai-mockup-hero.png";
+
 export const metadata: Metadata = {
   title: "Shaping How AI Should Work in Product | Eddie Kim",
   description:
-    "Work on AI product direction, reusable communication standards, agentic-coding capability, and cross-team AI design leadership at AutoScout24.",
+    "Work on AI product direction, reusable communication standards, AI-assisted workflow capability, and cross-team AI design leadership at AutoScout24.",
 };
 
 const heroFacts = [
@@ -23,23 +26,23 @@ const heroFacts = [
   {
     label: "Owned Directly",
     value:
-      "Visual AI Framework, AI guidance for UX, and agentic-coding education paths",
+      "Visual AI Framework, AI guidance for UX, and education paths for AI-assisted workflows",
   },
   {
     label: "Shaped",
-    value:
-      "Early AI concepts and prototypes, including conversational AI and lead enrichment",
+    value: "Early AI-assisted product concepts and product direction",
   },
   {
     label: "Aligned",
-    value: "CPO and senior stakeholders on AI-driven workflow change",
+    value:
+      "Senior product, design, and technology leaders on AI-assisted workflow change",
   },
 ];
 
 const whyItMattered = [
   "Without shared standards, AI cues, labels, and interaction patterns could drift across products.",
   "Teams needed clearer rules for when AI should be obvious to users and what level of review or control it required.",
-  "The UX team needed practical education paths for agentic coding as AI changed product-development and design workflows.",
+  "The UX team needed practical education paths for AI-assisted workflows as AI changed product-development and design practice.",
 ];
 
 const roleScope = [
@@ -48,15 +51,15 @@ const roleScope = [
     items: [
       "The Visual AI Framework",
       "AI design guidance and education paths for the UX team",
-      "A taskforce shaping agentic-coding capability and AI-assisted workflow change",
+      "Cross-functional capability work around AI-assisted product-development workflows",
       "AI prototyping capability across the broader product organisation",
     ],
   },
   {
     title: "Shaped through influence",
     items: [
-      "Senior design direction on two early AI concepts: conversational AI and AI-assisted lead enrichment",
-      "Alignment with the CPO and senior stakeholders on AI-driven workflow change",
+      "Senior design direction on early AI-assisted product concepts",
+      "Alignment with senior product, design, and technology leaders on AI-assisted workflow change",
       "Key flows and experience principles on early AI product work",
       "Guidance that shaped decisions beyond direct reporting lines",
     ],
@@ -81,11 +84,11 @@ const frameworkPrinciples = [
 const leverageAreas = [
   {
     title: "Early product direction",
-    body: "Alongside the framework work, I contributed senior design direction on two early AI efforts: a conversational AI concept and a concept for AI-assisted lead enrichment. Because both were still in concept and prototype stage, the contribution was upstream: shaping flows, principles, and decision criteria before patterns hardened.",
+    body: "Alongside the framework work, I contributed senior design direction to early AI-assisted product concepts. Because the work was still upstream, my contribution focused on flows, principles, and decision criteria before patterns hardened.",
   },
   {
     title: "Internal capability building",
-    body: "I also led AI guidance for UX, education paths for agentic coding, and prototyping capability across the broader product organisation. As part of that, I led a taskforce aligned with the CPO and senior stakeholders on how AI-assisted workflows were changing design practice and product development.",
+    body: "I also led AI guidance for UX, education paths for AI-assisted workflows, and prototyping capability across the broader product organisation. As part of that, I led cross-functional capability work with senior product, design, and technology leaders on how AI-assisted workflows were changing design practice and product development.",
   },
 ];
 
@@ -98,10 +101,20 @@ export default function StrategicAiDesignLeadershipPage() {
         <CaseStudyHero
           eyebrow="AutoScout24 · Strategic AI Design Leadership"
           title="Shaping How AI Should Work in Product"
-          lede="At AutoScout24, I owned the Visual AI Framework and the design standards behind it, led UX capability-building work around agentic coding, and contributed senior design direction to two early AI concepts: conversational AI and a concept for AI-assisted lead enrichment."
+          lede="At AutoScout24, I owned the Visual AI Framework and the design standards behind it, led UX capability-building around AI-assisted workflows, and contributed senior design direction to early AI-assisted product concepts."
           secondaryLede="The work mattered because teams needed clearer decision criteria for when AI should be visible, what level of review or control it required, and how UX workflows should adapt as AI changed product development."
           facts={heroFacts}
-        />
+        >
+          <CaseStudyFigure
+            image={strategicAiMockupHero}
+            alt="Full-bleed laptop mockup showing an AI communication framework."
+            sizes="100vw"
+            priority
+            fullBleed
+            className="mt-14"
+            imageClassName="h-auto w-full"
+          />
+        </CaseStudyHero>
 
         <CaseStudySection
           eyebrow="Why This Work Existed"
@@ -114,7 +127,7 @@ export default function StrategicAiDesignLeadershipPage() {
         <CaseStudySection
           eyebrow="Role"
           title="What I owned and where I shaped direction"
-          intro="I owned the reusable standards work and the AI design guidance behind it. I also led the taskforce shaping UX education paths for agentic coding, aligning that capability work with the CPO and senior stakeholders. On product concepts, my role was senior design direction: helping shape key flows, principles, and tradeoffs alongside other designers and cross-functional partners."
+          intro="I owned the reusable standards work and the AI design guidance behind it. I also led cross-functional capability work around AI-assisted workflows, aligning the work with senior product, design, and technology leaders. On product concepts, my role was senior design direction: helping shape key flows, principles, and tradeoffs alongside other designers and cross-functional partners."
         >
           <div className="grid gap-5 md:grid-cols-2">
             {roleScope.map((group) => (
@@ -148,11 +161,11 @@ export default function StrategicAiDesignLeadershipPage() {
               path.
             </p>
             <p>
-              The framework combined an AI presence scale with reusable signals
-              such as labels, badges, gradients, and icons, plus guidance on
-              review and override. It gave teams a clearer basis for deciding
-              what needed explicit signalling, what could remain lightweight,
-              and when stronger review or control was necessary.
+              The framework combined a shared AI visibility model with reusable
+              signals such as labels, badges, gradients, and icons, plus
+              guidance on review and override. It gave teams a clearer basis
+              for deciding what needed explicit signalling, what could remain
+              lightweight, and when stronger review or control was necessary.
             </p>
           </CaseStudyProse>
         </CaseStudySection>
@@ -175,9 +188,9 @@ export default function StrategicAiDesignLeadershipPage() {
           <CaseStudyCard variant="soft" className="!h-auto">
             <p className="homepage-type-body text-[color:var(--color-muted)]">
               The strongest proof here is in the reusable standards,
-              decision-making guidance, taskforce leadership, and
+              decision-making guidance, and
               capability-building context rather than post-launch metrics. The
-              named AI initiatives were still early, so this page is
+              product concepts were still early, so this page is
               intentionally about how the work set direction rather than
               claiming downstream product outcomes.
             </p>

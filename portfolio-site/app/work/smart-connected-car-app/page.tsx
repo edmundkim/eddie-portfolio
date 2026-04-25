@@ -123,6 +123,8 @@ const deliveryCards = [
   },
 ];
 
+const mobileSafePreservedWidthClassName = "min-w-0 md:min-w-[52rem]";
+
 export default function SmartConnectedCarAppPage() {
   return (
     <CaseStudyShell>
@@ -192,6 +194,7 @@ export default function SmartConnectedCarAppPage() {
             alt="Feature prioritisation table for the smart app showing planned functionality scored and ranked from a user perspective."
             caption="The prioritisation table turned survey input into product-discussion material, helping compare user desirability across planned functionality before IA and roadmap conversations."
             preserveWidthOnSmallScreens
+            preservedWidthClassName={mobileSafePreservedWidthClassName}
           />
 
           <CaseStudyFigure
@@ -200,6 +203,7 @@ export default function SmartConnectedCarAppPage() {
             alt="Journey map for a smart connected-car driver showing actions, touchpoints, expectations, and emotional notes across charging, access, control, and lifecycle moments."
             caption="The journey map showed that access, charging, status, service, and ownership moments needed to be considered as one connected driver journey, not as unrelated feature areas."
             preserveWidthOnSmallScreens
+            preservedWidthClassName={mobileSafePreservedWidthClassName}
           />
         </CaseStudySection>
 
@@ -236,6 +240,7 @@ export default function SmartConnectedCarAppPage() {
             alt="High-level flow for the smart connected-car app showing entry states, authenticated and unauthenticated experiences, tab navigation, vehicle control, phone key, climate, charging, account, service, and map areas."
             caption="The high-level flow made product complexity visible: entry states, authenticated and unauthenticated paths, primary navigation, and backend-dependent feature areas could be discussed in one shared map."
             preserveWidthOnSmallScreens
+            preservedWidthClassName={mobileSafePreservedWidthClassName}
           />
         </CaseStudySection>
 
@@ -261,6 +266,7 @@ export default function SmartConnectedCarAppPage() {
               alt="Vehicle activation flow showing in-car steps, login, QR code scanning, pairing, error handling, and successful vehicle connection states."
               caption="The pairing flow turned access into an implementation conversation: account, vehicle, QR and in-car steps, error handling, and success states had to line up for users to trust the connection."
               preserveWidthOnSmallScreens
+              preservedWidthClassName={mobileSafePreservedWidthClassName}
             />
 
             <CaseStudyFigure
@@ -269,6 +275,7 @@ export default function SmartConnectedCarAppPage() {
               alt="Geofence workspace showing map selection, list management, edit states, notification preferences, and successful geofence creation."
               caption="The geofence artefact made location and notification logic concrete, including saved places, edit states, preferences, and success moments that could not be understood from isolated screens."
               preserveWidthOnSmallScreens
+              preservedWidthClassName={mobileSafePreservedWidthClassName}
             />
           </div>
 
@@ -278,6 +285,7 @@ export default function SmartConnectedCarAppPage() {
             alt="Three smart app mobile screen directions showing a home/control screen evolving into later vehicle dashboard concepts."
             caption="The home experience was simplified from a denser dashboard of feature tiles toward a clearer status and control surface, making the most important vehicle signals easier to scan."
             preserveWidthOnSmallScreens
+            preservedWidthClassName={mobileSafePreservedWidthClassName}
           />
 
           <CaseStudyFigure
@@ -286,6 +294,7 @@ export default function SmartConnectedCarAppPage() {
             alt="Three smart app mobile wireframes showing home, charging, and climate control concepts."
             caption="The home, charging, and climate concepts show how everyday driver confidence shaped core surfaces rather than sitting behind secondary navigation."
             preserveWidthOnSmallScreens
+            preservedWidthClassName={mobileSafePreservedWidthClassName}
           />
         </CaseStudySection>
 

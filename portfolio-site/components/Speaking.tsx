@@ -32,7 +32,7 @@ export default function Speaking() {
         <ul className="m-0 mt-20 list-none space-y-24 p-0 sm:mt-24 sm:space-y-28 lg:space-y-32">
           {speakingTopics.map((topic) => (
             <li key={topic.title}>
-              <article className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(22rem,32rem)] lg:items-center lg:gap-16">
+              <article className="grid gap-8 2xl:grid-cols-[minmax(0,1fr)_minmax(22rem,32rem)] 2xl:items-center 2xl:gap-16">
                 <div className="max-w-2xl">
                   <h3 className="homepage-type-item-title text-[color:var(--foreground)]">
                     {topic.title}
@@ -48,7 +48,7 @@ export default function Speaking() {
                       src={topic.imageSrc}
                       alt={topic.imageAlt}
                       fill
-                      sizes="(min-width: 1024px) 32rem, 100vw"
+                      sizes="(min-width: 1536px) 32rem, 100vw"
                       className="object-cover"
                       style={{
                         objectPosition: topic.imagePosition,

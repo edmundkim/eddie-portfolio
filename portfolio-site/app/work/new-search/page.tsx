@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 
 import BulletList from "@/components/BulletList";
 import {
@@ -18,12 +17,11 @@ import CaseStudyEndNav from "@/components/CaseStudyEndNav";
 import appsSearchAfter from "../../../content/case-studies/new-search/assets/apps_search_V3_after.png";
 import appsMockupDark from "../../../content/case-studies/new-search/assets/apps_mockup_dark.png";
 import appsSearchV1Baseline from "../../../content/case-studies/new-search/assets/apps_search_v1_baseline.png";
-import appsSearchV2Failed from "../../../content/case-studies/new-search/assets/apps_search_v2_failed.png";
+import appsSearchV2Intermediate from "../../../content/case-studies/new-search/assets/apps_search_v2_failed.png";
 import desktopBefore from "../../../content/case-studies/new-search/assets/desktop_before.png";
 import desktopSearchAfter from "../../../content/case-studies/new-search/assets/desktop_search_after.png";
 import desktopSearchAfterModal from "../../../content/case-studies/new-search/assets/desktop_search_after_modal.png";
 import mwebSearchAfterMakeModel from "../../../content/case-studies/new-search/assets/mweb_search_after_make_model.png";
-import searchVisionMiro from "../../../content/case-studies/new-search/assets/search_vision_miro.png";
 
 export const metadata: Metadata = {
   title: "New Search | Eddie Kim",
@@ -48,87 +46,87 @@ const heroFacts = [
   },
   {
     label: "Evidence",
-    value: "Apps: +12% new-user enquiries; web: +7% dealer leads",
+    value: "Strongest validation on iOS; supporting evidence on Android and web",
   },
 ];
 
 const heroHighlights = [
   {
     label: "Reset trigger",
-    metricLines: ["Failed", "2023 test"],
-    body: "A Dec 2023 old-vs-new iOS benchmark underperformed on core enquiry metrics, so the team needed a stronger baseline rather than another cleanup pass.",
+    metricLines: ["Earlier", "direction"],
+    body: "Earlier validation showed the app search direction was not strong enough, so the team needed a stronger baseline rather than another cleanup pass.",
   },
   {
     label: "First validation",
-    metricLines: ["iOS win", "+ rollout"],
-    body: "iOS was the first clear validation of the new search direction: about +5% more new users sent an enquiry, and total results-page enquiries rose about +6%, while detail-page views held steady. Those results gave the team confidence to roll it out across AutoScout24 markets and white-label products.",
+    metricLines: ["iOS", "signal"],
+    body: "iOS was the first clear validation of the new search direction. The redesigned baseline produced a measurable enquiry lift while maintaining downstream engagement, giving the team confidence to roll it out more broadly.",
   },
   {
     label: "Later proof",
     metricLines: ["Broader", "evidence"],
-    body: "After iOS, Android and web added supporting evidence for the new direction. Android showed a +12% lift in new-user enquiries, and web later reported +7% growth in desktop dealer leads. Both were positive signals, though neither matched the strength of the initial iOS validation.",
+    body: "After iOS, Android and web added supporting evidence for the new direction. Both showed positive signals, though neither matched the strength of the initial iOS validation.",
   },
 ];
 
 const roleSignals = [
-  "I was the lead designer on the search funnel team for this reset, brought in as the apps design specialist to define a stronger direction instead of continuing to iterate on the weaker 2023 app approach.",
-  "My direct scope covered the filters experience end to end: information architecture, key UX and UI decisions, and the interaction patterns across iOS and Android for how people set filters and get back to more relevant results.",
+  "I led the app filter-design direction and helped shape the cross-platform baseline with product, research, engineering, and analytics partners.",
+  "My strongest direct scope was the app filters experience: information architecture, key UX and UI decisions, and the interaction patterns across iOS and Android for how people set filters and get back to more relevant results.",
   "I shaped the core design concept, helped frame and de-risk the research, and pushed the baseline decisions that mattered most: filter hierarchy, earlier make-and-model entry, clearer completion behaviour, and where platforms should align or diverge.",
   "The cross-platform baseline was collaborative. I later carried that direction into web work with another senior designer and cross-functional partners, while testing, rollout, and business outcomes remained shared team results.",
 ];
 
 const problemSignals = [
-  "Search sat close to one of the marketplace's most valuable moments: moving from browsing to enquiry. When filtering was hard to use, buyers had a harder time finding relevant cars and the path to dealer leads weakened.",
-  "The reset was triggered by evidence, not preference. A December 2023 iOS benchmark showed the earlier direction underperforming on core enquiry metrics, which made another cleanup pass hard to justify.",
+  "Search sat close to one of the marketplace's most valuable moments: moving from browsing to enquiry. When filtering was hard to use, buyers had a harder time finding relevant cars and the path to enquiries weakened.",
+  "The reset was triggered by evidence, not preference. Earlier validation showed the existing app direction underperforming on core enquiry signals, which made another cleanup pass hard to justify.",
   "Cross-platform discovery showed the same structural issues repeating across desktop, mobile web, iOS, and Android: filters were hard to find, hard to edit from results, and not clearly organised once applied.",
-  "Strategy work later showed how shallow engagement had become on mobile web: only 15% of results-page users opened filters, and only 10% reached the bottom of detailed search. That same work framed New Search as formal growth work tied to a +10% dealer-lead objective.",
+  "Strategy work later showed that filter engagement on mobile web was shallow. That same work framed New Search as growth work tied to stronger enquiry paths.",
 ];
 
 const experienceChanges = [
-  "The work moved away from patching the old flow and toward a clearer main filter overview that grouped filters more deliberately, surfaced what was already selected, and let people drill into one decision at a time. Launch materials show the iOS baseline spanning core areas such as make and model, equipment, location, and online since.",
-  "Important narrowing decisions were brought forward. Benchmark materials describe make and model moving earlier in the flow, making one of the highest-value choices easier to reach and setting up a broader rethink of how buyers express vehicle intent as the taxonomy gets deeper.",
-  "Completion also became easier to interpret. The winning iOS interaction returned people to the main filter page with a clearer Done or Finish action instead of a weaker Delete or Clear pattern, making filter changes feel more deliberate and easier to review.",
-  "The baseline was then adapted rather than cloned: Android moved toward AutoSave with extra clarity work still needed, while web launched a narrower baseline first and deferred richer enhancements until later.",
+  "The work moved away from patching the old flow and toward a clearer main filter overview that grouped filters more deliberately, surfaced what was already selected, and let people drill into one decision at a time.",
+  "Important narrowing decisions were brought forward. Make and model moved earlier in the flow, making one of the highest-value choices easier to reach and setting up a broader rethink of how buyers express vehicle intent as the underlying data became more nuanced.",
+  "Completion also became easier to interpret. The stronger app interaction made filter changes feel more deliberate and easier to review before people returned to results.",
+  "The baseline was then adapted rather than cloned: Android moved toward platform-appropriate save behaviour with extra clarity work still needed, while web launched a narrower baseline first and deferred richer enhancements until later.",
 ];
 
 const taxonomyWorkstream = {
   title: "New Make/Model Taxonomy and Filter Experience",
   paragraphs: [
-    "As part of the broader New Search reset, I helped shape a new make-and-model experience for a more complex vehicle taxonomy. The legacy interaction assumed buyers could move cleanly from make to model, but that stopped scaling once deeper distinctions such as generation, variant, and engine choice started to matter.",
-    "This was not just a filter redesign. It was a mental-model and intent-expression problem: how to expose more truthful structure without overwhelming people. I explored how search, drilldown, grouped dimensions, and clearer selection management could make a richer system feel clearer rather than heavier. The work touched taxonomy, interaction model, multi-select behaviour, and rollout complexity, and it is still evolving, so I treat it as strategically important work in progress rather than a neat resolved win.",
+    "As part of the broader New Search reset, I helped shape a new make-and-model experience for more nuanced vehicle data. The legacy interaction assumed buyers could move cleanly from make to model, but that stopped scaling once deeper distinctions started to matter.",
+    "This was not just a filter redesign. It was a mental-model and intent-expression problem: how to expose a richer structure without overwhelming people. I explored how search, drilldown, grouped dimensions, and clearer selection management could make the system feel clearer rather than heavier. The work is still evolving, so I treat it as strategically important work in progress rather than a neat resolved win.",
   ],
 };
 
 const decisionCards = [
   {
     title: "Reset the baseline instead of polishing a weak direction",
-    body: "The Dec 2023 iOS benchmark hurt core enquiry metrics, so polishing that direction further would have been the wrong bet. We reset the baseline instead: simplify the filter model, reduce structural complexity, and create something the team could benchmark and extend more reliably.",
+    body: "Earlier app validation weakened confidence in the existing direction, so polishing it further would have been the wrong bet. We reset the baseline instead: simplify the filter model, reduce structural complexity, and create something the team could validate and extend more reliably.",
   },
   {
     title: "Validate the new direction where the proof was strongest",
-    body: "iOS became the first clean proof point. By Aug 2024 the later new-user benchmark had selected the clearer direction and internal materials framed it at about +5% users with an enquiry and about +6% total enquiries from the results page. We kept the nuance: detail-page views stayed flat, so this was a credible win rather than a claim that every KPI improved.",
+    body: "iOS became the first clean proof point. The redesigned baseline outperformed the previous direction on enquiry signals while maintaining downstream engagement. We kept the nuance: this was a credible win rather than a claim that every KPI improved.",
   },
   {
     title: "Adapt the baseline by platform and ship web in stages",
-    body: "We did not force one interaction everywhere. Android research and later benchmark summaries supported AutoSave, with the clearest measurable signal a +12% new-user enquiry lift in Germany rather than a clean launch story. Web came later as an intentionally narrower 2026 baseline, with launch communications summarising a +7% desktop dealer-lead signal in Italy and stable mobile-web and detail-page-view metrics.",
+    body: "We did not force one interaction everywhere. Android evidence supported the same direction more narrowly, with additional clarity work still needed. Web came later as an intentionally narrower baseline, supported by a positive lead signal and stable downstream engagement rather than a broad claim that every surface improved equally.",
   },
 ];
 
 const platformSignals = [
   {
     label: "iOS",
-    metric: "Benchmark win + rollout",
-    body: "iOS is the clearest proof point. Internal benchmark summaries framed the winning new-user test at about +5% users with an enquiry and about +6% total enquiries from the results page, with no change in detail-page views. A later launch announcement said the experience rolled out across AutoScout24 markets and white-label products.",
+    metric: "Strongest validation",
+    body: "iOS is the clearest proof point. The redesigned baseline outperformed the previous direction on enquiry signals while maintaining downstream engagement, then rolled out more broadly.",
   },
   {
     label: "Android",
-    metric: "Recommendation + narrow signal",
-    body: "Android supports the same direction, but more narrowly. Research favoured AutoSave, and later benchmark summaries reported a +12% new-user enquiry signal in Germany while leads otherwise stayed stable across Germany and Italy. The visible evidence is positive, but not as complete as the iOS story.",
+    metric: "Supporting signal",
+    body: "Android supports the same direction, but more narrowly. Research and validation favoured platform-appropriate save behaviour, while the visible evidence remains positive but less complete than the iOS story.",
   },
   {
     label: "Web",
-    metric: "Launch update + Italy signal",
-    body: "Web came later as a simpler baseline launch. A 5 February 2026 launch update said the experience was live in Germany and Italy, and the same communication summarised a recent Italy desktop benchmark at +7% dealer leads from the results page, with mobile-web leads and detail-page views stable. That supports the launch story, but it is still summary-level evidence rather than a full experiment readout.",
+    metric: "Phased baseline",
+    body: "Web came later as a simpler baseline launch. Post-launch analysis indicated a positive lead signal on desktop while mobile web and downstream engagement stayed broadly stable. That supports the launch story, but it remains narrower evidence than the app validation.",
   },
 ];
 
@@ -158,17 +156,17 @@ const decisionComparisonImages = [
     contentClassName:
       "flex min-h-[28rem] items-start justify-center sm:min-h-[32rem]",
     imageClassName:
-      "h-auto max-h-[26rem] w-auto max-w-full sm:max-h-[30rem]",
+      "h-auto max-h-[26rem] !w-auto max-w-full sm:max-h-[30rem]",
   },
   {
-    label: "Abandoned direction",
-    image: appsSearchV2Failed,
+    label: "Intermediate direction",
+    image: appsSearchV2Intermediate,
     alt: "An intermediate app search direction with layered filter cards that still carried structural friction.",
     caption: "An intermediate direction that still carried structural friction.",
     contentClassName:
       "flex min-h-[28rem] items-start justify-center sm:min-h-[32rem]",
     imageClassName:
-      "h-auto max-h-[26rem] w-auto max-w-full sm:max-h-[30rem]",
+      "h-auto max-h-[26rem] !w-auto max-w-full sm:max-h-[30rem]",
   },
   {
     label: "Stronger baseline",
@@ -178,7 +176,7 @@ const decisionComparisonImages = [
     contentClassName:
       "flex min-h-[28rem] items-start justify-center sm:min-h-[32rem]",
     imageClassName:
-      "h-auto max-h-[26rem] w-auto max-w-full sm:max-h-[30rem]",
+      "h-auto max-h-[26rem] !w-auto max-w-full sm:max-h-[30rem]",
   },
 ];
 
@@ -191,7 +189,7 @@ export default function NewSearchPage() {
         <CaseStudyHero
           eyebrow="Case Study · AutoScout24 · Search & Discovery"
           title="New Search"
-          lede="New Search was a strategic reset of one of AutoScout24's most important journeys. I led the redesign of search and filters across app and web so buyers could find the right cars faster and with less friction, while the business gained a stronger funnel into leads and a clearer foundation for future search improvements."
+          lede="New Search was a strategic reset of one of AutoScout24's most important journeys. I led the app filter-design direction and helped shape the cross-platform baseline so buyers could find relevant cars with less ambiguity, while the business gained a stronger path to enquiries and a clearer foundation for future search improvements."
           facts={heroFacts}
         >
           <div className="mt-12 grid gap-5 md:grid-cols-3">
@@ -236,13 +234,13 @@ export default function NewSearchPage() {
           eyebrow="Overview"
           title="A staged reset, not one clean launch"
           intro="This initiative moved through different levels of proof by platform, so the case study works best as one programme with uneven evidence rather than one uniform redesign story."
+          className="border-t-0"
         >
           <CaseStudyProse>
             <p>
-              A weaker 2023 app direction forced the reset. iOS became the
-              first clear validation point in 2024, Android moved through
-              research and benchmarking in 2025, and web launched later in 2026
-              as a narrower baseline.
+              A weaker app direction forced the reset. iOS became the first
+              clear validation point, Android moved through research and
+              validation, and web launched later as a narrower baseline.
             </p>
 
             <p>
@@ -284,7 +282,7 @@ export default function NewSearchPage() {
               Before this reset moved into execution, I was part of the
               upstream buyer-side vision work that helped reframe the experience
               around guidance, selection, and trust. That work brought together
-              research synthesis, benchmarking, concept development, and
+              research synthesis, market review, concept development, and
               stakeholder alignment across search, list, and detail surfaces. It
               gave the team a clearer strategic foundation for what a stronger
               buyer journey should do, and New Search became one of the
@@ -299,25 +297,6 @@ export default function NewSearchPage() {
               followed.
             </p>
           </CaseStudyProse>
-
-          <CaseStudyFigure
-            fullBleed
-            className="mt-10"
-          >
-            <div className="relative aspect-[16/10] overflow-hidden sm:aspect-[2/1] md:aspect-[16/10] lg:aspect-[3/1]">
-              <Image
-                src={searchVisionMiro}
-                alt="Working board showing search experience alignment, high-level search structure, target flows, and dependencies for the New Search reset."
-                fill
-                sizes="100vw"
-                className="object-cover object-[56%_50%]"
-              />
-            </div>
-          </CaseStudyFigure>
-          <p className="homepage-type-metadata max-w-3xl text-[color:var(--color-muted)]">
-            Working board used to align search structure, rollout sequencing,
-            and dependencies before execution.
-          </p>
         </CaseStudySection>
 
         <CaseStudySection
@@ -356,7 +335,7 @@ export default function NewSearchPage() {
                 image={mwebSearchAfterMakeModel}
                 alt="Mobile web make and model selection flow showing how the reset brought a high-value filtering decision earlier in the experience."
                 caption="On mobile web, make and model moved earlier into a clearer selection flow."
-                imageClassName="h-auto max-h-[30rem] w-auto max-w-full"
+                imageClassName="h-auto max-h-[30rem] !w-auto max-w-full"
                 mediaClassName="flex items-start justify-center"
               />
             </div>
@@ -373,7 +352,7 @@ export default function NewSearchPage() {
         <CaseStudySection
           eyebrow="My Role"
           title="What I directly drove"
-          intro="My contribution was strongest in shaping the direction of the baseline and the decisions around it, not in claiming sole ownership of every experiment or rollout result."
+          intro="My contribution was strongest in shaping the direction of the baseline and the decisions around it, not in claiming sole ownership of every validation or launch result."
         >
           <BulletList items={roleSignals} />
         </CaseStudySection>
@@ -389,7 +368,7 @@ export default function NewSearchPage() {
                 Decision 01 in practice
               </p>
               <h3 className="homepage-type-item-title max-w-3xl text-[color:var(--foreground)]">
-                Legacy baseline, abandoned direction, stronger reset
+                Legacy baseline, intermediate direction, stronger reset
               </h3>
               <p className="homepage-type-body max-w-3xl text-[color:var(--color-muted)]">
                 The reset was not a cosmetic tune-up. The team moved beyond the
@@ -458,8 +437,8 @@ export default function NewSearchPage() {
           <CaseStudyProse>
             <p>
               Broader strategy work around New Search modelled larger upside and
-              tied the programme to a +10% dealer-lead objective, but I treat that
-              as business-case context rather than delivered outcome. The honest
+              tied the programme to stronger enquiry paths, but I treat that as
+              business-case context rather than delivered outcome. The honest
               takeaway is a staged reset with one strong proof point and two
               narrower follow-through stories.
             </p>

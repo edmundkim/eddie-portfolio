@@ -9,11 +9,12 @@ It supports the live case-study page at `app/work/strategic-ai-design-leadership
 - The strongest current visual evidence is the Visual AI Framework itself.
 - `timeline.md` is currently empty.
 - `source-analyses.md` is not present in this folder.
-- The live page currently uses no media assets, which remains a valid choice for this case.
+- The live page now uses `strategic-ai-mockup-hero.png` as the primary visual anchor.
 
 ## Recommendation at a glance
 
-- Keep the page intentionally sparse.
+- Keep the page otherwise intentionally sparse.
+- Use `strategic-ai-mockup-hero.png` as the primary visual anchor on the homepage Work card and the case-study hero.
 - Do not force product UI proof where the current evidence is strategic, framework-led, and partly confidential.
 - Do not force a framework image into the current page structure if it only repeats the surrounding copy.
 - If one framework asset is added later, use the safest one: `Principles.png`.
@@ -22,12 +23,14 @@ It supports the live case-study page at `app/work/strategic-ai-design-leadership
 
 ## Currently wired on the page
 
-- None.
+- `strategic-ai-mockup-hero.png` is used in the homepage Work section via `components/homepage/content.ts`.
+- `strategic-ai-mockup-hero.png` is used as the full-bleed Strategic AI case-study hero via `app/work/strategic-ai-design-leadership/page.tsx`.
 
 ## Current asset inventory
 
 | Filename | Status | Editorial note |
 | --- | --- | --- |
+| `strategic-ai-mockup-hero.png` | safe, wired | Primary public visual anchor for the Strategic AI case study. Used on the homepage Work card and as the full-bleed case-study hero. |
 | `Principles.png` | safe, not wired | Safest current proof that the framework existed and had specific, defensible principles, but not clearly necessary in the current page layout. |
 | `Presence Scale.png` | optional later | Useful supporting artifact, but the example labels should be reviewed before publishing as-is. |
 | `Visual Signals.png` | do not use as-is | Contains embedded product and concept UI examples that push beyond a safe public framework artifact. |
@@ -73,8 +76,8 @@ It supports the live case-study page at `app/work/strategic-ai-design-leadership
 
 ## Known gaps
 
-- The page is intentionally text-led for now.
+- Beyond the hero image, the page is intentionally text-led for now.
 - That is strategically acceptable for this case because the evidence is strongest at the framework and leadership layer.
-- If the page later needs one visual anchor, `Principles.png` is still the safest first choice.
+- If the page later needs additional framework proof, `Principles.png` is still the safest first choice.
 - If the page later needs more visual support, add only low-risk abstractions that strengthen the framework story.
 - Do not try to close the gap with confidential screens, prototype flows, or weak decorative assets.

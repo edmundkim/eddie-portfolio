@@ -33,7 +33,11 @@ function WorkProject({
     >
       <div
         aria-hidden={project.image ? undefined : true}
-        className="relative mb-12 h-[calc(clamp(18rem,58vw,43.75rem)+100px)] w-full overflow-hidden bg-[color:var(--color-panel)] sm:mb-[3.6rem] md:h-[clamp(18rem,58vw,43.75rem)]"
+        className={`relative mb-12 h-[calc(clamp(18rem,58vw,43.75rem)+100px)] w-full overflow-hidden ${
+          project.id === "declutter-list-page"
+            ? "bg-[#FFE5E6]"
+            : "bg-[color:var(--color-panel)]"
+        } sm:mb-[3.6rem] md:h-[clamp(18rem,58vw,43.75rem)]`}
       >
         {project.image ? (
           <Image
@@ -42,7 +46,7 @@ function WorkProject({
             fill
             priority={index < 2}
             sizes="100vw"
-            className={`homepage-work-image object-cover ${index === 0 ? "translate-y-[5%] scale-120" : ""}`}
+            className="homepage-work-image object-cover"
             style={imageStyle}
           />
         ) : null}

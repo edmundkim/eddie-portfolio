@@ -1,7 +1,8 @@
 import type { StaticImageData } from "next/image";
 
-import declutterHeroMockupWide from "@/content/case-studies/declutter-LP/assets/declutter-hero-mockup-wide.png";
+import declutterHeroMockupWide from "@/content/case-studies/declutter-LP/assets/declutter-hero-mockup-wide-red.png";
 import newSearchHeroMockupWide from "@/content/case-studies/new-search/assets/new-search-hero-mockup-wide.png";
+import strategicAiMockupHero from "@/content/case-studies/strategic-AI/assets/strategic-ai-mockup-hero.png";
 import daimlerSubscriptionMockup from "@/content/legacy-projects/daimler-subscription/assets/Clay_Mockup___7_.png";
 import smartConnectedCarMockupWide from "@/content/legacy-projects/smart-connected-car-app/assets/smart-connected-car-mockup-wide.png";
 
@@ -76,7 +77,7 @@ export const featuredProjects: FeaturedProject[] = [
     surface: "iOS, Android, desktop web, and mobile web",
     ctaLabel: "Open New Search project",
     summary:
-      "Redesigned search and filters to create a clearer product baseline.",
+      "Redesigned search and filters to give buyers a clearer way to refine their search.",
     description:
       "Restructured filter navigation, applied states, and make-model selection so buyers could refine searches with less ambiguity.",
     image: {
@@ -92,12 +93,17 @@ export const featuredProjects: FeaturedProject[] = [
     navTitle: "Strategic AI",
     href: "/work/strategic-ai-design-leadership",
     context: "AutoScout24",
-    surface: "AI product standards, early concepts, and UX capability building",
+    surface: "AI design standards, early product direction, and UX capability building",
     ctaLabel: "Open Strategic AI Design Leadership project",
     summary:
-      "Built reusable standards for how AI should be signalled, explained, reviewed, and controlled in product experiences.",
+      "Defined reusable standards for making AI features clearer, reviewable, and easier to trust.",
     description:
-      "Owned the Visual AI Framework and AI guidance for UX while shaping early concepts and agentic-coding education paths.",
+      "Owned the Visual AI Framework and AI guidance for UX while shaping early AI-assisted product direction and education paths for AI-assisted workflows.",
+    image: {
+      src: strategicAiMockupHero,
+      alt: "Laptop mockup showing an AI communication framework, previewing the Strategic AI Design Leadership case study.",
+      objectPosition: "50% 22%",
+    },
   },
   {
     id: "daimler-subscription-concept",

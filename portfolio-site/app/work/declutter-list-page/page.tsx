@@ -19,21 +19,20 @@ import appsBefore from "../../../content/case-studies/declutter-LP/assets/declut
 import desktopAfter from "../../../content/case-studies/declutter-LP/assets/declutter-desktop-after.png";
 import desktopBefore from "../../../content/case-studies/declutter-LP/assets/declutter-desktop-before.png";
 import desktopMacbookClean from "../../../content/case-studies/declutter-LP/assets/declutter-desktop-macbook-clean.png";
-import declutterHeroMockupWide from "../../../content/case-studies/declutter-LP/assets/declutter-hero-mockup-wide.png";
+import declutterHeroMockupWide from "../../../content/case-studies/declutter-LP/assets/declutter-hero-mockup-wide-red.png";
 import mwebAfter from "../../../content/case-studies/declutter-LP/assets/declutter-mweb-after.png";
 import mwebBefore from "../../../content/case-studies/declutter-LP/assets/declutter-mweb-before.png";
-import searchVisionMiro from "../../../content/case-studies/declutter-LP/assets/search_vision_miro.png";
 
 export const metadata: Metadata = {
   title: "Declutter the List Page | Eddie Kim",
   description:
-    "Case study on simplifying AutoScout24's list page card across web and app while balancing browsing clarity, dealer leads, partner exposure, and imagery.",
+    "Case study on simplifying AutoScout24's list-page card across web and app while balancing browsing clarity, commercial constraints, imagery, and rollout quality.",
 };
 
 const heroFacts = [
   {
     label: "Outcome",
-    value: "Rollout forecast: +25% dealer DPVs, +3% dealer leads",
+    value: "Measured uplift in buyer progression and enquiry signals",
   },
   { label: "Company", value: "AutoScout24" },
   {
@@ -45,7 +44,7 @@ const heroFacts = [
 
 const whyItMattered = [
   "The list card shapes what buyers notice, what they open, and how quickly they can compare offers.",
-  "It also sits upstream of dealer leads, finance and insurance entry points, and media value.",
+  "It also sits upstream of high-value browsing, enquiry, and commercial entry points.",
   "Multiple teams had legitimate claims on limited card space, so simplification meant deprioritising something.",
   "That made the work a marketplace prioritisation problem: decide what the card most needed to do, then defend those choices with evidence.",
 ];
@@ -55,52 +54,52 @@ const roleDetails = [
     title: "What I directly drove",
     items: [
       "Reframed the brief from visual clutter to decision quality on the list page",
-      "Led concept exploration and experiment design across declutter level, partner-link treatment, and gallery behaviour",
-      "Translated qualitative and quantitative findings into concrete web and app recommendations",
-      "Carried the design work through delivery support, QA, and rollout guidance",
+      "Led concept exploration and validation planning across information density, commercial entry points, and image behaviour",
+      "Translated research and measurement signals into concrete web and app recommendations",
+      "Supported delivery, QA, and rollout decisions with product and engineering partners",
     ],
   },
   {
     title: "What stayed shared",
     items: [
-      "Worked with product and analytics to evaluate tradeoffs across dealer leads, private leads, DPVs, and partner performance",
-      "Helped challenge flattering readouts when reported and actual DPVs diverged, especially in desktop gallery evaluation",
-      "Engineering, analytics, and rollout partners owned implementation, deep-dive analysis, and operational rollout",
+      "Worked with product and analytics to evaluate tradeoffs across browsing progression, enquiry quality, and commercial surfaces",
+      "Helped challenge proxy engagement signals when they did not reflect meaningful progression",
+      "Engineering, analytics, and rollout partners owned implementation, deeper analysis, and operational rollout",
     ],
   },
 ];
 
 const keyDecisions = [
   {
-    title: "Push the stronger simplification",
-    body: "The first mobile-web test showed the more reduced direction was worth backing. The most decluttered variant increased total dealer leads from the list page by 12%, while the slightly decluttered version increased them by 8%, which made simplification a credible product bet rather than a visual preference.",
+    title: "Back the stronger simplification",
+    body: "Early validation showed the more reduced direction was worth pursuing. That shifted the discussion from visual preference to product judgment: how far could we simplify the card while preserving the signals buyers and the business still needed?",
   },
   {
-    title: "Treat partner links as core product tradeoffs",
-    body: "Once declutter helped core browsing signals, the harder question became how much finance and insurance exposure the card should keep. Later tests showed private performance, Check24 outcomes, and finance metrics did not all move in the same direction, so the card could not optimise every commercial surface equally.",
+    title: "Treat commercial entry points as product tradeoffs",
+    body: "Once declutter helped core browsing signals, the harder question became how much space adjacent commercial surfaces should keep. The card could not optimise every buyer and business need equally, so each entry point had to earn its prominence.",
   },
   {
     title: "Trust actual progression over flattering proxies",
-    body: "Desktop validation exposed a measurement trap: richer gallery behaviour could make reported interaction metrics look healthier while actual dealer DPVs fell. That changed the decision from 'gallery feels richer' to 'which measure best reflects real progression?'",
+    body: "Follow-up validation exposed a measurement trap: richer on-card interaction could make engagement look healthier without clearly improving meaningful progression. That changed the decision from 'this feels richer' to 'which measure best reflects real buyer progress?'",
   },
   {
     title: "Let platforms diverge when the evidence diverged",
-    body: "The programme did not support one universal card. Web converged on No Gallery, while apps retained a gallery direction, and finance and insurance placement changed around the constraints and evidence of each platform.",
+    body: "The programme did not support one universal card. Web and native apps needed different balances of image emphasis, detail, and action density while still following the same product principles.",
   },
 ];
 
 const confirmedOutcomes = [
   {
-    label: "Confirmed measured result",
-    metric: "+12%",
-    summary: "dealer leads from the list page in early IT mWeb",
-    body: "In the early IT mobile-web test, the most decluttered no-links variant increased total dealer leads from the list page by 12%. The slightly decluttered version also improved leads by 8%, which made the stronger direction credible enough to keep testing rather than a final programme headline.",
+    label: "Measured signal",
+    metric: "Measured uplift",
+    summary: "the more reduced direction outperformed the earlier card",
+    body: "Early validation gave the team confidence to keep pushing the simpler direction while continuing to validate the commercial tradeoffs around the card.",
   },
   {
-    label: "Confirmed measured result",
-    metric: "+6%",
-    summary: "actual dealer DPVs in DE desktop No Gallery test",
-    body: "Desktop validation clarified the later rollout logic. The No Gallery direction increased actual dealer DPVs by 6% in DE with dealer leads stable, while Gallery variants reduced actual dealer DPVs in both DE (-9%) and IT (-27%).",
+    label: "Decision quality",
+    metric: "Progression signal",
+    summary: "follow-up validation favoured a simpler web treatment",
+    body: "Later analysis showed that richer on-card interaction could look healthy in proxy metrics without clearly improving meaningful progression. That pushed the team toward a simpler web approach and a different app balance.",
   },
 ];
 
@@ -108,7 +107,7 @@ const supportingOutcomes = [
   {
     label: "Final state",
     title: "The list-card approach was rolled out across markets and platforms",
-    body: "The programme ended with a clear rollout logic: mobile web and desktop converged on No Gallery, apps retained a gallery direction, and finance and insurance placement was refined around each platform's needs. The list-card approach was rolled out to all markets on all platforms, giving AutoScout24 a cleaner and more scalable foundation for results browsing.",
+    body: "The programme ended with a platform-specific list-card direction across web and native apps. It rolled out across multiple markets and platforms, giving AutoScout24 a cleaner and more scalable foundation for results browsing without pretending one card pattern should serve every surface equally.",
   },
 ];
 
@@ -176,7 +175,7 @@ export default function DeclutterListPage() {
         <CaseStudyHero
           eyebrow="Case Study · AutoScout24 · Search & Discovery"
           title="Declutter the List Page"
-          lede="Across a multi-phase programme, I led the design work to simplify AutoScout24's list page card across web and app. That work established a higher-performing list-card direction that made browsing easier, strengthened the search funnel, and created a clearer foundation for rollout decisions across platforms. The harder challenge was balancing that improvement with the needs of partner links, imagery, and other commercial surfaces on the card."
+          lede="Across a multi-phase programme, I led the design work to simplify AutoScout24's list-page card across web and app. The work improved browsing clarity, gave teams a stronger basis for rollout decisions, and showed where web and native apps needed different treatments. The harder challenge was not removing UI alone, but deciding which buyer, commercial, and platform needs deserved limited card space."
           facts={heroFacts}
         >
           <CaseStudyFigure
@@ -194,7 +193,7 @@ export default function DeclutterListPage() {
         <CaseStudySection
           eyebrow="Overview"
           title="A list card redesign aimed at faster decisions"
-          intro="This was a decision-quality problem on the search funnel, not a visual tidy-up. Internal signals suggested the issue was commercially meaningful rather than proving one single cause: one source reported that 12% of users said clutter hurt the search experience, and Contentsquare zoning showed about half of visitors left the list page before reaching a detail page."
+          intro="This was a decision-quality problem in the search funnel, not a visual tidy-up. Research and behavioural analysis pointed to a commercially meaningful issue: buyers were working too hard to scan, compare, and decide which offers deserved a closer look."
           className="border-t-0"
         >
           <CaseStudyProse>
@@ -212,8 +211,8 @@ export default function DeclutterListPage() {
             <p>
               In practice, that meant reducing information density, showing
               more offers above the fold, clarifying what the image area
-              signalled, and later reworking finance and insurance placement
-              rather than letting every internal demand stay equally prominent.
+              signalled, and later reworking commercial entry points rather
+              than letting every internal demand stay equally prominent.
             </p>
           </CaseStudyProse>
         </CaseStudySection>
@@ -258,16 +257,6 @@ export default function DeclutterListPage() {
           </CaseStudyProse>
         </CaseStudySection>
 
-        <CaseStudyFigure
-          image={searchVisionMiro}
-          alt="Zoomed-out Miro board showing the breadth of the broader search vision work around the list-card redesign."
-          sizes="(max-width: 767px) 1900px, 100vw"
-          fullBleed
-          className="mb-16 sm:mb-20 lg:mb-24"
-          mediaClassName="relative h-[460px] overflow-hidden md:h-auto md:overflow-visible"
-          imageClassName="absolute left-1/2 top-1/2 !h-full !w-auto max-w-none -translate-x-1/2 -translate-y-1/2 md:relative md:left-auto md:top-auto md:!h-auto md:!w-full md:translate-x-0 md:translate-y-0"
-        />
-
         <CaseStudySection
           eyebrow="Why This Mattered"
           title="This was a marketplace prioritisation problem"
@@ -279,7 +268,7 @@ export default function DeclutterListPage() {
         <CaseStudySection
           eyebrow="My Role"
           title="What I directly drove, and what stayed shared"
-          intro="My role was to lead the design problem across multiple phases: clarify what the card should optimise for, test the riskiest tradeoffs, and help turn repeated findings into a rollout direction."
+          intro="My role was to lead the design problem across multiple phases: clarify what the card should optimise for, validate the riskiest tradeoffs, and help turn repeated findings into a rollout direction."
         >
           <div className="grid gap-5 md:grid-cols-2">
             {roleDetails.map((group) => (
@@ -317,7 +306,7 @@ export default function DeclutterListPage() {
         <CaseStudySection
           eyebrow="Outcome / Impact"
           title="What the evidence supports"
-          intro="The clearest honest landing is that stronger declutter made the direction credible early, desktop validation clarified where No Gallery was safer, and the programme ultimately landed as a platform-specific rollout rather than one universal winner."
+          intro="The clearest honest landing is that stronger declutter produced positive validation signals, follow-up analysis clarified where simpler web behaviour was safer, and the programme ultimately landed as a platform-specific rollout rather than one universal winner."
         >
           <div className="grid gap-5 md:grid-cols-2">
             {confirmedOutcomes.map((outcome, index) => (
@@ -328,7 +317,7 @@ export default function DeclutterListPage() {
                 <p className="homepage-type-eyebrow text-[color:var(--color-muted)]">
                   {outcome.label}
                 </p>
-                <p className="mt-6 text-5xl font-medium leading-none tracking-[-0.04em] sm:text-6xl">
+                <p className="mt-6 text-3xl font-medium leading-tight sm:text-4xl">
                   {outcome.metric}
                 </p>
                 <p className="homepage-type-subhead mt-4 text-[color:var(--foreground)]">
