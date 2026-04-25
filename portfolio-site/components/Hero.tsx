@@ -1,15 +1,23 @@
 import Image from "next/image";
 
+import ContactIconLinks from "@/components/homepage/ContactIconLinks";
+
 export default function Hero() {
   return (
     <section
       id="top"
       aria-labelledby="hero-heading"
       aria-describedby="hero-summary"
-      className="homepage-core homepage-core--hero relative flex-1"
+      className="homepage-core homepage-core--hero relative flex-1 pt-[18px] sm:pt-[14px] md:pt-[30px]"
     >
-      <div className="homepage-content-width relative flex min-h-[calc(148svh-4rem)] flex-col justify-between gap-24 pb-[900px] pt-24 sm:min-h-[calc(154svh-5rem)] sm:gap-28 sm:pt-28 lg:min-h-[calc(166svh-6rem)] lg:gap-32 lg:pt-36">
+      <div className="homepage-content-width relative flex min-h-[calc(148svh-4rem)] flex-col justify-between gap-24 pb-[720px] pt-0 sm:min-h-[calc(154svh-5rem)] sm:gap-28 sm:pb-[810px] md:pt-28 lg:min-h-[calc(166svh-6rem)] lg:gap-32 lg:pt-36">
         <header className="max-w-[82rem]">
+          <ContactIconLinks
+            className="mb-14 flex flex-col items-start gap-7 md:hidden"
+            linkLayoutClassName="h-8 w-8 justify-start"
+            linkClassName="homepage-hero-theme-text text-[color:var(--hero-name)] focus-visible:[outline-color:var(--hero-name)]"
+          />
+
           <p className="homepage-hero-theme-text homepage-type-hero-name text-[color:var(--hero-name)]">
             Eddie Kim
           </p>

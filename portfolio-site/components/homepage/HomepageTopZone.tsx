@@ -75,7 +75,7 @@ export default function HomepageTopZone() {
         </div>
       </div>
 
-      <div className="homepage-shell homepage-chrome pt-3 sm:pt-4">
+      <div className="homepage-shell px-0 pt-3 sm:pt-4 md:px-[var(--homepage-edge-gap)]">
         <Hero />
       </div>
       <Work />

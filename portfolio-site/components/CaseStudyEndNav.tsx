@@ -68,8 +68,10 @@ function NavigationTile({
 
 export default function CaseStudyEndNav({
   currentSlug,
+  showDivider = true,
 }: {
   currentSlug: CaseStudySlug;
+  showDivider?: boolean;
 }) {
   const { previous, next } = getCaseStudyNavigation(currentSlug);
   const backToWorkHref = "/#work";
@@ -117,7 +119,9 @@ export default function CaseStudyEndNav({
   return (
     <nav
       aria-label="Case study navigation"
-      className="mt-16 border-t border-[color:var(--color-line)] pt-16 sm:mt-20 sm:pt-20"
+      className={`mt-16 pt-16 sm:mt-20 sm:pt-20 ${
+        showDivider ? "border-t border-[color:var(--color-line)]" : ""
+      }`}
     >
       <div className="grid gap-4 md:grid-cols-2">
         <NavigationTile {...backwardLink} />

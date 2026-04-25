@@ -69,7 +69,7 @@ export default function Experience() {
               className={
                 row.subdued
                   ? "homepage-type-body mt-3 max-w-3xl text-[color:var(--color-muted)]"
-                  : "homepage-type-subhead mt-3 max-w-3xl text-[color:var(--color-muted)]"
+                  : "homepage-type-body mt-3 max-w-3xl font-medium text-[color:var(--color-muted)]"
               }
             >
               {row.value}

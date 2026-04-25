@@ -92,12 +92,12 @@ export const featuredProjects: FeaturedProject[] = [
     navTitle: "Strategic AI",
     href: "/work/strategic-ai-design-leadership",
     context: "AutoScout24",
-    surface: "AI product standards, early concepts, and internal guidance",
+    surface: "AI product standards, early concepts, and UX capability building",
     ctaLabel: "Open Strategic AI Design Leadership project",
     summary:
       "Built reusable standards for how AI should be signalled, explained, reviewed, and controlled in product experiences.",
     description:
-      "Owned the Visual AI Framework and internal AI guidance while shaping early product concepts before ad hoc patterns spread.",
+      "Owned the Visual AI Framework and AI guidance for UX while shaping early concepts and agentic-coding education paths.",
   },
   {
     id: "daimler-subscription-concept",
@@ -109,7 +109,7 @@ export const featuredProjects: FeaturedProject[] = [
     surface: "Desktop and mobile web",
     ctaLabel: "Open Daimler Vehicle Subscription Concept project",
     summary:
-      "Defined a subscription journey for an unfamiliar service model, from selection to account management.",
+      "Defined a greenfield subscription journey to help validate and de-risk a future subscription model, from selection to account management.",
     description:
       "Led UX definition for acquisition, configuration, checkout, and lifecycle management.",
     image: {
@@ -169,7 +169,7 @@ export const speakingTopics: SpeakingTopic[] = [
   {
     title: "Ahead of the Curve: Embracing AI in Your Design Practice",
     description:
-      "Talk on how design practitioners and teams can adopt AI more thoughtfully: where it creates leverage, where caution is needed, and how to build practical workflows without losing judgment.",
+      "Talk on how design practitioners and teams can adopt AI more thoughtfully: where it creates leverage, where caution is needed, and how to build practical workflows without losing judgement.",
     imageSrc: "/speaking/techspace-ahead-of-the-curve-close.jpg",
     imageAlt:
       "Eddie Kim presenting a talk on embracing AI in design practice at Techspace.",

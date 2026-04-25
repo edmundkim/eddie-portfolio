@@ -1,12 +1,14 @@
 Facts
 Project / Initiative
 Working name: Strategic AI design leadership at AutoScout24, covering AI product direction, the Visual AI Framework, and AI education / enablement across UX and the wider Builders organisation. [Source: summary of role]
-Short plain-English description: A cross-functional body of work focused on shaping how AI products are designed, communicated, and operationalised across the organisation, while also building internal capability around AI tools, prototyping, and practical design use. [Source: summary of role]
+Short plain-English description: A cross-functional body of work focused on shaping how AI products are designed, communicated, and operationalised across the organisation, while also building internal capability around AI tools, agentic coding, prototyping, and practical design use. [Source: summary of role] [Source: user-provided context, 2026-04-25]
 The source material also includes internal presentations about AI in UX, AI research, creativity, workflows, practical usage, and responsible use. [Source: builders presentation 1] [Source: builders presentation 2]
+The latest user-provided context adds responsibility for UX upskilling and educational paths around agentic coding, leadership of a related taskforce, and alignment with the CPO and senior stakeholders across the organisation. [Source: user-provided context, 2026-04-25]
 Why it mattered
 AI-related experiences risked becoming inconsistent across the product, with no shared language, scalable guidance, or framework grounded in clear principles. [Source: summary of role]
 Teams needed clearer rules for how AI should appear in the product, how visible it should be, and how to design AI responsibly at scale. [Source: summary of role]
 UX and product teams needed stronger internal capability around AI tools, prototyping, and practical application as AI changed design workflows. [Source: summary of role]
+Agentic coding and AI-assisted work were changing both product-development workflows and UX workflows, creating a need for clearer education paths and senior alignment. [Source: user-provided context, 2026-04-25]
 The role summary states there was a broader leadership question around what AI meant for the future role and value of UX. [Source: summary of role]
 Builders presentation 1 states that the UX team set out to answer: “How might we improve processes at Team User Experience at AS24 with artificial intelligence?” [Source: builders presentation 1]
 The Visual AI Framework states that AI visibility should scale with its impact on user understanding, decisions, and control, and that users should be able to tell when AI is assisting, generating, summarising, recommending, personalising, or taking action on their behalf. [Source: Visual AI Framework]
@@ -16,10 +18,13 @@ Scope: The role summary states that the remit spanned three connected areas:
 AI product direction
 AI design framework and guidance
 AI education, enablement, and prototyping capability [Source: summary of role]
+The user-provided context extends the education and enablement scope to include agentic-coding upskilling paths for the UX team, taskforce leadership, and alignment with the CPO and senior stakeholders. [Source: user-provided context, 2026-04-25]
 Direct ownership stated in the source material:
 owning the Visual AI Framework [Source: summary of role]
 owning AI education and enablement for the UX team [Source: summary of role]
 driving AI prototyping enablement across the wider Builders organisation [Source: summary of role]
+responsibility for upskilling and educational paths for the UX team around agentic coding [Source: user-provided context, 2026-04-25]
+leading a taskforce on AI-driven changes to product-development and UX workflows [Source: user-provided context, 2026-04-25]
 Direct contribution stated in the source material:
 providing senior design direction on high-priority AI initiatives [Source: summary of role]
 contributing to key flows, experience principles, and product thinking alongside supporting designers and cross-functional stakeholders [Source: summary of role]
@@ -29,11 +34,15 @@ both initiatives are currently in concept and prototype stage [Source: summary o
 Collaboration context stated in the source material:
 worked alongside supporting designers and cross-functional stakeholders [Source: summary of role]
 led through design direction, framework ownership, education and enablement, cross-team coordination, and senior guidance without formal line management authority over all involved designers [Source: summary of role]
+aligned the agentic-coding and workflow-change taskforce work with the CPO and senior stakeholders across the organisation [Source: user-provided context, 2026-04-25]
 Core responsibilities
 Spearheading design direction for AI initiatives across AutoScout24. [Source: summary of role]
 Guiding designers working on AI initiatives, including supporting designers who were not direct reports. [Source: summary of role]
 Owning the Visual AI Framework for AI product experience across the organisation. [Source: summary of role]
 Owning AI education and enablement for the UX team. [Source: summary of role]
+Creating upskilling and educational paths for the UX team around agentic coding. [Source: user-provided context, 2026-04-25]
+Leading a taskforce on AI-driven changes to product-development and UX workflows. [Source: user-provided context, 2026-04-25]
+Aligning the taskforce and capability-building work with the CPO and senior stakeholders. [Source: user-provided context, 2026-04-25]
 Driving AI prototyping enablement across the wider Builders organisation. [Source: summary of role]
 Contributing to key AI flows, experience principles, and product thinking on high-priority AI initiatives. [Source: summary of role]
 Presenting enablement material and related research to the wider Builders organisation. [Source: summary of role]
@@ -60,6 +69,8 @@ Contributed senior design direction on Conversational AI and Lead Enrichment AI.
 Supported designers working on AI initiatives without formal line management authority over them. [Source: summary of role]
 Drove AI prototyping enablement across the wider Builders organisation. [Source: summary of role]
 Led AI education and enablement for the UX organisation. [Source: summary of role]
+Led taskforce work on agentic coding, UX upskilling, and AI-assisted workflow change. [Source: user-provided context, 2026-04-25]
+Aligned with the CPO and senior stakeholders on changes to product-development and UX workflows. [Source: user-provided context, 2026-04-25]
 Presented AI enablement plans and research to the wider Builders organisation. [Source: summary of role] [Source: builders presentation 2]
 Evidence by source
 Summary of role
@@ -131,3 +142,18 @@ measurable business impact
 explicit authorship attribution within the document itself [Source: Visual AI Framework]
 Limitations if directly relevant
 the document shows framework content and examples but does not record rollout or usage status [Source: Visual AI Framework]
+User-provided context, 2026-04-25
+What it supports
+responsibility for UX upskilling and educational paths around agentic coding
+taskforce leadership around AI-driven changes to product-development and UX workflows
+alignment with the CPO and senior stakeholders across the organisation
+framing the work as organisational capability building rather than a narrow enablement activity
+What it does not support
+specific dates, milestones, or timeline
+adoption metrics
+business impact metrics
+user impact metrics
+formal company-wide rollout status
+sole ownership of broader company AI strategy
+Limitations if directly relevant
+the source is user-provided context rather than an implementation log or externally verifiable record

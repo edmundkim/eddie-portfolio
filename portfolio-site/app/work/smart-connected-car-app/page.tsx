@@ -25,7 +25,7 @@ import testingMatrix from "../../../content/legacy-projects/smart-connected-car-
 import vehiclePairingFlow from "../../../content/legacy-projects/smart-connected-car-app/assets/vehicle_pairing_playground_v2__1_.png";
 
 export const metadata: Metadata = {
-  title: "Designing smart’s Connected-Car App Before the Car Existed | Eddie Kim",
+  title: "smart Connected Car App Design | Eddie Kim",
   description:
     "Case study on shaping smart's native iOS and Android EV companion app from early research into structured, tested, buildable UX.",
 };
@@ -50,8 +50,8 @@ const heroFacts = [
 ];
 
 const constraints = [
-  "The vehicle was still being defined, so the app had to give shape to access, status, remote-control, and ownership moments before every hardware behavior was fixed.",
-  "smart was phasing out the physical key, making pairing, access, phone-key behavior, and remote commands trust-critical parts of the experience.",
+  "The vehicle was still being defined, so the app had to give shape to access, status, remote-control, and ownership moments before every hardware behaviour was fixed.",
+  "smart was phasing out the physical key, making pairing, access, phone-key behaviour, and remote commands trust-critical parts of the experience.",
   "EV drivers needed confidence around charging, climate, readiness, and vehicle status, not a feature drawer that hid the most important signals.",
   "Requirements shifted during implementation, with partner and backend integrations across public charging, wall box charging, maps, and internal infrastructure.",
 ];
@@ -63,13 +63,13 @@ const roleScope = [
       "Research synthesis from EV-owner interviews, survey input, and connected-car landscape analysis",
       "Information architecture, navigation, user flows, wireframes, and prototypes for core vehicle moments",
       "Testing plans, scripts, facilitation, synthesis, and design iteration",
-      "Implementation support through flow artifacts, requirements clarification, and prioritization conversations",
+      "Implementation support through flow artefacts, requirements clarification, and prioritisation conversations",
     ],
   },
   {
     title: "How the work created leverage",
     items: [
-      "smart product owners used the artifacts to connect business priorities with user needs and delivery constraints",
+      "smart product owners used the artefacts to connect business priorities with user needs and delivery constraints",
       "Engineering, QA, scrum, and Deloitte delivery teams used flows to discuss states, dependencies, and edge cases before build",
       "Final UI, technical implementation, QA, and release readiness remained shared across the broader design, engineering, and delivery team",
     ],
@@ -78,7 +78,7 @@ const roleScope = [
 
 const researchSignals = [
   "I sourced and interviewed five EV owners across Europe to understand how they managed charging, range anxiety, vehicle status, and control.",
-  "Survey input from EV communities helped prioritize planned features from a user perspective rather than relying only on internal assumptions.",
+  "Survey input from EV communities helped prioritise planned features from a user perspective rather than relying only on internal assumptions.",
   "A landscape review of 14 connected-car apps clarified feature coverage, navigation patterns, and expectation gaps in the market.",
   "The research pointed toward a practical core: drivers needed better visibility and control over when, where, and how their vehicle would be charged and ready.",
 ];
@@ -96,7 +96,7 @@ const productDecisionCards = [
   },
   {
     title: "Treat charging as a confidence journey, not a utility",
-    body: "Research emphasized control over when, where, and how charging happened, plus pain around limited visibility. Charging stayed in primary navigation and was explored alongside status, cost, range, public charging, and vehicle readiness.",
+    body: "Research emphasised control over when, where, and how charging happened, plus pain around limited visibility. Charging stayed in primary navigation and was explored alongside status, cost, range, public charging, and vehicle readiness.",
   },
   {
     title: "Separate frequent remote actions from deeper controls",
@@ -104,14 +104,14 @@ const productDecisionCards = [
   },
   {
     title: "Turn pairing, geofence, and edge-state logic into buildable flows",
-    body: "Vehicle activation, phone-key pairing, geofencing, and remote commands relied on clear sequences, states, and error paths. Detailed flow artifacts gave product owners, developers, and QA a shared model for discussion and implementation.",
+    body: "Vehicle activation, phone-key pairing, geofencing, and remote commands relied on clear sequences, states, and error paths. Detailed flow artefacts gave product owners, developers, and QA a shared model for discussion and implementation.",
   },
 ];
 
 const deliveryCards = [
   {
     title: "Flows made risk visible",
-    body: "Pairing, geofencing, charging, climate, and remote controls depended on state changes across the app, vehicle, account, and backend systems. Flow artifacts made those dependencies easier to review before build.",
+    body: "Pairing, geofencing, charging, climate, and remote controls depended on state changes across the app, vehicle, account, and backend systems. Flow artefacts made those dependencies easier to review before build.",
   },
   {
     title: "Concepts tested hierarchy",
@@ -131,7 +131,7 @@ export default function SmartConnectedCarAppPage() {
       <CaseStudyArticle>
         <CaseStudyHero
           eyebrow="smart · Connected Car Mobile App"
-          title="Designing smart’s Connected-Car App Before the Car Existed"
+          title="smart Connected Car App Design"
           lede="As Experience Design Lead at Deloitte Digital, I helped shape smart's native iOS and Android EV companion app for vehicle access, status, charging, climate, and controls while requirements and connected-vehicle dependencies were still moving."
           secondaryLede="This is an earlier, pre-launch case study. Its value is the product design path: turning an ambiguous connected-EV ecosystem into structured, tested, buildable UX that moved toward implementation."
           facts={heroFacts}
@@ -145,7 +145,7 @@ export default function SmartConnectedCarAppPage() {
           priority
           className="h-[clamp(18rem,34vw,38rem)] bg-[#1f1f1f]"
           mediaClassName="h-full"
-          imageClassName="h-full w-full object-cover object-right"
+          imageClassName="h-full w-full object-cover object-center"
         />
 
         <CaseStudySection
@@ -159,7 +159,7 @@ export default function SmartConnectedCarAppPage() {
         <CaseStudySection
           eyebrow="My Role"
           title="Lead the UX work that product and delivery teams could use"
-          intro="I worked on a year-long program with Deloitte Digital Germany and Portugal, smart product owners, engineering, QA, scrum, and delivery partners. My role was to turn research, requirements, and shifting constraints into UX artifacts the team could make decisions from."
+          intro="I worked on a year-long programme with Deloitte Digital Germany and Portugal, smart product owners, engineering, QA, scrum, and delivery partners. My role was to turn research, requirements, and shifting constraints into UX artefacts the team could make decisions from."
         >
           <div className="grid gap-5 md:grid-cols-2">
             {roleScope.map((group) => (
@@ -187,15 +187,15 @@ export default function SmartConnectedCarAppPage() {
           </div>
 
           <CaseStudyFigure
-            label="Prioritization evidence"
+            label="prioritisation"
             image={researchPrioritization}
-            alt="Feature prioritization table for the smart app showing planned functionality scored and ranked from a user perspective."
-            caption="The prioritization table turned survey input into product-discussion material, helping compare user desirability across planned functionality before IA and roadmap conversations."
+            alt="Feature prioritisation table for the smart app showing planned functionality scored and ranked from a user perspective."
+            caption="The prioritisation table turned survey input into product-discussion material, helping compare user desirability across planned functionality before IA and roadmap conversations."
             preserveWidthOnSmallScreens
           />
 
           <CaseStudyFigure
-            label="Journey evidence"
+            label="journey map"
             image={journeyMap}
             alt="Journey map for a smart connected-car driver showing actions, touchpoints, expectations, and emotional notes across charging, access, control, and lifecycle moments."
             caption="The journey map showed that access, charging, status, service, and ownership moments needed to be considered as one connected driver journey, not as unrelated feature areas."
@@ -267,7 +267,7 @@ export default function SmartConnectedCarAppPage() {
               label="Geofence flow"
               image={geofenceFlow}
               alt="Geofence workspace showing map selection, list management, edit states, notification preferences, and successful geofence creation."
-              caption="The geofence artifact made location and notification logic concrete, including saved places, edit states, preferences, and success moments that could not be understood from isolated screens."
+              caption="The geofence artefact made location and notification logic concrete, including saved places, edit states, preferences, and success moments that could not be understood from isolated screens."
               preserveWidthOnSmallScreens
             />
           </div>
@@ -302,9 +302,9 @@ export default function SmartConnectedCarAppPage() {
               and service moments.
             </p>
             <p>
-              The program reached implementation with a coherent native-app
+              The programme reached implementation with a coherent native-app
               structure, detailed flows, prototypes, and testing inputs that
-              helped the team clarify product behavior before the experience
+              helped the team clarify product behaviour before the experience
               reached users publicly.
             </p>
             <p>

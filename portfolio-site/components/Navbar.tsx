@@ -1,16 +1,9 @@
 import {
-  contactLinks,
   featuredProjects,
   formatFeaturedProjectIndex,
   type HomepageNavMode,
 } from "@/components/homepage/content";
-
-const emailLink =
-  contactLinks.find((link) => link.label === "Email Eddie")?.href ??
-  "mailto:edmundhkim@gmail.com";
-const linkedInLink = contactLinks.find((link) => link.label === "LinkedIn");
-const utilityIconClass =
-  "flex h-8 w-8 items-center justify-center text-[color:var(--homepage-nav-utility)] transition-[color,opacity] duration-200 hover:opacity-65 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:[outline-color:var(--homepage-nav-utility)] motion-reduce:transition-none";
+import ContactIconLinks from "@/components/homepage/ContactIconLinks";
 
 type NavbarProps = {
   mode?: HomepageNavMode;
@@ -111,44 +104,9 @@ export default function Navbar({ mode = "default" }: NavbarProps) {
     <nav
       aria-label="Homepage utility navigation"
       data-nav-mode={mode}
-      className="pointer-events-auto sticky top-4 z-10 flex h-[calc(100svh-2rem)] w-12 shrink-0 flex-col self-start overflow-visible py-2 sm:top-6 sm:h-[calc(100svh-3rem)] sm:w-14 sm:py-4"
+      className="pointer-events-auto sticky top-4 z-10 hidden h-[calc(100svh-2rem)] w-12 shrink-0 flex-col self-start overflow-visible py-2 sm:top-6 sm:h-[calc(100svh-3rem)] sm:w-14 sm:py-4 md:flex"
     >
-      <div className="flex flex-col items-start gap-4">
-        <a
-          href={emailLink}
-          aria-label="Get in touch by email"
-          className={utilityIconClass}
-        >
-          <svg
-            aria-hidden="true"
-            viewBox="0 0 24 24"
-            className="h-[1.32rem] w-[1.32rem]"
-            fill="currentColor"
-          >
-            <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.93 5.49a3 3 0 0 1-3.14 0L1.5 8.67Z" />
-            <path d="M22.5 6.91v-.16a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.16l9.71 5.97a1.5 1.5 0 0 0 1.58 0l9.71-5.97Z" />
-          </svg>
-        </a>
-
-        {linkedInLink ? (
-          <a
-            href={linkedInLink.href}
-            aria-label="Visit Eddie on LinkedIn"
-            className={utilityIconClass}
-            target={linkedInLink.external ? "_blank" : undefined}
-            rel={linkedInLink.external ? "noreferrer" : undefined}
-          >
-            <svg
-              aria-hidden="true"
-              viewBox="0 0 24 24"
-              className="h-[1.21rem] w-[1.21rem]"
-              fill="currentColor"
-            >
-              <path d="M7.12 20.45H3.56V9h3.56v11.45ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28Z" />
-            </svg>
-          </a>
-        ) : null}
-      </div>
+      <ContactIconLinks linkClassName="text-[color:var(--homepage-nav-utility)] focus-visible:[outline-color:var(--homepage-nav-utility)]" />
 
       <div className="relative mt-auto min-h-[7.5rem] w-0 overflow-visible sm:min-h-[8rem] lg:min-h-[13.5rem]">
         <DefaultNavMode active={!isWorkMode} />

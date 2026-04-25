@@ -119,7 +119,7 @@ export function CaseStudyHero({
         </p>
 
         {secondaryLede ? (
-          <p className="homepage-type-body homepage-type-body--responsive max-w-[46rem] text-[color:var(--color-muted)]">
+          <p className="homepage-type-body max-w-[46rem] text-[color:var(--color-muted)]">
             {secondaryLede}
           </p>
         ) : null}
@@ -141,15 +141,12 @@ export function CaseStudyFactGrid({
   return (
     <dl
       className={joinClassNames(
-        "mt-12 grid border-t border-[color:var(--color-line)] sm:grid-cols-2 xl:grid-cols-4",
+        "mt-12 grid sm:grid-cols-2 xl:grid-cols-4",
         className,
       )}
     >
       {facts.map((fact) => (
-        <div
-          key={fact.label}
-          className="border-b border-[color:var(--color-line)] py-5 sm:py-6 sm:pr-8"
-        >
+        <div key={fact.label} className="py-5 sm:py-6 sm:pr-8">
           <dt className="homepage-type-eyebrow text-[color:var(--color-muted)]">
             {fact.label}
           </dt>
@@ -263,7 +260,7 @@ export function CaseStudyFigure({
   caption,
   children,
   fullBleed = false,
-  framed = true,
+  framed = false,
   preserveWidthOnSmallScreens = false,
   sizes = "(min-width: 1280px) 60rem, (min-width: 1024px) calc(100vw - 24rem), 100vw",
   priority,
@@ -395,7 +392,7 @@ export function CaseStudyProse({
   return (
     <div
       className={joinClassNames(
-        "homepage-type-body homepage-type-body--responsive max-w-[50rem] space-y-5 text-[color:var(--color-muted)]",
+        "homepage-type-body max-w-[50rem] space-y-5 text-[color:var(--color-muted)]",
         className,
       )}
     >

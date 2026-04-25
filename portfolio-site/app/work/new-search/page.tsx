@@ -73,14 +73,14 @@ const heroHighlights = [
 const roleSignals = [
   "I was the lead designer on the search funnel team for this reset, brought in as the apps design specialist to define a stronger direction instead of continuing to iterate on the weaker 2023 app approach.",
   "My direct scope covered the filters experience end to end: information architecture, key UX and UI decisions, and the interaction patterns across iOS and Android for how people set filters and get back to more relevant results.",
-  "I shaped the core design concept, helped frame and de-risk the research, and pushed the baseline decisions that mattered most: filter hierarchy, earlier make-and-model entry, clearer completion behavior, and where platforms should align or diverge.",
+  "I shaped the core design concept, helped frame and de-risk the research, and pushed the baseline decisions that mattered most: filter hierarchy, earlier make-and-model entry, clearer completion behaviour, and where platforms should align or diverge.",
   "The cross-platform baseline was collaborative. I later carried that direction into web work with another senior designer and cross-functional partners, while testing, rollout, and business outcomes remained shared team results.",
 ];
 
 const problemSignals = [
   "Search sat close to one of the marketplace's most valuable moments: moving from browsing to enquiry. When filtering was hard to use, buyers had a harder time finding relevant cars and the path to dealer leads weakened.",
   "The reset was triggered by evidence, not preference. A December 2023 iOS benchmark showed the earlier direction underperforming on core enquiry metrics, which made another cleanup pass hard to justify.",
-  "Cross-platform discovery showed the same structural issues repeating across desktop, mobile web, iOS, and Android: filters were hard to find, hard to edit from results, and not clearly organized once applied.",
+  "Cross-platform discovery showed the same structural issues repeating across desktop, mobile web, iOS, and Android: filters were hard to find, hard to edit from results, and not clearly organised once applied.",
   "Strategy work later showed how shallow engagement had become on mobile web: only 15% of results-page users opened filters, and only 10% reached the bottom of detailed search. That same work framed New Search as formal growth work tied to a +10% dealer-lead objective.",
 ];
 
@@ -95,7 +95,7 @@ const taxonomyWorkstream = {
   title: "New Make/Model Taxonomy and Filter Experience",
   paragraphs: [
     "As part of the broader New Search reset, I helped shape a new make-and-model experience for a more complex vehicle taxonomy. The legacy interaction assumed buyers could move cleanly from make to model, but that stopped scaling once deeper distinctions such as generation, variant, and engine choice started to matter.",
-    "This was not just a filter redesign. It was a mental-model and intent-expression problem: how to expose more truthful structure without overwhelming people. I explored how search, drilldown, grouped dimensions, and clearer selection management could make a richer system feel clearer rather than heavier. The work touched taxonomy, interaction model, multi-select behavior, and rollout complexity, and it is still evolving, so I treat it as strategically important work in progress rather than a neat resolved win.",
+    "This was not just a filter redesign. It was a mental-model and intent-expression problem: how to expose more truthful structure without overwhelming people. I explored how search, drilldown, grouped dimensions, and clearer selection management could make a richer system feel clearer rather than heavier. The work touched taxonomy, interaction model, multi-select behaviour, and rollout complexity, and it is still evolving, so I treat it as strategically important work in progress rather than a neat resolved win.",
   ],
 };
 
@@ -110,7 +110,7 @@ const decisionCards = [
   },
   {
     title: "Adapt the baseline by platform and ship web in stages",
-    body: "We did not force one interaction everywhere. Android research and later benchmark summaries supported AutoSave, with the clearest measurable signal a +12% new-user enquiry lift in Germany rather than a clean launch story. Web came later as an intentionally narrower 2026 baseline, with launch communications summarizing a +7% desktop dealer-lead signal in Italy and stable mobile-web and detail-page-view metrics.",
+    body: "We did not force one interaction everywhere. Android research and later benchmark summaries supported AutoSave, with the clearest measurable signal a +12% new-user enquiry lift in Germany rather than a clean launch story. Web came later as an intentionally narrower 2026 baseline, with launch communications summarising a +7% desktop dealer-lead signal in Italy and stable mobile-web and detail-page-view metrics.",
   },
 ];
 
@@ -123,12 +123,12 @@ const platformSignals = [
   {
     label: "Android",
     metric: "Recommendation + narrow signal",
-    body: "Android supports the same direction, but more narrowly. Research favored AutoSave, and later benchmark summaries reported a +12% new-user enquiry signal in Germany while leads otherwise stayed stable across Germany and Italy. The visible evidence is positive, but not as complete as the iOS story.",
+    body: "Android supports the same direction, but more narrowly. Research favoured AutoSave, and later benchmark summaries reported a +12% new-user enquiry signal in Germany while leads otherwise stayed stable across Germany and Italy. The visible evidence is positive, but not as complete as the iOS story.",
   },
   {
     label: "Web",
     metric: "Launch update + Italy signal",
-    body: "Web came later as a simpler baseline launch. A 5 February 2026 launch update said the experience was live in Germany and Italy, and the same communication summarized a recent Italy desktop benchmark at +7% dealer leads from the results page, with mobile-web leads and detail-page views stable. That supports the launch story, but it is still summary-level evidence rather than a full experiment readout.",
+    body: "Web came later as a simpler baseline launch. A 5 February 2026 launch update said the experience was live in Germany and Italy, and the same communication summarised a recent Italy desktop benchmark at +7% dealer leads from the results page, with mobile-web leads and detail-page views stable. That supports the launch story, but it is still summary-level evidence rather than a full experiment readout.",
   },
 ];
 
@@ -235,7 +235,7 @@ export default function NewSearchPage() {
         <CaseStudySection
           eyebrow="Overview"
           title="A staged reset, not one clean launch"
-          intro="This initiative moved through different levels of proof by platform, so the case study works best as one program with uneven evidence rather than one uniform redesign story."
+          intro="This initiative moved through different levels of proof by platform, so the case study works best as one programme with uneven evidence rather than one uniform redesign story."
         >
           <CaseStudyProse>
             <p>
@@ -247,7 +247,7 @@ export default function NewSearchPage() {
 
             <p>
               That sequencing mattered. The goal was not to force identical
-              behavior across surfaces, but to establish a search model each
+              behaviour across surfaces, but to establish a search model each
               platform could support credibly and then ship where the evidence
               was strong enough.
             </p>
@@ -258,7 +258,19 @@ export default function NewSearchPage() {
               Reset at a glance
             </p>
 
-            <CaseStudyFigureGrid items={heroComparisonImages} />
+            <div className="space-y-8 sm:space-y-10">
+              {heroComparisonImages.map((item) => (
+                <CaseStudyFigure
+                  key={`${item.label}-${item.alt}`}
+                  label={item.label}
+                  image={item.image}
+                  alt={item.alt}
+                  caption={item.caption}
+                  priority={item.priority}
+                  framed={false}
+                />
+              ))}
+            </div>
           </div>
         </CaseStudySection>
 
@@ -292,7 +304,7 @@ export default function NewSearchPage() {
             fullBleed
             className="mt-10"
           >
-            <div className="relative aspect-[4/3] overflow-hidden bg-[color:var(--color-panel)] sm:aspect-[16/10] lg:aspect-[3/1]">
+            <div className="relative aspect-[16/10] overflow-hidden sm:aspect-[2/1] md:aspect-[16/10] lg:aspect-[3/1]">
               <Image
                 src={searchVisionMiro}
                 alt="Working board showing search experience alignment, high-level search structure, target flows, and dependencies for the New Search reset."
@@ -418,7 +430,7 @@ export default function NewSearchPage() {
           title="A stronger baseline, validated first on iOS"
           intro="The outcome here is not that every platform improved in the same way. It is that New Search established a stronger baseline, proved it most clearly on iOS, and then extended across Android and web with more limited evidence."
         >
-          <CaseStudyCard variant="soft">
+          <CaseStudyCard variant="soft" className="!h-auto">
             <div className="space-y-8">
               {platformSignals.map((item, index) => (
                 <div
@@ -445,8 +457,8 @@ export default function NewSearchPage() {
 
           <CaseStudyProse>
             <p>
-              Broader strategy work around New Search modeled larger upside and
-              tied the program to a +10% dealer-lead objective, but I treat that
+              Broader strategy work around New Search modelled larger upside and
+              tied the programme to a +10% dealer-lead objective, but I treat that
               as business-case context rather than delivered outcome. The honest
               takeaway is a staged reset with one strong proof point and two
               narrower follow-through stories.

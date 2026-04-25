@@ -131,16 +131,18 @@ const mobileWebCompareImages = [
     image: mwebBefore,
     alt: "Mobile web list card before declutter with denser content and more visual competition.",
     contentClassName:
-      "flex min-h-[28rem] items-start justify-start sm:min-h-[32rem]",
-    imageClassName: "h-auto max-h-[28rem] w-auto max-w-full sm:max-h-[32rem]",
+      "flex min-h-[28rem] items-start justify-center sm:min-h-[32rem]",
+    imageClassName:
+      "h-auto max-h-[28rem] !w-auto max-w-full sm:max-h-[32rem]",
   },
   {
     label: "After",
     image: mwebAfter,
     alt: "Mobile web list card after declutter with simplified hierarchy and more focused comparison signals.",
     contentClassName:
-      "flex min-h-[28rem] items-start justify-start sm:min-h-[32rem]",
-    imageClassName: "h-auto max-h-[28rem] w-auto max-w-full sm:max-h-[32rem]",
+      "flex min-h-[28rem] items-start justify-center sm:min-h-[32rem]",
+    imageClassName:
+      "h-auto max-h-[28rem] !w-auto max-w-full sm:max-h-[32rem]",
   },
 ];
 
@@ -150,16 +152,18 @@ const appCompareImages = [
     image: appsBefore,
     alt: "Native app list card before declutter with a denser balance of imagery, details, and controls.",
     contentClassName:
-      "flex min-h-[24rem] items-start justify-start sm:min-h-[26rem]",
-    imageClassName: "h-auto max-h-[24rem] w-auto max-w-full sm:max-h-[26rem]",
+      "flex min-h-[24rem] items-start justify-center sm:min-h-[26rem]",
+    imageClassName:
+      "h-auto max-h-[24rem] !w-auto max-w-full sm:max-h-[26rem]",
   },
   {
     label: "After",
     image: appsAfter,
     alt: "Native app list card after declutter with a different platform-specific balance of imagery and information.",
     contentClassName:
-      "flex min-h-[24rem] items-start justify-start sm:min-h-[26rem]",
-    imageClassName: "h-auto max-h-[24rem] w-auto max-w-full sm:max-h-[26rem]",
+      "flex min-h-[24rem] items-start justify-center sm:min-h-[26rem]",
+    imageClassName:
+      "h-auto max-h-[24rem] !w-auto max-w-full sm:max-h-[26rem]",
   },
 ];
 
@@ -172,17 +176,18 @@ export default function DeclutterListPage() {
         <CaseStudyHero
           eyebrow="Case Study · AutoScout24 · Search & Discovery"
           title="Declutter the List Page"
-          lede="Across a multi-phase program, I led the design work to simplify AutoScout24's list page card across web and app. That work established a higher-performing list-card direction that made browsing easier, strengthened the search funnel, and created a clearer foundation for rollout decisions across platforms. The harder challenge was balancing that improvement with the needs of partner links, imagery, and other commercial surfaces on the card."
+          lede="Across a multi-phase programme, I led the design work to simplify AutoScout24's list page card across web and app. That work established a higher-performing list-card direction that made browsing easier, strengthened the search funnel, and created a clearer foundation for rollout decisions across platforms. The harder challenge was balancing that improvement with the needs of partner links, imagery, and other commercial surfaces on the card."
           facts={heroFacts}
         >
           <CaseStudyFigure
             image={declutterHeroMockupWide}
             alt="Wide mockup showing the decluttered AutoScout24 list page experience."
-            sizes="120vw"
+            sizes="(max-width: 767px) 1500px, 120vw"
             priority
             fullBleed
             className="mt-14"
-            imageClassName="relative left-1/2 h-auto w-[120vw] max-w-none -translate-x-1/2"
+            mediaClassName="relative h-[600px] overflow-hidden md:h-auto md:overflow-visible"
+            imageClassName="absolute left-1/2 top-1/2 !h-full !w-auto max-w-none -translate-x-1/2 -translate-y-1/2 md:relative md:top-auto md:!h-auto md:!w-[120vw] md:translate-y-0"
           />
         </CaseStudyHero>
 
@@ -190,6 +195,7 @@ export default function DeclutterListPage() {
           eyebrow="Overview"
           title="A list card redesign aimed at faster decisions"
           intro="This was a decision-quality problem on the search funnel, not a visual tidy-up. Internal signals suggested the issue was commercially meaningful rather than proving one single cause: one source reported that 12% of users said clutter hurt the search experience, and Contentsquare zoning showed about half of visitors left the list page before reaching a detail page."
+          className="border-t-0"
         >
           <CaseStudyProse>
             <p>
@@ -206,7 +212,7 @@ export default function DeclutterListPage() {
             <p>
               In practice, that meant reducing information density, showing
               more offers above the fold, clarifying what the image area
-              signaled, and later reworking finance and insurance placement
+              signalled, and later reworking finance and insurance placement
               rather than letting every internal demand stay equally prominent.
             </p>
           </CaseStudyProse>
@@ -217,7 +223,16 @@ export default function DeclutterListPage() {
           title="The desktop card made the hierarchy shift obvious"
           intro="Once the problem is clear, the desktop compare makes the core move easy to see: less noise, clearer scanability, and a more disciplined balance between product signals and commercial surfaces."
         >
-          <CaseStudyFigureGrid items={desktopCompareImages} />
+          <div className="space-y-8 sm:space-y-10">
+            {desktopCompareImages.map((item) => (
+              <CaseStudyFigure
+                key={`${item.label}-${item.alt}`}
+                label={item.label}
+                image={item.image}
+                alt={item.alt}
+              />
+            ))}
+          </div>
         </CaseStudySection>
 
         <CaseStudySection
@@ -246,10 +261,11 @@ export default function DeclutterListPage() {
         <CaseStudyFigure
           image={searchVisionMiro}
           alt="Zoomed-out Miro board showing the breadth of the broader search vision work around the list-card redesign."
-          sizes="100vw"
+          sizes="(max-width: 767px) 1900px, 100vw"
           fullBleed
           className="mb-16 sm:mb-20 lg:mb-24"
-          imageClassName="h-auto w-full max-w-none"
+          mediaClassName="relative h-[460px] overflow-hidden md:h-auto md:overflow-visible"
+          imageClassName="absolute left-1/2 top-1/2 !h-full !w-auto max-w-none -translate-x-1/2 -translate-y-1/2 md:relative md:left-auto md:top-auto md:!h-auto md:!w-full md:translate-x-0 md:translate-y-0"
         />
 
         <CaseStudySection
@@ -326,7 +342,7 @@ export default function DeclutterListPage() {
           </div>
 
           {supportingOutcomes.map((outcome) => (
-            <CaseStudyCard key={outcome.title}>
+            <CaseStudyCard key={outcome.title} className="!h-auto">
               <p className="homepage-type-eyebrow text-[color:var(--color-muted)]">
                 {outcome.label}
               </p>
@@ -344,6 +360,8 @@ export default function DeclutterListPage() {
           eyebrow="Mobile Web"
           title="The same declutter logic had to hold up in tighter space"
           intro="On mobile web, the challenge was not only reducing clutter but deciding which signals deserved the limited space. The reduced card made the key comparison cues easier to read without treating every element as equally important."
+          className="py-10 sm:py-20 lg:py-24"
+          contentClassName="space-y-6 sm:space-y-8"
         >
           <CaseStudyFigureGrid items={mobileWebCompareImages} />
         </CaseStudySection>
@@ -352,6 +370,8 @@ export default function DeclutterListPage() {
           eyebrow="Reflection"
           title="What this project clarified"
           intro="Simplification only held up when the team was explicit about what the card should optimise for."
+          className="py-10 sm:py-20 lg:py-24"
+          contentClassName="space-y-6 sm:space-y-8"
         >
           <CaseStudyProse>
             <p>
@@ -371,7 +391,7 @@ export default function DeclutterListPage() {
           framed={false}
         />
 
-        <CaseStudyEndNav currentSlug="declutter-list-page" />
+        <CaseStudyEndNav currentSlug="declutter-list-page" showDivider={false} />
       </CaseStudyArticle>
     </CaseStudyShell>
   );

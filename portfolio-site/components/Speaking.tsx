@@ -20,11 +20,11 @@ export default function Speaking() {
             id="speaking-heading"
             className="homepage-type-section-heading"
           >
-            Selected talks on AI, design judgment, and how teams adapt
+            Selected talks on AI, design judgement, and how teams adapt
           </h2>
           <p className="homepage-type-subhead mt-6 max-w-2xl text-[color:var(--color-muted)]">
             I speak about how AI is changing design work in practice: where
-            judgment still matters, how teams adapt, and how to adopt new tools
+            judgement still matters, how teams adapt, and how to adopt new tools
             without losing clarity, quality, or intent.
           </p>
         </div>
@@ -37,7 +37,7 @@ export default function Speaking() {
                   <h3 className="homepage-type-item-title text-[color:var(--foreground)]">
                     {topic.title}
                   </h3>
-                  <p className="homepage-type-body homepage-type-body--responsive mt-5 text-[color:var(--color-muted)]">
+                  <p className="homepage-type-body mt-5 text-[color:var(--color-muted)]">
                     {topic.description}
                   </p>
                 </div>

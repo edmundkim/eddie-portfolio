@@ -51,7 +51,7 @@ const decisionCards = [
   },
   {
     title: "Lower the barrier to commitment",
-    body: "The acquisition flow minimized upfront data entry, used a focused step-by-step configuration model, and kept a persistent subscription summary visible during decision-making. I also moved mandatory identity verification until after subscription, deliberately trading earlier certainty for a lower barrier to entry.",
+    body: "The acquisition flow minimised upfront data entry, used a focused step-by-step configuration model, and kept a persistent subscription summary visible during decision-making. I also moved mandatory identity verification until after subscription, deliberately trading earlier certainty for a lower barrier to entry.",
   },
   {
     title: "Use testing to tighten high-friction moments",

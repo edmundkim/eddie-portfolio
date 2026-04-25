@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import type { CSSProperties } from "react";
 
 import {
   featuredProjects,
@@ -7,6 +7,7 @@ import {
   projectCta,
   type FeaturedProject,
 } from "@/components/homepage/content";
+import WorkSectionHoverArea from "@/components/homepage/WorkSectionHoverArea";
 
 function WorkProject({
   project,
@@ -18,6 +19,10 @@ function WorkProject({
   isLast: boolean;
 }) {
   const projectHeadingId = `${project.id}-title`;
+  const imageStyle = {
+    "--homepage-work-image-position":
+      project.image?.objectPosition ?? "50% 50%",
+  } as CSSProperties;
 
   return (
     <li
@@ -28,7 +33,7 @@ function WorkProject({
     >
       <div
         aria-hidden={project.image ? undefined : true}
-        className="relative mb-12 h-[clamp(18rem,58vw,43.75rem)] w-full overflow-hidden bg-[color:var(--color-panel)] sm:mb-[3.6rem]"
+        className="relative mb-12 h-[calc(clamp(18rem,58vw,43.75rem)+100px)] w-full overflow-hidden bg-[color:var(--color-panel)] sm:mb-[3.6rem] md:h-[clamp(18rem,58vw,43.75rem)]"
       >
         {project.image ? (
           <Image
@@ -37,68 +42,66 @@ function WorkProject({
             fill
             priority={index < 2}
             sizes="100vw"
-            className={`object-cover ${index === 0 ? "translate-y-[5%] scale-120" : ""}`}
-            style={{ objectPosition: project.image.objectPosition }}
+            className={`homepage-work-image object-cover ${index === 0 ? "translate-y-[5%] scale-120" : ""}`}
+            style={imageStyle}
           />
         ) : null}
       </div>
 
       <div className="homepage-shell homepage-core homepage-core--hero">
-        <article
-          aria-labelledby={projectHeadingId}
-          className="py-1 sm:py-1.5 lg:min-h-[26rem]"
+        <WorkSectionHoverArea
+          href={project.href}
+          ariaLabel={project.ctaLabel}
         >
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,1.25fr)_18rem] lg:gap-12">
-            <div>
-              <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
-                <p className="homepage-type-metadata text-[color:var(--color-muted)]">
-                  {project.context}
+          <article
+            aria-labelledby={projectHeadingId}
+            className="py-1 sm:py-1.5 lg:min-h-[26rem]"
+          >
+            <div className="grid gap-10 lg:grid-cols-[minmax(0,1.25fr)_18rem] lg:gap-12">
+              <div className="min-w-0">
+                <p className="homepage-type-eyebrow text-[color:var(--secondary-text)]">
+                  {formatFeaturedProjectIndex(index)}
                 </p>
-                <span className="homepage-type-badge inline-flex rounded-full border border-[color:var(--color-line)] px-3 py-1 text-[color:var(--color-muted)]">
-                  {project.label}
-                </span>
-              </div>
-
-              <p className="homepage-type-eyebrow mt-10 text-[color:var(--secondary-text)]">
-                {formatFeaturedProjectIndex(index)}
-              </p>
-              <h3
-                id={projectHeadingId}
-                className="homepage-type-project-title mt-4 max-w-3xl"
-              >
-                {project.title}
-              </h3>
-            </div>
-
-            <div className="flex flex-col justify-between gap-8 lg:pt-16">
-              <div>
-                <p className="homepage-type-subhead text-[color:var(--foreground)]">
-                  {project.summary}
-                </p>
-                <p className="homepage-type-metadata mt-5 max-w-xl text-[color:var(--color-muted)]">
-                  <span className="font-medium text-[color:var(--foreground)]">
-                    Surface:
-                  </span>{" "}
-                  {project.surface}
-                </p>
-                <p className="homepage-type-body mt-6 text-[color:var(--color-muted)]">
-                  {project.description}
-                </p>
-              </div>
-
-              <div>
-                <Link
-                  href={project.href}
-                  aria-label={project.ctaLabel}
-                  className="homepage-type-cta inline-flex items-center gap-3 text-[color:var(--accent)] transition-colors duration-200 hover:text-[color:var(--foreground)] focus-visible:text-[color:var(--foreground)] focus-visible:outline-none"
+                <h3
+                  id={projectHeadingId}
+                  className="homepage-type-project-title mt-4 max-w-3xl"
                 >
+                  {project.title}
+                </h3>
+                <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2">
+                  <p className="homepage-type-metadata text-[color:var(--color-muted)]">
+                    {project.context}
+                  </p>
+                  <span className="homepage-type-badge inline-flex rounded-full border border-[color:var(--color-line)] px-3 py-1 text-[color:var(--color-muted)]">
+                    {project.label}
+                  </span>
+                </div>
+              </div>
+
+              <div className="flex flex-col justify-between gap-8 lg:pt-9">
+                <div className="max-w-xl space-y-4">
+                  <p className="homepage-type-body font-medium text-[color:var(--foreground)]">
+                    {project.summary}
+                  </p>
+                  <p className="homepage-type-body text-[color:var(--color-muted)]">
+                    <span className="font-medium text-[color:var(--foreground)]">
+                      Surface:
+                    </span>{" "}
+                    {project.surface}
+                  </p>
+                  <p className="homepage-type-body text-[color:var(--color-muted)]">
+                    {project.description}
+                  </p>
+                </div>
+
+                <span className="homepage-type-cta inline-flex items-center gap-3 text-[color:var(--accent)] transition-colors duration-200">
                   <span>{projectCta}</span>
                   <span aria-hidden="true">↗</span>
-                </Link>
+                </span>
               </div>
             </div>
-          </div>
-        </article>
+          </article>
+        </WorkSectionHoverArea>
       </div>
     </li>
   );
@@ -111,20 +114,9 @@ export default function Work() {
       aria-labelledby="work-heading"
       className="homepage-surface--light"
     >
-      <div className="homepage-shell homepage-core homepage-core--hero py-16 sm:py-20 lg:py-24">
-        <div className="max-w-3xl">
-          <h2
-            id="work-heading"
-            className="homepage-type-section-heading text-[color:var(--foreground)]"
-          >
-            Selected Work
-          </h2>
-          <p className="homepage-type-subhead mt-6 max-w-2xl text-[color:var(--color-muted)]">
-            Selected work across marketplace search, vehicle browsing, AI
-            product standards, subscription journeys, and connected mobility.
-          </p>
-        </div>
-      </div>
+      <h2 id="work-heading" className="sr-only">
+        Selected Work
+      </h2>
 
       <ol className="m-0 list-none p-0">
         {featuredProjects.map((project, index) => (
