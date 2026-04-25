@@ -1,0 +1,22 @@
+Overview
+One-line summary
+I led a cross-cutting body of AI design work at AutoScout24 spanning product direction on early AI initiatives, creation of a reusable Visual AI Framework, and internal AI enablement for UX and the wider Builders organisation.
+The most defensible story is not shipped feature impact. It is senior-level design leadership in defining how AI should be designed, communicated, and operationalised before the organisation scaled further AI work.
+Recommended narrative angle
+Frame this as a strategic design leadership project focused on setting direction for AI at an organisational level. The strongest credible angle is that you helped AutoScout24 move from fragmented, ad hoc AI thinking towards clearer product guidance, a concrete communication framework, and more practical internal capability. That is more defensible than framing it as end-to-end ownership of launched AI products or proven business impact.
+What this work was
+This was a combination of product direction, framework creation, and organisational enablement. It included senior design contribution to two early AI initiatives, Conversational AI and Lead Enrichment AI, while those initiatives were still in concept and prototype stage. In parallel, it included creation of the Visual AI Framework to guide how AI should be communicated in product experiences, plus internal education and prototyping enablement work for UX and the wider Builders organisation.
+Why it mattered
+The source material points to three concrete needs. First, AI-related experiences risked becoming inconsistent across the product, with no shared language or scalable guidance. Second, teams needed a clearer and more responsible approach to how AI should appear in product experiences, especially where it affected user understanding, decisions, or control. Third, AI was changing design workflows quickly, and the organisation needed stronger internal capability around AI tools, prototyping, and practical application.
+My role and scope
+As Principal Product Designer and AI Design Lead, your remit spanned AI product direction, AI design framework and guidance, and AI education and enablement. You owned the Visual AI Framework, owned AI education and enablement for UX, and drove AI prototyping enablement across the wider Builders organisation. On product work, the source material supports senior design direction and contribution rather than sole end-to-end ownership of specific AI initiatives. You operated through framework ownership, design direction, cross-team coordination, and guidance to designers who were not your direct reports.
+What I drove
+Owned and developed the Visual AI Framework, including principles for AI visibility, communication, control, review, and reusable visual signals.
+Contributed senior design direction to two high-priority AI initiatives, Conversational AI and Lead Enrichment AI, while they were in concept and prototype stage.
+Defined a practical model for when AI should be explicitly signalled in product experiences and when it should remain low-visibility background support.
+Shaped guidance for non-theatrical, consistent AI language and interaction patterns across products.
+Led AI education and enablement for the UX organisation.
+Drove AI prototyping enablement across the wider Builders organisation and presented related material and research internally.
+Synthesised external AI research and practical design guidance into internal presentations, tools, and working methods.
+Why this matters strategically
+This work matters because it operates at leverage points above a single feature. A reusable framework can shape multiple product decisions. Clear communication principles can improve consistency and reduce ad hoc AI UX decisions. Internal enablement can change how teams prototype, evaluate, and discuss AI work. The strategic value here is in setting standards, guiding early product direction, and building organisational capability around an emerging product area, not in claiming proven downstream results that the current evidence does not show.
