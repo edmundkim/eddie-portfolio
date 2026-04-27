@@ -4,6 +4,7 @@ import {
   HomepageEyebrow,
   HomepageSection,
 } from "@/components/homepage/Section";
+import HomepageTextReveal from "@/components/homepage/HomepageTextReveal";
 
 type ExperienceRow = {
   label: string;
@@ -44,37 +45,41 @@ export default function Experience() {
       contentClassName="grid gap-10 md:grid-cols-[14rem_minmax(0,1fr)] md:items-start md:gap-12"
     >
       <div>
-        <HomepageEyebrow>Experience</HomepageEyebrow>
+        <HomepageTextReveal>
+          <HomepageEyebrow>Experience</HomepageEyebrow>
+        </HomepageTextReveal>
       </div>
 
       <div className="max-w-4xl space-y-8">
         <h2 id="experience-heading" className="sr-only">
           Experience
         </h2>
-        {experienceRows.map((row) => (
-          <div
+        {experienceRows.map((row, index) => (
+          <HomepageTextReveal
             key={row.label}
-            className="border-b border-[color:var(--color-line)] pb-8 last:border-b-0 last:pb-0"
+            delay={`${80 + index * 90}ms`}
           >
-            <p
-              className={
-                row.subdued
-                  ? "homepage-type-utility text-[color:var(--secondary-text)]"
-                  : "homepage-type-item-title text-[color:var(--foreground)]"
-              }
-            >
-              {row.label}
-            </p>
-            <p
-              className={
-                row.subdued
-                  ? "homepage-type-body mt-3 max-w-3xl text-[color:var(--color-muted)]"
-                  : "homepage-type-body mt-3 max-w-3xl font-medium text-[color:var(--color-muted)]"
-              }
-            >
-              {row.value}
-            </p>
-          </div>
+            <div className="border-b border-[color:var(--color-line)] pb-8 last:border-b-0 last:pb-0">
+              <p
+                className={
+                  row.subdued
+                    ? "homepage-type-utility text-[color:var(--secondary-text)]"
+                    : "homepage-type-item-title text-[color:var(--foreground)]"
+                }
+              >
+                {row.label}
+              </p>
+              <p
+                className={
+                  row.subdued
+                    ? "homepage-type-body mt-3 max-w-3xl text-[color:var(--color-muted)]"
+                    : "homepage-type-body mt-3 max-w-3xl font-medium text-[color:var(--color-muted)]"
+                }
+              >
+                {row.value}
+              </p>
+            </div>
+          </HomepageTextReveal>
         ))}
       </div>
     </HomepageSection>

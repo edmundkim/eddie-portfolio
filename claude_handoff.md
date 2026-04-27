@@ -1,387 +1,259 @@
-# Claude Handoff: Portfolio Homepage State
+# Claude Handoff: Eddie Kim Portfolio
 
-Last updated: 2026-04-24
+Last updated: 2026-04-25
 
 ## Purpose
 
-Use this as the current handoff for the Eddie Kim portfolio homepage work.
+Use this as the current handoff for Eddie Kim's portfolio site work.
 
-Important: the current code is the source of truth. This document replaces older homepage recovery notes that mentioned an `IntersectionObserver` nav model, unresolved sticky behavior, or the old dark lower footer zone.
+The live code is the source of truth. This document should help the next coding session understand the current direction, active files, uncommitted work, verification commands, and likely next steps.
 
-## Current Scope
+## Project Goal
 
-This work is homepage-focused.
+Build a modern, minimal portfolio site for Eddie Kim.
 
-In scope:
+The site should communicate:
 
-- homepage shell and section structure
-- sticky left nav behavior
-- hero-to-work theme transition
-- Work section preview layout
-- homepage typography, spacing, and responsive rails
-- lower homepage sections: About, Experience, Speaking, Contact
+- Principal Product Designer at AutoScout24
+- AI design leadership
+- CMO and Co-Founder at CryptoXpress
+- product thinking, systems thinking, and shipped impact
 
-Out of scope unless explicitly requested:
+Style direction:
 
-- case study page redesigns
-- case study copy rewrites
-- broad design-system refactors
-- invented metrics or achievements
+- clean, minimal, high-quality typography
+- modern but not flashy
+- avoid generic startup-site patterns
+- preserve the current editorial, sparse, high-signal feel
 
-## Current Homepage Structure
+## Working Rules
 
-File:
+- Do not invent achievements, metrics, company details, or case-study claims.
+- Prefer small, reviewable changes over broad rewrites.
+- Preserve the existing Next.js, TypeScript, and Tailwind structure.
+- Use minimal dependencies.
+- Explain the plan before larger changes.
+- Keep layout and content strategy separate unless the user explicitly asks to combine them.
+- For case-study edits, prioritize the rendered page source, then `TONE-OF-VOICE.md`, then source docs in the case-study content folders.
 
-- `portfolio-site/app/page.tsx`
+## Source Of Truth
 
-The homepage currently renders:
+Core guidance:
 
-1. `HomepageTopZone`
-2. light zone containing `About` and `Experience`
-3. light zone containing `Speaking` and `ContactClose`
+- `portfolio-site/AGENTS.md`
+- `portfolio-site/RESUME.md`
+- `portfolio-site/TONE-OF-VOICE.md`
 
-`HomepageTopZone` renders:
+Current content positioning from `RESUME.md`:
 
-1. absolute sticky nav overlay
-2. `Hero`
-3. `Work`
+- Eddie is a Principal Product Designer and AI Design Lead at AutoScout24.
+- Emphasize search and discovery impact, AI leadership, systems thinking, marketplace scale, and practical design-to-build workflow change.
+- CryptoXpress should be represented as Co-Founder / CMO experience, but do not over-expand it without sourced detail.
 
-The lower homepage is no longer inside the old dark bottom zone.
+Tone from `TONE-OF-VOICE.md`:
 
-## Core Files
+- clear, credible, concise, mature, senior, high-signal
+- prioritize decisions, consequences, scope, judgment, and evidence
+- avoid inflated UX language such as "seamless", "holistic", "best-in-class", "user-centric", and vague process narration
 
-- `portfolio-site/app/page.tsx`
-- `portfolio-site/app/globals.css`
-- `portfolio-site/components/homepage/HomepageTopZone.tsx`
-- `portfolio-site/components/Navbar.tsx`
-- `portfolio-site/components/Hero.tsx`
+## Current Repo State
+
+Latest observed commit:
+
+- `79058a3 Refine portfolio case studies`
+
+Current uncommitted changes:
+
+- `claude_handoff.md` is modified by this handoff update.
+- `New` is an untracked empty file and looks accidental.
+
+The recent homepage and case-study edits are now in `HEAD`, including:
+
+- root `package.json` forwarding scripts to `portfolio-site`
+- Declutter red hero asset
+- Strategic AI hero asset
+- case-study copy refinements
+- homepage Work, Hero, and Speaking adjustments
+
+Recent commits:
+
+- `79058a3 Refine portfolio case studies`
+- `522f55e Refine portfolio homepage and case studies`
+- `13f5a6f Initial portfolio site`
+- `0774522 Add portfolio site`
+- `1eb772a Initial commit`
+
+## Active Focus
+
+Currently relevant open files:
+
+- `portfolio-site/RESUME.md`
+- `portfolio-site/TONE-OF-VOICE.md`
+- `portfolio-site/AGENTS.md`
 - `portfolio-site/components/Work.tsx`
-- `portfolio-site/components/About.tsx`
-- `portfolio-site/components/Experience.tsx`
-- `portfolio-site/components/Speaking.tsx`
-- `portfolio-site/components/ContactClose.tsx`
-- `portfolio-site/components/homepage/content.ts`
-- `portfolio-site/components/homepage/Section.tsx`
-
-## Nav And Theme State
-
-Primary file:
-
-- `portfolio-site/components/homepage/HomepageTopZone.tsx`
-
-Current model:
-
-- `HomepageTopZone` owns `navMode`: `"default"` or `"work"`
-- `HomepageTopZone` owns `heroTheme`: `"dark"` or `"light"`
-- both are computed in a scroll/resize update function
-- no `IntersectionObserver` is currently used
-- the trigger uses `#work.getBoundingClientRect().top`
-- theme/nav switch uses an early lead:
-
-```ts
-const themeLead = Math.min(window.innerHeight * 0.18, 240);
-const hasWorkEnteredThemeZone =
-  workSectionTop <= window.innerHeight + themeLead;
-```
-
-This means:
-
-- the dark-to-light flip begins before the first Work image fully enters
-- the work nav mode now appears at the same time as the hero theme flip
-- the old separate nav trigger line was removed
-
-## Sticky Nav Current State
-
-Primary file:
-
 - `portfolio-site/components/Navbar.tsx`
 
-Top nav:
+Main active theme:
 
-- email icon links to `mailto:edmundhkim@gmail.com`
-- LinkedIn icon links to `https://www.linkedin.com/in/edmundhkim/`
-- icons float without circular containers
-- mail icon is filled, not outline
-- LinkedIn icon uses a cleaner standard glyph path
-- icon sizes are currently:
-  - mail: `1.32rem`
-  - LinkedIn: `1.21rem`
+- refining the homepage Work presentation and case-study credibility
+- making AI/search/marketplace positioning clearer without overstating claims
+- wiring stronger visual anchors for Declutter and Strategic AI
 
-Bottom nav:
-
-- mobile, below `lg`: no Work hint and no Work index
-- `lg` to before `xl`: compact project index
-- `xl+`: full project index
-- default Work hint only appears from `lg` up
-- inactive nav elements use `pointer-events-none`, `opacity-0`, and `tabIndex={-1}`
-- Work nav enters with a transform-led slide-up animation
-- reduced-motion users avoid the movement through existing `motion-reduce` classes
-
-Responsive nav tradeoff:
-
-- keeping the full index below `xl` crowded the narrower desktop rail
-- the current middle state restores useful project navigation at `lg` without undoing the improved margins
-
-## Hero Current State
-
-Primary file:
-
-- `portfolio-site/components/Hero.tsx`
-
-Current features:
-
-- hero text colors are driven by CSS variables on `data-hero-theme`
-- dark mode:
-  - name: `#FBFBFB`
-  - main headline: `#6169FF`
-  - supporting line: `#CCCCCC`
-  - summary: `#FBFBFB`
-  - selected-work project meta: `#566AFF`
-- light mode:
-  - name/supporting/summary/project meta: `#101010`
-  - main headline: `#000BFF`
-- `Selected works` remains hard-coded `#101010`
-- the profile image has no drop shadow
-- profile image wrapper is currently `max-w-[21.6rem]`
-- selected-work transition label sits near the bottom of the hero:
-  - `Selected works` with inline down arrow
-  - `2022-present`
-  - `AutoScout24`
-
-Still worth watching:
-
-- hero still uses intentionally large vertical values:
-  - `min-h-[calc(148svh-4rem)]`
-  - `sm:min-h-[calc(154svh-5rem)]`
-  - `lg:min-h-[calc(166svh-6rem)]`
-  - `pb-[900px]`
-- these may need a future cleanup pass, but they are part of the current composition
-
-## Hero-To-Work Theme Transition
+## Homepage State
 
 Primary files:
 
+- `portfolio-site/app/page.tsx`
 - `portfolio-site/components/homepage/HomepageTopZone.tsx`
-- `portfolio-site/app/globals.css`
-
-Current behavior:
-
-- `.homepage-zone--dark-top` defaults to `#101010`
-- `[data-hero-theme="light"]` changes it to `#FBFBFB`
-- transition duration is `500ms`
-- hero text and selected-work project meta use scoped CSS variables
-- the bottom fade on `.homepage-zone--dark-top::after` fades out in light mode
-- reduced-motion disables these transitions
-
-Why the trigger leads the viewport:
-
-- if the theme flip starts exactly when `#work` enters, the 500ms transition feels late
-- `themeLead` starts the transition early enough that light mode is underway as the first Work image appears
-
-## Work Section Current State
-
-Primary file:
-
+- `portfolio-site/components/Navbar.tsx`
+- `portfolio-site/components/Hero.tsx`
 - `portfolio-site/components/Work.tsx`
+- `portfolio-site/components/homepage/content.ts`
+- `portfolio-site/components/Speaking.tsx`
 
 Current structure:
 
-- `#work` has an `sr-only` heading: `Selected works`
-- each project row has:
-  - full-width image block
-  - inner text content rail using `homepage-shell homepage-core homepage-core--hero`
-  - context and label grouped together as metadata
-  - index/title on the left
-  - summary/description/CTA on the right at `lg`
-- text content article has subtle vertical padding:
-  - `py-1 sm:py-1.5`
-- item spacing:
-  - `py-12`
-  - `sm:py-[4.2rem]`
-  - last item bottom padding `pb-24 sm:pb-[7.2rem]`
+- `HomepageTopZone` contains the sticky nav overlay, `Hero`, and `Work`.
+- Lower homepage sections include About, Experience, Speaking, and Contact.
+- The nav/theme model is scroll/resize geometry-based, not `IntersectionObserver`.
+- `HomepageTopZone` controls `navMode` and `heroTheme`.
 
-Current images:
+Current `Hero.tsx` state:
 
-- Declutter uses `declutter-hero-mockup-wide.png`
-- New Search uses `new-search-hero-mockup-wide.png`
-- Daimler uses `Clay_Mockup___7_.png`
-- Strategic AI currently has no image assigned
+- headline: "I lead product design work across search, discovery, and AI at marketplace scale."
+- role line: "Principal Product Designer and AI Design Lead at AutoScout24"
+- summary mentions a marketplace with over 30M monthly users
+- hero still uses large vertical spacing and bottom padding; avoid changing unless the user asks for hero spacing or transition work
 
-Current Declutter image treatment:
+Current `Navbar.tsx` state:
 
-- first project image gets `scale-120`
-- first project image gets `translate-y-[5%]`
-- object position is `58% 50%`
+- contact icons come from `ContactIconLinks`
+- mobile/tablet below `md` uses contact icons inside the hero instead of the sticky nav
+- bottom work hint and work index appear from `lg` upward
+- `lg` to before `xl` uses compact work index
+- `xl+` uses full project index
 
-## Content Data
+Current `Work.tsx` state:
+
+- Work section renders from `featuredProjects`
+- each project has a full-width image block plus text rail
+- Declutter now gets a custom pale red background `#FFE5E6`
+- the previous first-project `scale-120` / `translate-y-[5%]` treatment has been removed
+- all Work images use `homepage-work-image object-cover`
+
+Current `Speaking.tsx` state:
+
+- background is `#F1F1F1`
+- the two-column talk layout now starts at `2xl`, so it stacks longer on narrower desktop widths
+- image `sizes` now uses `(min-width: 1536px) 32rem, 100vw`
+
+## Featured Projects Data
 
 Primary file:
 
 - `portfolio-site/components/homepage/content.ts`
 
-Current notable values:
+Current Work/project cards:
+
+- Declutter the List Page
+- New Search
+- Strategic AI Design Leadership
+- Daimler Vehicle Subscription Concept
+- Smart Connected Car App
+
+Notable current image wiring:
+
+- Declutter imports `declutter-hero-mockup-wide-red.png`
+- New Search imports `new-search-hero-mockup-wide.png`
+- Strategic AI imports `strategic-ai-mockup-hero.png`
+- Daimler imports `Clay_Mockup___7_.png`
+- Smart imports `smart-connected-car-mockup-wide.png`
+
+Contact links:
 
 - email: `mailto:edmundhkim@gmail.com`
 - LinkedIn: `https://www.linkedin.com/in/edmundhkim/`
-- Daimler image import:
-  - `@/content/legacy-projects/daimler-subscription/assets/Clay_Mockup___7_.png`
-- `featuredProjects` powers:
-  - Work cards
-  - sticky Work nav index
 
-Do not invent new metrics or outcomes. Preserve the current copy unless the user explicitly asks for copy changes.
+## Case Study State
 
-## Lower Homepage Sections
+Several case-study pages were recently refined. Treat the current code as the latest baseline and inspect before continuing.
 
-### About / How I Work
+Declutter:
 
-Primary file:
+- uses new red hero image asset
+- copy has been softened away from highly specific metrics in several places
+- current wording emphasizes measured uplift, buyer progression, enquiry signals, commercial tradeoffs, and platform-specific rollout
+- removed the `searchVisionMiro` figure from the page
 
-- `portfolio-site/components/About.tsx`
+New Search:
 
-Current state:
+- copy has been softened from exact test readouts toward stronger but less brittle validation language
+- iOS remains the strongest validation signal, with Android and web as supporting evidence
+- imported `appsSearchV2Failed` has been renamed locally to `appsSearchV2Intermediate`
 
-- full-width background: `#EAEDFF`
-- content remains inside `HomepageSection`
-- no section divider border
+Strategic AI:
 
-### Experience
+- now uses `strategic-ai-mockup-hero.png` on the homepage Work card and as a full-bleed case-study hero
+- copy emphasizes Visual AI Framework, AI design guidance, AI-assisted workflows, early product direction, and organisational capability
+- `assets.md` now documents `strategic-ai-mockup-hero.png` as the primary public visual anchor
+- page intentionally avoids claiming downstream product outcomes for early AI concepts
 
-Primary file:
+Daimler:
 
-- `portfolio-site/components/Experience.tsx`
+- `CaseStudyFigure` now passes `preservedWidthClassName="min-w-0 sm:min-w-[52rem]"`
+- end nav has `showDivider={false}`
 
-Current state:
+Smart Connected Car App:
 
-- no major top section border
-- internal row separators remain
-- this was intentional because those divide rows inside one section, not between major sections
+- recent commit includes a small page adjustment; inspect before changing further
 
-### Speaking
+Shared case-study component:
 
-Primary file:
+- `CaseStudyFigure` now accepts optional `preservedWidthClassName`
+- default remains `min-w-[52rem]`
 
-- `portfolio-site/components/Speaking.tsx`
+## Verification Commands
 
-Current state:
-
-- full-width background: `#F1F1F1`
-- two-column talk rows at `lg`:
-  - left: title and description
-  - right: image
-- mobile stacks text first, image second
-- generous row spacing:
-  - `space-y-24`
-  - `sm:space-y-28`
-  - `lg:space-y-32`
-
-Known follow-up:
-
-- the user reported the two-column Speaking layout gets too cramped on smaller/narrow desktop viewports
-- a future fix should probably move the two-column grid from `lg:` to `xl:` or otherwise stack earlier
-- do not change content or images for that fix
-
-### Contact / Footer
-
-Primary file:
-
-- `portfolio-site/components/ContactClose.tsx`
-
-Current state:
-
-- lives in a light zone
-- no major top section border
-- still uses the existing contact copy and links
-
-## Global Layout And Typography
-
-Primary file:
-
-- `portfolio-site/app/globals.css`
-
-Current layout variables:
-
-- `--homepage-edge-gap`
-- `--homepage-nav-width`
-- `--homepage-nav-gap`
-- `--homepage-content-rail`
-
-Current rail behavior:
-
-- base and `sm` use small rails
-- `1024px` to before `1280px` uses:
-
-```css
---homepage-content-rail: clamp(10rem, 13vw, 12rem);
-```
-
-- `1280px+` restores the wider editorial rail:
-
-```css
---homepage-content-rail: clamp(21.9615rem, 23.4256vw, 26.3538rem);
-```
-
-Why:
-
-- the old `lg` rail jumped to about `351px` at `1024px`, which made narrower desktop layouts feel awkward
-- the current middle range keeps a more usable rail without losing the wide-desktop composition
-
-Typography:
-
-- `app/page.tsx` loads IBM Plex Sans via `next/font/google`
-- global typography helper classes now exist:
-  - `homepage-type-display`
-  - `homepage-type-subhead`
-  - `homepage-type-body`
-  - `homepage-type-eyebrow`
-  - `homepage-type-badge`
-  - `homepage-type-functional`
-  - and related variants
-- Hero, Work, About, Speaking, and nav have started using these helpers
-
-## Validation Status
-
-Recent code changes in this session were repeatedly validated with:
+Run from repo root:
 
 - `npm run lint`
-- `npx tsc --noEmit`
 - `npm run build`
 
-Most recent successful validation was after:
+Run from `portfolio-site`:
 
-- hiding mobile Work hint/index while keeping email and LinkedIn icons visible
+- `npm run lint`
+- `npm run build`
 
-This documentation-only update did not require rerunning the app checks.
+There is no explicit `typecheck` script in `portfolio-site/package.json`. If typecheck is needed, use:
 
-## Current Open Follow-Ups
+- `npx tsc --noEmit`
 
-1. Speaking responsive layout
-   - two-column layout should stack earlier when the text column gets too narrow
-   - likely fix: move the row grid from `lg:grid-cols-*` to `xl:grid-cols-*`, or add a more adaptive grid rule
+Note:
 
-2. Hero vertical system
-   - current tall hero values work visually but are still heavy-handed
-   - avoid touching unless the user asks for hero spacing or transition changes
+- the root `package.json` forwards `dev`, `build`, `lint`, and `start` to `portfolio-site`
 
-3. Browser verification
-   - manually check:
-     - mobile nav has only email and LinkedIn
-     - `lg` compact Work index appears
-     - `xl` full Work index appears
-     - hero theme flips before the first Work image appears
-     - About background is `#EAEDFF`
-     - Speaking background is `#F1F1F1`
+## Risks And Open Questions
 
-## Recommended Next Prompt
+- The untracked empty file `New` looks accidental; ask before deleting.
+- `strategic-ai-mockup-hero.png` is about 8.6 MB; consider optimizing if build/performance becomes a concern.
+- Copy has been intentionally softened in some case studies. Confirm with Eddie before restoring exact metrics or adding new ones.
+- `RESUME.md` mentions over 20M monthly users, while the current hero says over 30M monthly users. Do not change either casually; verify the intended public claim before harmonizing.
+- The hero vertical spacing remains heavy-handed but is part of the current composition.
 
-If continuing the current homepage work, a good next prompt is:
+## Recommended Next Steps
 
-> Please fix the Speaking section responsive layout so the two-column rows stack before the text column becomes too narrow. Keep the current `#F1F1F1` background, existing content, images, and spacing direction. Prefer a small breakpoint/grid change in `components/Speaking.tsx`, then run lint, typecheck, and build.
+1. Decide whether the empty untracked `New` file should stay.
+2. Review the latest committed case-study and homepage state before making more changes.
+3. Run `npm run lint`, `npx tsc --noEmit`, and `npm run build` before finalizing code changes.
+4. Manually check responsive behavior for:
+   - homepage hero-to-work transition
+   - Work image framing
+   - sticky nav at mobile, `lg`, and `xl`
+   - Speaking section at tablet, laptop, and wide desktop widths
+   - Strategic AI hero image load/performance
 
-## Notes For The Next Assistant
+## Useful Next Prompt
 
-- Do not use old handoff assumptions about `IntersectionObserver`; the current nav uses scroll/resize geometry.
-- Do not restore the dark bottom/footer zone unless the user explicitly asks.
-- Do not bring back mobile Work hint/index unless asked; mobile should currently show only email and LinkedIn at the top.
-- Preserve the `1024px` to `1279px` rail unless the user is explicitly revisiting margins.
-- Keep changes small and explain the "why"; the user is using this as a learning process.
+If continuing from here, a good next prompt is:
+
+> Please review the latest homepage and case-study state, clean up the accidental `New` file if appropriate, verify the new image treatments, then run lint, typecheck, and build. Keep copy changes conservative and do not invent new claims.

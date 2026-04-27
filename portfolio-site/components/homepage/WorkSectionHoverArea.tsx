@@ -55,7 +55,7 @@ export default function WorkSectionHoverArea({
       href={href}
       aria-label={ariaLabel}
       data-hover-active="false"
-      className={`work-section-hover-area relative block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:[outline-color:var(--accent)] ${className ?? ""}`}
+      className={`work-section-hover-area relative block w-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:[outline-color:var(--accent)] ${className ?? ""}`}
       style={hoverStyle}
       onPointerEnter={handlePointerEnter}
       onPointerMove={handlePointerMove}

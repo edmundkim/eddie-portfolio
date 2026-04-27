@@ -2,6 +2,7 @@ import {
   HomepageEyebrow,
   HomepageSection,
 } from "@/components/homepage/Section";
+import HomepageTextReveal from "@/components/homepage/HomepageTextReveal";
 
 export default function About() {
   return (
@@ -12,26 +13,32 @@ export default function About() {
         contentClassName="grid gap-10 md:grid-cols-[14rem_minmax(0,1fr)] md:gap-12"
       >
         <div>
-          <HomepageEyebrow>How I Work</HomepageEyebrow>
+          <HomepageTextReveal>
+            <HomepageEyebrow>How I Work</HomepageEyebrow>
+          </HomepageTextReveal>
         </div>
 
         <div className="max-w-3xl space-y-6">
-          <h2
-            id="about-heading"
-            className="homepage-type-section-heading"
-          >
-            I help teams turn ambiguous product problems into clearer decisions,
-            then carry that work into what ships.
-          </h2>
+          <HomepageTextReveal delay="80ms">
+            <h2
+              id="about-heading"
+              className="homepage-type-section-heading"
+            >
+              I help teams turn ambiguous product problems into clearer decisions,
+              then carry that work into what ships.
+            </h2>
+          </HomepageTextReveal>
 
-          <p className="homepage-type-subhead text-[color:var(--color-muted)]">
-            My work usually starts by clarifying the real product decision. I
-            use research, experiments, and product constraints to make tradeoffs
-            visible, then carry that direction through validation, delivery, and
-            rollout. In practice, that has meant resetting search foundations,
-            simplifying a commercially crowded browse experience, and setting
-            clearer standards for how AI should behave in product.
-          </p>
+          <HomepageTextReveal delay="160ms">
+            <p className="homepage-type-subhead text-[color:var(--color-muted)]">
+              My work usually starts by clarifying the real product decision. I
+              use research, experiments, and product constraints to make tradeoffs
+              visible, then carry that direction through validation, delivery, and
+              rollout. In practice, that has meant resetting search foundations,
+              simplifying a commercially crowded browse experience, and setting
+              clearer standards for how AI should behave in product.
+            </p>
+          </HomepageTextReveal>
         </div>
       </HomepageSection>
     </section>
