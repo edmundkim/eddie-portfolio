@@ -26,7 +26,7 @@ import mwebSearchAfterMakeModel from "../../../content/case-studies/new-search/a
 export const metadata: Metadata = {
   title: "New Search | Eddie Kim",
   description:
-    "Case study on resetting AutoScout24's search and filters through a staged app and web baseline, with the clearest proof on iOS.",
+    "Case study on resetting AutoScout24's marketplace search, intent expression, and filters through a staged app and web baseline.",
 };
 
 const appsMockupVideoSrc = "/case-studies/new-search/apps_mockup_video_light.mp4";
@@ -46,7 +46,8 @@ const heroFacts = [
   },
   {
     label: "Evidence",
-    value: "Strongest validation on iOS; supporting evidence on Android and web",
+    value:
+      "Research, experimentation, and post-launch analysis with proof that differed by platform",
   },
 ];
 
@@ -59,7 +60,7 @@ const heroHighlights = [
   {
     label: "First validation",
     metricLines: ["iOS", "signal"],
-    body: "iOS was the first clear validation of the new search direction. The redesigned baseline produced a measurable enquiry lift while maintaining downstream engagement, giving the team confidence to roll it out more broadly.",
+    body: "iOS was the first clear validation of the new search direction. The redesigned baseline produced positive commercial progression signals while maintaining downstream engagement, giving the team confidence to roll it out more broadly.",
   },
   {
     label: "Later proof",
@@ -104,11 +105,11 @@ const decisionCards = [
   },
   {
     title: "Validate the new direction where the proof was strongest",
-    body: "iOS became the first clean proof point. The redesigned baseline outperformed the previous direction on enquiry signals while maintaining downstream engagement. We kept the nuance: this was a credible win rather than a claim that every KPI improved.",
+    body: "iOS became the first clean proof point. The redesigned baseline moved commercial progression signals in the right direction while maintaining downstream engagement. We kept the nuance: this was a credible win rather than a claim that every KPI improved.",
   },
   {
     title: "Adapt the baseline by platform and ship web in stages",
-    body: "We did not force one interaction everywhere. Android evidence supported the same direction more narrowly, with additional clarity work still needed. Web came later as an intentionally narrower baseline, supported by a positive lead signal and stable downstream engagement rather than a broad claim that every surface improved equally.",
+    body: "We did not force one interaction everywhere. Android evidence supported the same direction more narrowly, with additional clarity work still needed. Web came later as an intentionally narrower baseline, supported by positive commercial progression signals and stable downstream engagement rather than a broad claim that every surface improved equally.",
   },
 ];
 
@@ -116,7 +117,7 @@ const platformSignals = [
   {
     label: "iOS",
     metric: "Strongest validation",
-    body: "iOS is the clearest proof point. The redesigned baseline outperformed the previous direction on enquiry signals while maintaining downstream engagement, then rolled out more broadly.",
+    body: "iOS is the clearest proof point. The redesigned baseline showed positive commercial progression signals while maintaining downstream engagement, then rolled out more broadly.",
   },
   {
     label: "Android",
@@ -126,7 +127,7 @@ const platformSignals = [
   {
     label: "Web",
     metric: "Phased baseline",
-    body: "Web came later as a simpler baseline launch. Post-launch analysis indicated a positive lead signal on desktop while mobile web and downstream engagement stayed broadly stable. That supports the launch story, but it remains narrower evidence than the app validation.",
+    body: "Web came later as a simpler baseline launch. Post-launch analysis indicated positive movement on key progression signals while mobile web and downstream engagement stayed broadly stable. That supports the launch story, but it remains narrower evidence than the app validation.",
   },
 ];
 
@@ -189,7 +190,7 @@ export default function NewSearchPage() {
         <CaseStudyHero
           eyebrow="Case Study · AutoScout24 · Search & Discovery"
           title="New Search"
-          lede="New Search was a strategic reset of one of AutoScout24's most important journeys. I led the app filter-design direction and helped shape the cross-platform baseline so buyers could find relevant cars with less ambiguity, while the business gained a stronger path to enquiries and a clearer foundation for future search improvements."
+          lede="New Search was a strategic reset of one of AutoScout24's most important journeys. This was not only a filter redesign. It was a reset of how buyers express intent in a marketplace with complex inventory, so they could find relevant cars with less ambiguity while the business gained a stronger foundation for commercial progression and future search improvements."
           facts={heroFacts}
         >
           <div className="mt-12 grid gap-5 md:grid-cols-3">
@@ -233,7 +234,7 @@ export default function NewSearchPage() {
         <CaseStudySection
           eyebrow="Overview"
           title="A staged reset, not one clean launch"
-          intro="This initiative moved through different levels of proof by platform, so the case study works best as one programme with uneven evidence rather than one uniform redesign story."
+          intro="This initiative moved through different levels of proof by platform, so the case study works best as one programme around intent expression and filter discovery rather than one uniform redesign story."
           className="border-t-0"
         >
           <CaseStudyProse>
@@ -248,6 +249,13 @@ export default function NewSearchPage() {
               behaviour across surfaces, but to establish a search model each
               platform could support credibly and then ship where the evidence
               was strong enough.
+            </p>
+            <p>
+              Because exact performance figures are not included publicly, I
+              focus on the shape of the evidence: research, experimentation,
+              and post-launch analysis showed positive movement in key
+              commercial progression signals on the strongest surfaces while
+              downstream engagement stayed broadly stable.
             </p>
           </CaseStudyProse>
 
@@ -310,12 +318,12 @@ export default function NewSearchPage() {
         <CaseStudySection
           eyebrow="The Change"
           title="What changed in the baseline"
-          intro="The high-value changes were structural: clearer filter hierarchy, stronger entry points to high-value choices, and interaction patterns the team could actually validate and roll out without hiding the complexity buyers actually needed."
+          intro="The high-value changes were structural: clearer filter hierarchy, stronger entry points to high-value choices, and interaction patterns the team could actually validate and roll out without hiding the inventory complexity buyers needed to express."
         >
           <div className="space-y-10">
             <BulletList items={experienceChanges} />
 
-            <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_18rem] lg:items-start">
+            <div className="grid gap-8 2xl:grid-cols-[minmax(0,1fr)_18rem] 2xl:items-start">
               <div>
                 <p className="homepage-type-eyebrow text-[color:var(--color-muted)]">
                   Important workstream

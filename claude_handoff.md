@@ -1,6 +1,6 @@
 # Claude Handoff: Eddie Kim Portfolio
 
-Last updated: 2026-04-25
+Last updated: 2026-04-28
 
 ## Purpose
 
@@ -48,6 +48,7 @@ Current content positioning from `RESUME.md`:
 
 - Eddie is a Principal Product Designer and AI Design Lead at AutoScout24.
 - Emphasize search and discovery impact, AI leadership, systems thinking, marketplace scale, and practical design-to-build workflow change.
+- AutoScout24 marketplace scale is currently stated as over 30M monthly users in both the hero and `RESUME.md`.
 - CryptoXpress should be represented as Co-Founder / CMO experience, but do not over-expand it without sourced detail.
 
 Tone from `TONE-OF-VOICE.md`:
@@ -58,46 +59,57 @@ Tone from `TONE-OF-VOICE.md`:
 
 ## Current Repo State
 
-Latest observed commit:
+Branch:
 
-- `79058a3 Refine portfolio case studies`
+- `main`, tracking `origin/main`
+- No local or remote `product` branch was observed during this handoff pass.
 
-Current uncommitted changes:
+Latest committed baseline before the current wrap-up:
 
-- `claude_handoff.md` is modified by this handoff update.
-- `New` is an untracked empty file and looks accidental.
+- `cec3f9f Polish homepage reveal and analytics`
 
-The recent homepage and case-study edits are now in `HEAD`, including:
+This wrap-up pass includes product-relevant edits in:
 
-- root `package.json` forwarding scripts to `portfolio-site`
-- Declutter red hero asset
-- Strategic AI hero asset
-- case-study copy refinements
-- homepage Work, Hero, and Speaking adjustments
+- `portfolio-site/RESUME.md`
+- `portfolio-site/app/globals.css`
+- `portfolio-site/app/work/daimler-subscription-concept/page.tsx`
+- `portfolio-site/app/work/declutter-list-page/page.tsx`
+- `portfolio-site/app/work/new-search/page.tsx`
+- `portfolio-site/app/work/smart-connected-car-app/page.tsx`
+- `portfolio-site/app/work/strategic-ai-design-leadership/page.tsx`
+- `portfolio-site/components/About.tsx`
+- `portfolio-site/components/ContactClose.tsx`
+- `portfolio-site/components/Hero.tsx`
+- `portfolio-site/components/Navbar.tsx`
+- `portfolio-site/components/Speaking.tsx`
+- `portfolio-site/components/Work.tsx`
+- `portfolio-site/components/homepage/HomepageTopZone.tsx`
+- `portfolio-site/components/homepage/WorkAssetReveal.tsx`
+- `portfolio-site/components/homepage/content.ts`
+- `claude_handoff.md`
+
+Intentionally left out of the product commit unless Eddie says otherwise:
+
+- `New` - untracked empty file, likely accidental
+- `Synthesia-cover-letter-Eddie-Kim.docx` - untracked personal document
+- `~$nthesia-cover-letter-Eddie-Kim.docx` - untracked Word temp/lock file
 
 Recent commits:
 
+- `cec3f9f Polish homepage reveal and analytics`
+- `94a8796 Update portfolio favicon`
+- `0c8e126 Update portfolio page title`
 - `79058a3 Refine portfolio case studies`
 - `522f55e Refine portfolio homepage and case studies`
-- `13f5a6f Initial portfolio site`
-- `0774522 Add portfolio site`
-- `1eb772a Initial commit`
 
 ## Active Focus
 
-Currently relevant open files:
-
-- `portfolio-site/RESUME.md`
-- `portfolio-site/TONE-OF-VOICE.md`
-- `portfolio-site/AGENTS.md`
-- `portfolio-site/components/Work.tsx`
-- `portfolio-site/components/Navbar.tsx`
-
 Main active theme:
 
-- refining the homepage Work presentation and case-study credibility
-- making AI/search/marketplace positioning clearer without overstating claims
-- wiring stronger visual anchors for Declutter and Strategic AI
+- making the homepage feel more product-led and editorial by connecting the hero directly into the first selected-work entry
+- making selected work read as senior product systems work, not a generic portfolio grid
+- softening public case-study proof where exact metrics or confidential AI product detail should not be exposed
+- keeping AI leadership concrete through decision standards, review/control logic, and workflow capability rather than hype
 
 ## Homepage State
 
@@ -109,43 +121,50 @@ Primary files:
 - `portfolio-site/components/Hero.tsx`
 - `portfolio-site/components/Work.tsx`
 - `portfolio-site/components/homepage/content.ts`
+- `portfolio-site/components/homepage/WorkAssetReveal.tsx`
 - `portfolio-site/components/Speaking.tsx`
 
 Current structure:
 
 - `HomepageTopZone` contains the sticky nav overlay, `Hero`, and `Work`.
 - Lower homepage sections include About, Experience, Speaking, and Contact.
-- The nav/theme model is scroll/resize geometry-based, not `IntersectionObserver`.
-- `HomepageTopZone` controls `navMode` and `heroTheme`.
+- The nav/theme model is scroll/resize geometry-based.
+- `HomepageTopZone` now uses the first work image trigger (`work-theme-trigger`) to fade in a fixed light work background and switch the nav/hero theme.
+- The visual background transition has a small exit buffer to avoid flicker around the threshold.
 
 Current `Hero.tsx` state:
 
-- headline: "I lead product design work across search, discovery, and AI at marketplace scale."
+- headline: "I design search, discovery, and AI product systems for complex marketplaces."
 - role line: "Principal Product Designer and AI Design Lead at AutoScout24"
-- summary mentions a marketplace with over 30M monthly users
-- hero still uses large vertical spacing and bottom padding; avoid changing unless the user asks for hero spacing or transition work
+- summary mentions turning messy product systems into clearer user decisions, measurable marketplace outcomes, and responsible AI patterns at over 30M monthly user scale
+- the previous oversized bottom padding has been reduced
+- the selected-work marker now comes from `featuredProjects[0]`, so changing project order changes the hero handoff copy
+
+Current `Work.tsx` state:
+
+- Work renders from `featuredProjects`
+- the first project title block appears in the hero, not again in the Work list
+- each later project gets a separate header band, full-width image band, and content band
+- image backgrounds are now data-driven through optional `project.image.backgroundColor`
+- New Search uses a fade reveal
+- Declutter uses the curtain/unveil reveal and pale red background `#FFE5E6`
+- other Work images use the existing unveil reveal
+- a confidentiality note appears after the final project
 
 Current `Navbar.tsx` state:
 
 - contact icons come from `ContactIconLinks`
 - mobile/tablet below `md` uses contact icons inside the hero instead of the sticky nav
+- default/work nav state transitions have slower delayed movement to match the longer hero-to-work transition
 - bottom work hint and work index appear from `lg` upward
 - `lg` to before `xl` uses compact work index
 - `xl+` uses full project index
 
-Current `Work.tsx` state:
-
-- Work section renders from `featuredProjects`
-- each project has a full-width image block plus text rail
-- Declutter now gets a custom pale red background `#FFE5E6`
-- the previous first-project `scale-120` / `translate-y-[5%]` treatment has been removed
-- all Work images use `homepage-work-image object-cover`
-
 Current `Speaking.tsx` state:
 
-- background is `#F1F1F1`
-- the two-column talk layout now starts at `2xl`, so it stacks longer on narrower desktop widths
-- image `sizes` now uses `(min-width: 1536px) 32rem, 100vw`
+- background is `#F6F6F6`
+- the two-column talk layout starts at `2xl`, so it stacks longer on narrower desktop widths
+- image `sizes` uses `(min-width: 1536px) 32rem, 100vw`
 
 ## Featured Projects Data
 
@@ -153,18 +172,24 @@ Primary file:
 
 - `portfolio-site/components/homepage/content.ts`
 
-Current Work/project cards:
+Current Work/project order:
 
-- Declutter the List Page
-- New Search
-- Strategic AI Design Leadership
-- Daimler Vehicle Subscription Concept
-- Smart Connected Car App
+1. New Search
+2. Declutter the List Page, displayed in the homepage hero/work area as "List Card Redesign"
+3. Strategic AI Design Leadership
+4. Daimler Vehicle Subscription Concept
+5. Smart Connected Car App
+
+Notable data model changes:
+
+- `FeaturedProjectImage` supports optional `backgroundColor`
+- `FeaturedProject` now includes `period` and `displayTitle`
+- `formatFeaturedProjectIndex` still exists but is no longer used by `Work.tsx`
 
 Notable current image wiring:
 
-- Declutter imports `declutter-hero-mockup-wide-red.png`
 - New Search imports `new-search-hero-mockup-wide.png`
+- Declutter imports `declutter-hero-mockup-wide-red.png`
 - Strategic AI imports `strategic-ai-mockup-hero.png`
 - Daimler imports `Clay_Mockup___7_.png`
 - Smart imports `smart-connected-car-mockup-wide.png`
@@ -176,84 +201,85 @@ Contact links:
 
 ## Case Study State
 
-Several case-study pages were recently refined. Treat the current code as the latest baseline and inspect before continuing.
+Several case-study pages were refined in this pass. Treat the current code as the latest baseline and inspect before continuing.
 
 Declutter:
 
-- uses new red hero image asset
-- copy has been softened away from highly specific metrics in several places
-- current wording emphasizes measured uplift, buyer progression, enquiry signals, commercial tradeoffs, and platform-specific rollout
-- removed the `searchVisionMiro` figure from the page
+- public proof is now phrased around testing, analysis, progression signals, enquiry behaviour, and rollout direction rather than exact values
+- a paragraph explains that exact values are not included publicly
+- card grids now move to multi-column at `2xl` to avoid cramped desktop layouts
 
 New Search:
 
-- copy has been softened from exact test readouts toward stronger but less brittle validation language
-- iOS remains the strongest validation signal, with Android and web as supporting evidence
-- imported `appsSearchV2Failed` has been renamed locally to `appsSearchV2Intermediate`
+- public proof is phrased as research, experimentation, and post-launch analysis with platform-specific evidence
+- the story frames the work around buyer intent expression and complex marketplace inventory
+- exact figures are withheld publicly, while the evidence shape remains clear
+- one supporting visual/text grid now shifts to `2xl`
 
 Strategic AI:
 
-- now uses `strategic-ai-mockup-hero.png` on the homepage Work card and as a full-bleed case-study hero
-- copy emphasizes Visual AI Framework, AI design guidance, AI-assisted workflows, early product direction, and organisational capability
-- `assets.md` now documents `strategic-ai-mockup-hero.png` as the primary public visual anchor
-- page intentionally avoids claiming downstream product outcomes for early AI concepts
+- hero and facts now emphasize reusable AI decision guidance over downstream product claims
+- added a generalized AI decision model covering quiet assistance, generated content, recommendations, decision-shaping summaries, and actions on the user's behalf
+- the model is explicitly abstracted to protect confidential product strategy
+- section grids now shift to `2xl`
 
 Daimler:
 
-- `CaseStudyFigure` now passes `preservedWidthClassName="min-w-0 sm:min-w-[52rem]"`
-- end nav has `showDivider={false}`
+- positioned as a supporting case study
+- copy emphasizes making an ambiguous service model concrete enough for users, executives, and delivery partners to evaluate
+- section grids now shift to `2xl`
 
 Smart Connected Car App:
 
-- recent commit includes a small page adjustment; inspect before changing further
+- positioned as an earlier supporting case
+- copy emphasizes implementation-ready UX across vehicle, backend, and partner dependencies
+- hero image now renders at natural width instead of a fixed cropped height
+- section grids now shift to `2xl`
 
-Shared case-study component:
+Resume:
 
-- `CaseStudyFigure` now accepts optional `preservedWidthClassName`
-- default remains `min-w-[52rem]`
+- AutoScout24 marketplace scale changed from over 20M monthly users to over 30M monthly users.
 
-## Verification Commands
+## Verification Status
 
-Run from repo root:
+Latest wrap-up checks run on 2026-04-28:
+
+- `npm run lint` - passed
+- `npx tsc --noEmit` from `portfolio-site` - passed
+- `npm run build` - passed
+- `curl -I http://127.0.0.1:3002/` against `next start` - passed with HTTP 200
+- Headless Chrome screenshots at 390x844 and 1440x1200 - passed basic hero/mobile overflow smoke check
+
+There is no explicit `typecheck` script in `portfolio-site/package.json`.
+
+Recommended verification commands from repo root:
 
 - `npm run lint`
 - `npm run build`
 
-Run from `portfolio-site`:
-
-- `npm run lint`
-- `npm run build`
-
-There is no explicit `typecheck` script in `portfolio-site/package.json`. If typecheck is needed, use:
+TypeScript-only check from `portfolio-site`:
 
 - `npx tsc --noEmit`
-
-Note:
-
-- the root `package.json` forwards `dev`, `build`, `lint`, and `start` to `portfolio-site`
 
 ## Risks And Open Questions
 
 - The untracked empty file `New` looks accidental; ask before deleting.
-- `strategic-ai-mockup-hero.png` is about 8.6 MB; consider optimizing if build/performance becomes a concern.
-- Copy has been intentionally softened in some case studies. Confirm with Eddie before restoring exact metrics or adding new ones.
-- `RESUME.md` mentions over 20M monthly users, while the current hero says over 30M monthly users. Do not change either casually; verify the intended public claim before harmonizing.
-- The hero vertical spacing remains heavy-handed but is part of the current composition.
+- The untracked Synthesia Word document and Word temp file look unrelated to the product site; do not commit unless Eddie explicitly asks.
+- There is no observed `product` branch. If Eddie means a deployment branch or environment named product, confirm before pushing or branch-moving.
+- The first selected-work block now depends on `featuredProjects[0]`; reorder carefully because the hero copy changes with it.
+- The homepage theme transition depends on `work-theme-trigger` on the first work image. If the Work layout changes, re-test the hero-to-work transition.
+- `strategic-ai-mockup-hero.png` is large; consider optimization if performance becomes a concern.
+- Copy has been intentionally softened in some case studies. Confirm with Eddie before restoring exact metrics or adding new claims.
 
 ## Recommended Next Steps
 
-1. Decide whether the empty untracked `New` file should stay.
-2. Review the latest committed case-study and homepage state before making more changes.
-3. Run `npm run lint`, `npx tsc --noEmit`, and `npm run build` before finalizing code changes.
-4. Manually check responsive behavior for:
-   - homepage hero-to-work transition
-   - Work image framing
-   - sticky nav at mobile, `lg`, and `xl`
-   - Speaking section at tablet, laptop, and wide desktop widths
-   - Strategic AI hero image load/performance
+1. After the wrap-up commit, decide whether to delete or ignore the root-level untracked files.
+2. Manually check the homepage at mobile, laptop, and wide desktop widths, especially the hero-to-work transition and first work image.
+3. Review the Strategic AI decision model for tone and confidentiality.
+4. If a `product` branch is required, create or switch to it deliberately after confirming the intended branch/deployment flow.
 
 ## Useful Next Prompt
 
 If continuing from here, a good next prompt is:
 
-> Please review the latest homepage and case-study state, clean up the accidental `New` file if appropriate, verify the new image treatments, then run lint, typecheck, and build. Keep copy changes conservative and do not invent new claims.
+> Please review the latest homepage hero-to-work transition and selected-work layout in browser at mobile, laptop, and wide desktop widths. Keep copy changes conservative, do not invent claims, and do not commit the unrelated root-level Word/temp files.

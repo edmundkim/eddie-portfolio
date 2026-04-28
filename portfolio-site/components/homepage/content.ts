@@ -9,13 +9,16 @@ import smartConnectedCarMockupWide from "@/content/legacy-projects/smart-connect
 export type FeaturedProjectImage = {
   src: StaticImageData;
   alt: string;
+  backgroundColor?: string;
   objectPosition?: string;
 };
 
 export type FeaturedProject = {
   id: string;
   label: string;
+  period: string;
   title: string;
+  displayTitle: string;
   navTitle: string;
   href: string;
   context: string;
@@ -49,37 +52,20 @@ export function formatFeaturedProjectIndex(index: number) {
 
 export const featuredProjects: FeaturedProject[] = [
   {
-    id: "declutter-list-page",
-    label: "Shipped product",
-    title: "Declutter the List Page",
-    navTitle: "Declutter the List Page",
-    href: "/work/declutter-list-page",
-    context: "AutoScout24",
-    surface: "Desktop web, mobile web, iOS, and Android",
-    ctaLabel: "Open Declutter the List Page project",
-    summary:
-      "Reworked the vehicle list card so buyers could compare key vehicle signals more clearly.",
-    description:
-      "Clarified hierarchy, reduced visual noise, and helped align product tradeoffs around what belongs on the browsing surface.",
-    image: {
-      src: declutterHeroMockupWide,
-      alt: "Handheld AutoScout24 mobile web mockup previewing the Declutter case study on the homepage.",
-      objectPosition: "58% 50%",
-    },
-  },
-  {
     id: "new-search",
     label: "Search redesign",
+    period: "2022-present",
     title: "New Search",
+    displayTitle: "New Search",
     navTitle: "New Search",
     href: "/work/new-search",
     context: "AutoScout24",
     surface: "iOS, Android, desktop web, and mobile web",
     ctaLabel: "Open New Search project",
     summary:
-      "Redesigned search and filters to give buyers a clearer way to refine their search.",
+      "Reset search and filters so buyers could express intent more clearly in a marketplace with complex inventory.",
     description:
-      "Restructured filter navigation, applied states, and make-model selection so buyers could refine searches with less ambiguity.",
+      "Restructured filter hierarchy, applied states, and make-model selection into a cross-platform baseline that could be validated and extended.",
     image: {
       src: newSearchHeroMockupWide,
       alt: "AutoScout24 search-filter mockup previewing the New Search case study on the homepage.",
@@ -87,18 +73,42 @@ export const featuredProjects: FeaturedProject[] = [
     },
   },
   {
+    id: "declutter-list-page",
+    label: "Shipped product",
+    period: "2022-present",
+    title: "Declutter the List Page",
+    displayTitle: "List Card Redesign",
+    navTitle: "Declutter the List Page",
+    href: "/work/declutter-list-page",
+    context: "AutoScout24",
+    surface: "Desktop web, mobile web, iOS, and Android",
+    ctaLabel: "Open List Card Redesign project",
+    summary:
+      "Reworked the vehicle list card so buyers could compare key vehicle signals and progress with less cognitive load.",
+    description:
+      "Clarified hierarchy, reduced visual noise, and helped align platform-specific tradeoffs around what belongs on the browsing surface.",
+    image: {
+      src: declutterHeroMockupWide,
+      alt: "Handheld AutoScout24 mobile web mockup previewing the Declutter case study on the homepage.",
+      backgroundColor: "#FFE5E6",
+      objectPosition: "58% 50%",
+    },
+  },
+  {
     id: "strategic-ai-design-leadership",
     label: "AI design standards",
+    period: "2022-present",
     title: "Strategic AI Design Leadership",
+    displayTitle: "Strategic AI Design Leadership",
     navTitle: "Strategic AI",
     href: "/work/strategic-ai-design-leadership",
     context: "AutoScout24",
     surface: "AI design standards, early product direction, and UX capability building",
     ctaLabel: "Open Strategic AI Design Leadership project",
     summary:
-      "Defined reusable standards for making AI features clearer, reviewable, and easier to trust.",
+      "Defined reusable decision standards for when AI should be quiet, labelled, explainable, reviewable, or controlled by the user.",
     description:
-      "Owned the Visual AI Framework and AI guidance for UX while shaping early AI-assisted product direction and education paths for AI-assisted workflows.",
+      "Owned the Visual AI Framework and AI guidance for UX while shaping safe early product direction and education paths for AI-assisted workflows.",
     image: {
       src: strategicAiMockupHero,
       alt: "Laptop mockup showing an AI communication framework, previewing the Strategic AI Design Leadership case study.",
@@ -108,16 +118,18 @@ export const featuredProjects: FeaturedProject[] = [
   {
     id: "daimler-subscription-concept",
     label: "Concept case study",
+    period: "2021-2022",
     title: "Daimler Vehicle Subscription Concept",
+    displayTitle: "Daimler Vehicle Subscription Concept",
     navTitle: "Daimler Concept",
     href: "/work/daimler-subscription-concept",
     context: "Daimler Mercedes-Benz · Deloitte Digital",
     surface: "Desktop and mobile web",
     ctaLabel: "Open Daimler Vehicle Subscription Concept project",
     summary:
-      "Defined a greenfield subscription journey to help validate and de-risk a future subscription model, from selection to account management.",
+      "Defined a greenfield subscription journey to make an unfamiliar service model concrete enough to test and align around.",
     description:
-      "Led UX definition for acquisition, configuration, checkout, and lifecycle management.",
+      "Led UX definition for acquisition, configuration, checkout, lifecycle management, and executive client alignment.",
     image: {
       src: daimlerSubscriptionMockup,
       alt: "Daimler vehicle subscription concept mockup previewing the homepage case study.",
@@ -126,16 +138,18 @@ export const featuredProjects: FeaturedProject[] = [
   {
     id: "smart-connected-car-app",
     label: "Connected mobility",
+    period: "2021-2022",
     title: "Smart Connected Car App",
+    displayTitle: "Smart Connected Car App",
     navTitle: "Smart App",
     href: "/work/smart-connected-car-app",
     context: "smart · Deloitte Digital",
     surface: "Native iOS and Android EV companion app",
     ctaLabel: "Open Smart Connected Car App project",
     summary:
-      "Shaped the core EV companion experience for access, status, charging, climate, and remote controls.",
+      "Structured a complex EV companion experience across access, status, charging, climate, and remote controls.",
     description:
-      "Structured the core app model through research synthesis, flows, prototypes, testing, and delivery support while requirements were still moving.",
+      "Turned moving vehicle, backend, and partner dependencies into implementation-ready flows, prototypes, testing inputs, and delivery conversations.",
     image: {
       src: smartConnectedCarMockupWide,
       alt: "Wide smart connected-car app mockup previewing the homepage case study.",

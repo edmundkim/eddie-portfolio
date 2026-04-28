@@ -21,7 +21,7 @@ import closingMockup from "../../../content/legacy-projects/daimler-subscription
 export const metadata: Metadata = {
   title: "Daimler Vehicle Subscription Concept | Eddie Kim",
   description:
-    "Greenfield Daimler subscription concept focused on making an unfamiliar service model clearer from selection through lifecycle management.",
+    "Supporting case study on making an unfamiliar Daimler subscription service model clear enough to test, align around, and move toward MVP definition.",
 };
 
 const heroFacts = [
@@ -68,7 +68,7 @@ export default function DaimlerSubscriptionConceptPage() {
         <CaseStudyHero
           eyebrow="Daimler Mercedes-Benz · Vehicle Subscription Concept"
           title="Daimler Vehicle Subscription Concept"
-          lede="Daimler was exploring a vehicle subscription offer before the model was well understood by consumers or fully defined internally. I led UX definition for a two-month concept that made the service clearer from vehicle selection through lifecycle management, giving the client team a more coherent end-to-end model and surfacing the friction that still needed refinement in user testing."
+          lede="Daimler was exploring a vehicle subscription offer before the model was well understood by consumers or fully defined internally. As a supporting case, this shows how I led UX definition for a two-month concept that made the service clearer from vehicle selection through lifecycle management, gave the client team a more coherent end-to-end model, and surfaced the friction that still needed refinement in user testing."
           facts={heroFacts}
         />
 
@@ -98,7 +98,9 @@ export default function DaimlerSubscriptionConceptPage() {
               The scope therefore went beyond an acquisition funnel. I had to
               define a journey that made the model understandable from vehicle
               selection through delivery and ongoing management while the
-              business requirements were still evolving.
+              business requirements were still evolving. The value was in
+              making an ambiguous service model concrete enough for users,
+              executives, and delivery partners to evaluate together.
             </p>
           </CaseStudyProse>
 
@@ -117,7 +119,7 @@ export default function DaimlerSubscriptionConceptPage() {
           title="Leading UX definition with clear ownership boundaries"
           intro="I led UX definition on a small cross-functional concept team and presented the work directly to Daimler and Mercedes-Benz executives."
         >
-          <div className="grid gap-5 md:grid-cols-2">
+          <div className="grid gap-5 2xl:grid-cols-2">
             <CaseStudyCard title="What I owned">
               <p className="homepage-type-body text-[color:var(--color-muted)]">
                 As Experience Design Lead at Deloitte Digital Germany, I owned
@@ -142,7 +144,7 @@ export default function DaimlerSubscriptionConceptPage() {
           title="The most important calls were about clarity and commitment"
           intro="The strongest part of the work was not surface polish. It was choosing how to make an unfamiliar service legible enough that users could understand it and low-friction enough that they could commit."
         >
-          <div className="grid gap-5 md:grid-cols-3">
+          <div className="grid gap-5 2xl:grid-cols-3">
             {decisionCards.map((card) => (
               <CaseStudyCard key={card.title} title={card.title}>
                 <p className="homepage-type-body text-[color:var(--color-muted)]">

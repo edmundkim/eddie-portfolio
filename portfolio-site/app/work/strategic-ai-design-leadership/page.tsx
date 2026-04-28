@@ -26,11 +26,12 @@ const heroFacts = [
   {
     label: "Owned Directly",
     value:
-      "Visual AI Framework, AI guidance for UX, and education paths for AI-assisted workflows",
+      "Visual AI Framework, AI decision guidance, and education paths for AI-assisted workflows",
   },
   {
-    label: "Shaped",
-    value: "Early AI-assisted product concepts and product direction",
+    label: "Focus",
+    value:
+      "Reusable decision logic for AI visibility, explanation, review, and control",
   },
   {
     label: "Aligned",
@@ -81,6 +82,39 @@ const frameworkPrinciples = [
   },
 ];
 
+const aiDecisionModel = [
+  {
+    aiRole: "Quiet assistance",
+    example: "Formatting, cleanup, or small suggestions",
+    signal: "No persistent label needed",
+    control: "Normal edit or undo",
+  },
+  {
+    aiRole: "Generated or rewritten content",
+    example: "A draft, summary, or suggested wording",
+    signal: "Lightweight AI label",
+    control: "Edit, regenerate, or dismiss",
+  },
+  {
+    aiRole: "Recommendation",
+    example: "A ranked suggestion or next-best action",
+    signal: "Explain why it appears",
+    control: "Compare, override, or ignore",
+  },
+  {
+    aiRole: "Decision-shaping summary",
+    example: "A synthesis that may affect user judgement",
+    signal: "Clear disclosure and source access",
+    control: "Review source, reject, or correct",
+  },
+  {
+    aiRole: "Action on the user's behalf",
+    example: "Changing state, sending, publishing, or committing",
+    signal: "Explicit confirmation",
+    control: "Consent, undo, and audit trail",
+  },
+];
+
 const leverageAreas = [
   {
     title: "Early product direction",
@@ -101,8 +135,8 @@ export default function StrategicAiDesignLeadershipPage() {
         <CaseStudyHero
           eyebrow="AutoScout24 · Strategic AI Design Leadership"
           title="Shaping How AI Should Work in Product"
-          lede="At AutoScout24, I owned the Visual AI Framework and the design standards behind it, led UX capability-building around AI-assisted workflows, and contributed senior design direction to early AI-assisted product concepts."
-          secondaryLede="The work mattered because teams needed clearer decision criteria for when AI should be visible, what level of review or control it required, and how UX workflows should adapt as AI changed product development."
+          lede="At AutoScout24, I led the design standards for how AI should appear, explain itself, and preserve user control across product experiences."
+          secondaryLede="Because the underlying AI initiatives are confidential and tied to current strategy, this case study focuses on the reusable decision model: how I helped teams decide when AI should be quiet, labelled, explainable, reviewable, or explicitly controlled by the user."
           facts={heroFacts}
         >
           <CaseStudyFigure
@@ -129,7 +163,7 @@ export default function StrategicAiDesignLeadershipPage() {
           title="What I owned and where I shaped direction"
           intro="I owned the reusable standards work and the AI design guidance behind it. I also led cross-functional capability work around AI-assisted workflows, aligning the work with senior product, design, and technology leaders. On product concepts, my role was senior design direction: helping shape key flows, principles, and tradeoffs alongside other designers and cross-functional partners."
         >
-          <div className="grid gap-5 md:grid-cols-2">
+          <div className="grid gap-5 2xl:grid-cols-2">
             {roleScope.map((group) => (
               <CaseStudyCard key={group.title} title={group.title}>
                 <BulletList items={group.items} />
@@ -143,7 +177,7 @@ export default function StrategicAiDesignLeadershipPage() {
           title="The most concrete output was a reusable AI communication model"
           intro="The framework turned broad AI principles into a reusable standard teams could use to make more consistent product decisions."
         >
-          <div className="grid gap-5 md:grid-cols-2">
+          <div className="grid gap-5 2xl:grid-cols-2">
             {frameworkPrinciples.map((principle) => (
               <CaseStudyCard key={principle.title} title={principle.title}>
                 <p className="homepage-type-body text-[color:var(--color-muted)]">
@@ -154,6 +188,11 @@ export default function StrategicAiDesignLeadershipPage() {
           </div>
 
           <CaseStudyProse>
+            <p>
+              The model below is abstracted from internal framework work and
+              rebuilt with generalized examples to protect confidential product
+              strategy.
+            </p>
             <p>
               In practice, subtle assistive behaviour could stay quiet, while
               generated summaries, recommendations, and non-obvious
@@ -168,6 +207,43 @@ export default function StrategicAiDesignLeadershipPage() {
               lightweight, and when stronger review or control was necessary.
             </p>
           </CaseStudyProse>
+
+          <div className="overflow-hidden rounded-lg border border-[color:var(--color-line)]">
+            {aiDecisionModel.map((item, index) => (
+              <div
+                key={item.aiRole}
+                className="grid gap-5 border-b border-[color:var(--color-line)] px-6 py-7 last:border-b-0 sm:px-8 2xl:grid-cols-[5rem_minmax(0,1fr)_minmax(0,1fr)] 2xl:gap-8"
+              >
+                <p className="homepage-type-eyebrow text-[color:var(--color-muted)]">
+                  {String(index + 1).padStart(2, "0")}
+                </p>
+
+                <div>
+                  <h3 className="homepage-type-item-title text-[color:var(--foreground)]">
+                    {item.aiRole}
+                  </h3>
+                  <p className="homepage-type-body mt-3 text-[color:var(--color-muted)]">
+                    {item.example}
+                  </p>
+                </div>
+
+                <div className="space-y-4">
+                  <p className="homepage-type-body text-[color:var(--color-muted)]">
+                    <span className="font-medium text-[color:var(--foreground)]">
+                      Signal:
+                    </span>{" "}
+                    {item.signal}
+                  </p>
+                  <p className="homepage-type-body text-[color:var(--color-muted)]">
+                    <span className="font-medium text-[color:var(--foreground)]">
+                      Control:
+                    </span>{" "}
+                    {item.control}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </CaseStudySection>
 
         <CaseStudySection
@@ -175,7 +251,7 @@ export default function StrategicAiDesignLeadershipPage() {
           title="The value was in reusable standards and organisational capability"
           intro="This work was less about a single shipped feature and more about giving teams a clearer basis for early AI product decisions and AI-assisted ways of working."
         >
-          <div className="grid gap-5 md:grid-cols-2">
+          <div className="grid gap-5 2xl:grid-cols-2">
             {leverageAreas.map((group) => (
               <CaseStudyCard key={group.title} title={group.title}>
                 <p className="homepage-type-body text-[color:var(--color-muted)]">

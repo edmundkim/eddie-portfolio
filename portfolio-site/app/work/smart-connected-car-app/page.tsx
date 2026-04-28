@@ -27,7 +27,7 @@ import vehiclePairingFlow from "../../../content/legacy-projects/smart-connected
 export const metadata: Metadata = {
   title: "smart Connected Car App Design | Eddie Kim",
   description:
-    "Case study on shaping smart's native iOS and Android EV companion app from early research into structured, tested, buildable UX.",
+    "Supporting case study on shaping smart's native EV companion app from early research into structured, tested, implementation-ready UX.",
 };
 
 const heroFacts = [
@@ -123,7 +123,7 @@ const deliveryCards = [
   },
 ];
 
-const mobileSafePreservedWidthClassName = "min-w-0 md:min-w-[52rem]";
+const mobileSafePreservedWidthClassName = "min-w-0";
 
 export default function SmartConnectedCarAppPage() {
   return (
@@ -134,8 +134,8 @@ export default function SmartConnectedCarAppPage() {
         <CaseStudyHero
           eyebrow="smart · Connected Car Mobile App"
           title="smart Connected Car App Design"
-          lede="As Experience Design Lead at Deloitte Digital, I helped shape smart's native iOS and Android EV companion app for vehicle access, status, charging, climate, and controls while requirements and connected-vehicle dependencies were still moving."
-          secondaryLede="This is an earlier, pre-launch case study. Its value is the product design path: turning an ambiguous connected-EV ecosystem into structured, tested, buildable UX that moved toward implementation."
+          lede="As Experience Design Lead at Deloitte Digital, I helped shape smart's native iOS and Android EV companion app for vehicle access, status, charging, climate, and controls while vehicle, backend, and partner dependencies were still moving."
+          secondaryLede="This is an earlier, pre-launch supporting case. Its value is the product design path: turning an ambiguous connected-EV ecosystem into structured, tested, implementation-ready UX that product, engineering, QA, and delivery teams could align around."
           facts={heroFacts}
         />
 
@@ -145,15 +145,14 @@ export default function SmartConnectedCarAppPage() {
           sizes="100vw"
           fullBleed
           priority
-          className="h-[clamp(18rem,34vw,38rem)] bg-[#1f1f1f]"
-          mediaClassName="h-full"
-          imageClassName="h-full w-full object-cover object-center"
+          className="bg-[#1f1f1f]"
+          imageClassName="h-auto w-full"
         />
 
         <CaseStudySection
           eyebrow="The Problem"
           title="Design the companion app before the car existed"
-          intro="The brief was not only to design screens. The team needed a coherent product model for pairing, access, remote commands, charging, climate, status, service, and account management around a future electric vehicle."
+          intro="The brief was not only to design screens. The team needed a coherent product model for pairing, access, remote commands, charging, climate, status, service, and account management around a future electric vehicle and its surrounding systems."
         >
           <BulletList items={constraints} />
         </CaseStudySection>
@@ -163,7 +162,7 @@ export default function SmartConnectedCarAppPage() {
           title="Lead the UX work that product and delivery teams could use"
           intro="I worked on a year-long programme with Deloitte Digital Germany and Portugal, smart product owners, engineering, QA, scrum, and delivery partners. My role was to turn research, requirements, and shifting constraints into UX artefacts the team could make decisions from."
         >
-          <div className="grid gap-5 md:grid-cols-2">
+          <div className="grid gap-5 2xl:grid-cols-2">
             {roleScope.map((group) => (
               <CaseStudyCard key={group.title} title={group.title}>
                 <BulletList items={group.items} />
@@ -210,7 +209,7 @@ export default function SmartConnectedCarAppPage() {
         <CaseStudySection
           eyebrow="Product Decisions"
           title="Key Product Decisions"
-          intro="The central design move was to make the app navigable around the driver's recurring jobs while giving product, engineering, and QA enough structure to discuss states, dependencies, and implementation risk."
+          intro="The central design move was to make the app navigable around the driver's recurring jobs while giving product, engineering, QA, and delivery partners enough structure to discuss states, dependencies, and implementation risk."
         >
           <div className="overflow-hidden border-y border-[color:var(--color-line)]">
             {productDecisionCards.map((card, index) => (
@@ -249,7 +248,7 @@ export default function SmartConnectedCarAppPage() {
           title="Move from concepts to flows the team could build"
           intro="The work became concrete through state diagrams, wireframes, click dummies, and concept screens for high-risk flows such as pairing, geofencing, charging, climate, and remote vehicle control."
         >
-          <div className="grid gap-5 md:grid-cols-3">
+          <div className="grid gap-5 2xl:grid-cols-3">
             {deliveryCards.map((card) => (
               <CaseStudyCard key={card.title} title={card.title}>
                 <p className="homepage-type-body text-[color:var(--color-muted)]">

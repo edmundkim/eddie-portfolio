@@ -5,7 +5,7 @@ Principal Product Designer based in Berlin. Designing at the intersection of UX,
 
 ### AutoScout24 — Principal Product Designer, AI Design Lead
 **Mar 2025 – Present · Berlin**
-- Leads design for core buyer journeys across web and app for a marketplace with **over 20M monthly users**.
+- Leads design for core buyer journeys across web and app for a marketplace with **over 30M monthly users**.
 - Redesigned web search, driving **+7% lead conversion** across markets.
 - Simplified complex vehicle filtering across platforms to improve search accuracy and create a stronger foundation for AI-driven experiences.
 - Leads AI design for search and discovery, shaping trustworthy conversational and AI-assisted product experiences.

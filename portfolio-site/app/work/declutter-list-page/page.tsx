@@ -32,7 +32,8 @@ export const metadata: Metadata = {
 const heroFacts = [
   {
     label: "Outcome",
-    value: "Measured uplift in buyer progression and enquiry signals",
+    value:
+      "Validated through testing and analysis across buyer progression and enquiry behaviour",
   },
   { label: "Company", value: "AutoScout24" },
   {
@@ -91,9 +92,9 @@ const keyDecisions = [
 const confirmedOutcomes = [
   {
     label: "Measured signal",
-    metric: "Measured uplift",
-    summary: "the more reduced direction outperformed the earlier card",
-    body: "Early validation gave the team confidence to keep pushing the simpler direction while continuing to validate the commercial tradeoffs around the card.",
+    metric: "Positive signal",
+    summary: "the more reduced direction moved progression signals in the right direction",
+    body: "Early A/B testing gave the team confidence to keep pushing the simpler direction while continuing to validate the commercial tradeoffs around the card.",
   },
   {
     label: "Decision quality",
@@ -107,7 +108,7 @@ const supportingOutcomes = [
   {
     label: "Final state",
     title: "The list-card approach was rolled out across markets and platforms",
-    body: "The programme ended with a platform-specific list-card direction across web and native apps. It rolled out across multiple markets and platforms, giving AutoScout24 a cleaner and more scalable foundation for results browsing without pretending one card pattern should serve every surface equally.",
+    body: "The key outcome was not one universal winning card, but a clearer platform-specific direction for how much information the list card should carry. It rolled out across multiple markets and platforms, giving AutoScout24 a cleaner and more scalable foundation for results browsing without pretending one pattern should serve every surface equally.",
   },
 ];
 
@@ -175,7 +176,7 @@ export default function DeclutterListPage() {
         <CaseStudyHero
           eyebrow="Case Study · AutoScout24 · Search & Discovery"
           title="Declutter the List Page"
-          lede="Across a multi-phase programme, I led the design work to simplify AutoScout24's list-page card across web and app. The work improved browsing clarity, gave teams a stronger basis for rollout decisions, and showed where web and native apps needed different treatments. The harder challenge was not removing UI alone, but deciding which buyer, commercial, and platform needs deserved limited card space."
+          lede="Across a multi-phase programme, I led the design work to simplify AutoScout24's list-page card across web and app. The work improved browsing clarity, gave teams a stronger basis for rollout decisions, and showed where web and native apps needed different treatments. The harder challenge was not removing UI alone, but improving decision quality: deciding which buyer, commercial, and platform needs deserved limited card space."
           facts={heroFacts}
         >
           <CaseStudyFigure
@@ -213,6 +214,12 @@ export default function DeclutterListPage() {
               more offers above the fold, clarifying what the image area
               signalled, and later reworking commercial entry points rather
               than letting every internal demand stay equally prominent.
+            </p>
+            <p>
+              The work was tested through A/B experiments and follow-up
+              analysis across buyer progression and enquiry behaviour. Exact
+              values are not included publicly, so the case focuses on the
+              validation method, decision logic, and rollout direction.
             </p>
           </CaseStudyProse>
         </CaseStudySection>
@@ -270,7 +277,7 @@ export default function DeclutterListPage() {
           title="What I directly drove, and what stayed shared"
           intro="My role was to lead the design problem across multiple phases: clarify what the card should optimise for, validate the riskiest tradeoffs, and help turn repeated findings into a rollout direction."
         >
-          <div className="grid gap-5 md:grid-cols-2">
+          <div className="grid gap-5 2xl:grid-cols-2">
             {roleDetails.map((group) => (
               <CaseStudyCard key={group.title} title={group.title}>
                 <BulletList items={group.items} />
@@ -284,7 +291,7 @@ export default function DeclutterListPage() {
           title="The most important calls were about evidence and priorities"
           intro="What made the work consequential was not a cleaner layout on its own. It was deciding what evidence to trust and what the card should prioritise on each platform."
         >
-          <div className="grid gap-5 md:grid-cols-2">
+          <div className="grid gap-5 2xl:grid-cols-2">
             {keyDecisions.map((decision) => (
               <CaseStudyCard key={decision.title} title={decision.title}>
                 <p className="homepage-type-body text-[color:var(--color-muted)]">
@@ -308,7 +315,7 @@ export default function DeclutterListPage() {
           title="What the evidence supports"
           intro="The clearest honest landing is that stronger declutter produced positive validation signals, follow-up analysis clarified where simpler web behaviour was safer, and the programme ultimately landed as a platform-specific rollout rather than one universal winner."
         >
-          <div className="grid gap-5 md:grid-cols-2">
+          <div className="grid gap-5 2xl:grid-cols-2">
             {confirmedOutcomes.map((outcome, index) => (
               <CaseStudyCard
                 key={outcome.summary}

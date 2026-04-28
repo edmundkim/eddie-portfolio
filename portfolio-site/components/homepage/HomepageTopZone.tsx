@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
@@ -12,24 +12,43 @@ type HomepageHeroTheme = "dark" | "light";
 export default function HomepageTopZone() {
   const [navMode, setNavMode] = useState<HomepageNavMode>("default");
   const [heroTheme, setHeroTheme] = useState<HomepageHeroTheme>("dark");
+  const [isVisualThemeActive, setIsVisualThemeActive] = useState(false);
+  const isVisualThemeActiveRef = useRef(false);
+  const isWorkNavActiveRef = useRef(false);
 
   useEffect(() => {
-    const workSection = document.getElementById("work");
-
-    if (!workSection || typeof window === "undefined") {
+    if (typeof window === "undefined") {
       return;
     }
 
     let frameId: number | null = null;
+    const themeExitBuffer = 120;
 
     const updateHomepageState = () => {
-      const workSectionTop = workSection.getBoundingClientRect().top;
-      const themeLead = Math.min(window.innerHeight * 0.18, 240);
-      const hasWorkEnteredThemeZone =
-        workSectionTop <= window.innerHeight + themeLead;
-      const nextMode = hasWorkEnteredThemeZone ? "work" : "default";
-      const nextHeroTheme = hasWorkEnteredThemeZone ? "light" : "dark";
+      const workThemeTrigger = document.getElementById("work-theme-trigger");
 
+      if (!workThemeTrigger) {
+        return;
+      }
+
+      const workTriggerTop = workThemeTrigger.getBoundingClientRect().top;
+      const themeEnterOffset = window.innerHeight;
+      const themeExitOffset = window.innerHeight + themeExitBuffer;
+      const useVisualTheme = isVisualThemeActiveRef.current
+        ? workTriggerTop <= themeExitOffset
+        : workTriggerTop <= themeEnterOffset;
+      const useWorkNav = isWorkNavActiveRef.current
+        ? workTriggerTop <= themeExitOffset
+        : workTriggerTop <= themeEnterOffset;
+      const nextMode = useWorkNav ? "work" : "default";
+      const nextHeroTheme = useVisualTheme ? "light" : "dark";
+
+      isVisualThemeActiveRef.current = useVisualTheme;
+      isWorkNavActiveRef.current = useWorkNav;
+
+      setIsVisualThemeActive((currentState) =>
+        currentState === useVisualTheme ? currentState : useVisualTheme,
+      );
       setNavMode((currentMode) =>
         currentMode === nextMode ? currentMode : nextMode,
       );
@@ -64,11 +83,21 @@ export default function HomepageTopZone() {
     };
   }, []);
 
+  const topZoneStyle = {
+    "--homepage-work-background-opacity": isVisualThemeActive ? "1" : "0",
+  } as CSSProperties;
+
   return (
     <div
       data-hero-theme={heroTheme}
+      style={topZoneStyle}
       className="homepage-zone homepage-zone--dark homepage-zone--dark-top"
     >
+      <div
+        aria-hidden="true"
+        className="homepage-zone__work-background"
+      />
+
       <div className="homepage-zone__overlay pointer-events-none absolute inset-0 z-20">
         <div className="homepage-shell homepage-chrome h-full pt-3 sm:pt-4">
           <Navbar mode={navMode} />

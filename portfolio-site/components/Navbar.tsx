@@ -15,8 +15,8 @@ type NavModeProps = {
 
 function DefaultNavMode({ active }: NavModeProps) {
   const stateClass = active
-    ? "translate-y-0 opacity-75 transition-[color,opacity,transform] duration-300"
-    : "pointer-events-none translate-y-3 opacity-0 transition-none";
+    ? "[transform:translateY(0)] opacity-75 transition-[color,opacity,transform] delay-[700ms] duration-700 ease-out"
+    : "pointer-events-none opacity-0 transition-[opacity,transform] duration-[450ms] ease-in [transform:translateY(1.25rem)]";
 
   return (
     <a
@@ -24,7 +24,7 @@ function DefaultNavMode({ active }: NavModeProps) {
       aria-label="Jump to selected work"
       aria-hidden={!active}
       tabIndex={active ? 0 : -1}
-      className={`homepage-type-functional homepage-work-hint absolute bottom-0 left-0 hidden flex-col items-start gap-4 text-[color:var(--homepage-nav-hint)] hover:opacity-100 focus-visible:opacity-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:[outline-color:var(--homepage-nav-hint)] motion-reduce:translate-y-0 motion-reduce:transition-none lg:flex ${stateClass}`}
+      className={`homepage-type-functional homepage-work-hint absolute bottom-0 left-0 hidden flex-col items-start gap-4 text-[color:var(--homepage-nav-hint)] hover:opacity-100 focus-visible:opacity-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:[outline-color:var(--homepage-nav-hint)] motion-reduce:transition-none motion-reduce:[transform:translateY(0)] lg:flex ${stateClass}`}
     >
       <span className="text-[11px] font-medium uppercase tracking-[0.28em] opacity-72">
         Work
@@ -39,14 +39,14 @@ function DefaultNavMode({ active }: NavModeProps) {
 
 function WorkNavMode({ active }: NavModeProps) {
   const stateClass = active
-    ? "translate-y-0 opacity-100 transition-transform duration-500 ease-out"
-    : "pointer-events-none translate-y-8 opacity-0 transition-none";
+    ? "[transform:translateX(0)] opacity-100 transition-[opacity,transform] delay-[450ms] duration-900 ease-out"
+    : "pointer-events-none opacity-0 transition-[opacity,transform] duration-700 ease-in [transform:translateX(-3.5rem)]";
 
   return (
     <section
       aria-label="Selected work"
       aria-hidden={!active}
-      className={`homepage-type-functional absolute bottom-0 left-0 hidden motion-reduce:translate-y-0 motion-reduce:transition-none lg:block ${stateClass}`}
+      className={`homepage-type-functional absolute bottom-0 left-0 hidden motion-reduce:transition-none motion-reduce:[transform:translateX(0)] lg:block ${stateClass}`}
     >
       <ol className="m-0 hidden w-[8.5rem] list-none space-y-3 p-0 lg:block xl:hidden">
         {featuredProjects.map((project, index) => {

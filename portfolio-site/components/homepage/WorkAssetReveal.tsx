@@ -9,19 +9,24 @@ import {
 
 type WorkAssetRevealProps = HTMLAttributes<HTMLDivElement> & {
   children: ReactNode;
+  variant?: "fade" | "unveil";
 };
 
-const revealThreshold = 0.24;
+const unveilRevealThreshold = 0.24;
+const fadeRevealThreshold = 0.42;
 
 export default function WorkAssetReveal({
   children,
   className,
+  variant = "unveil",
   ...props
 }: WorkAssetRevealProps) {
   const revealRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     const element = revealRef.current;
+    const revealThreshold =
+      variant === "fade" ? fadeRevealThreshold : unveilRevealThreshold;
 
     if (!element) {
       return;
@@ -59,12 +64,13 @@ export default function WorkAssetReveal({
       window.cancelAnimationFrame(frameId);
       observer?.disconnect();
     };
-  }, []);
+  }, [variant]);
 
   return (
     <div
       {...props}
       ref={revealRef}
+      data-reveal-variant={variant}
       className={`homepage-work-asset-reveal ${className ?? ""}`}
     >
       {children}

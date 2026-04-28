@@ -24,8 +24,8 @@ export default function About() {
               id="about-heading"
               className="homepage-type-section-heading"
             >
-              I help teams turn ambiguous product problems into clearer decisions,
-              then carry that work into what ships.
+              I help teams turn ambiguous product systems into clearer user
+              decisions, then carry that work into what ships.
             </h2>
           </HomepageTextReveal>
 
@@ -34,9 +34,10 @@ export default function About() {
               My work usually starts by clarifying the real product decision. I
               use research, experiments, and product constraints to make tradeoffs
               visible, then carry that direction through validation, delivery, and
-              rollout. In practice, that has meant resetting search foundations,
-              simplifying a commercially crowded browse experience, and setting
-              clearer standards for how AI should behave in product.
+              rollout. In practice, that has meant resetting search and intent
+              foundations, simplifying a commercially crowded browse
+              experience, and setting clearer standards for how AI should
+              behave in product.
             </p>
           </HomepageTextReveal>
         </div>

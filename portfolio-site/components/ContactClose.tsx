@@ -15,7 +15,7 @@ export default function ContactClose() {
         <a
           href={primaryContactLink.href}
           aria-label="Get in touch with Eddie by email"
-          className="flex min-h-[21rem] items-center justify-center overflow-hidden rounded-[2rem] bg-[#E7E6E1] px-7 py-8 text-center text-[color:var(--accent)] transition-colors duration-300 [margin-inline:max(-2.5rem,calc(var(--homepage-edge-gap)-var(--homepage-content-rail)))] hover:bg-[color:var(--accent)] hover:text-white focus-visible:bg-[color:var(--accent)] focus-visible:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:[outline-color:var(--accent)] motion-reduce:transition-none sm:min-h-[26rem] sm:rounded-[2.5rem] sm:px-10 sm:py-10 lg:min-h-[31rem] lg:px-14 lg:py-12"
+          className="flex min-h-[21rem] items-center justify-center overflow-hidden rounded-[2rem] bg-[#E7E6E1] px-7 py-8 text-center text-[color:var(--accent)] transition-colors duration-300 [margin-inline:max(-2.5rem,calc(var(--homepage-edge-gap)-var(--homepage-content-rail)))] hover:bg-[color:var(--accent)] hover:text-white focus-visible:bg-[color:var(--accent)] focus-visible:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:[outline-color:var(--accent)] motion-reduce:transition-none sm:min-h-[26rem] sm:rounded-[2.5rem] sm:px-10 sm:py-10 lg:-mx-10 lg:min-h-[31rem] lg:w-[calc(100%+5rem)] lg:px-14 lg:py-12"
         >
           <div className="flex -translate-y-5 flex-col items-center gap-4 sm:gap-5 lg:gap-6">
             <div className="flex flex-col items-center gap-4 sm:gap-5">

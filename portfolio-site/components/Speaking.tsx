@@ -11,7 +11,7 @@ export default function Speaking() {
     <section
       id="speaking"
       aria-labelledby="speaking-heading"
-      className="bg-[#F1F1F1]"
+      className="bg-[#F6F6F6]"
     >
       <HomepageSection as="div" className="py-28 sm:py-32">
         <div className="max-w-3xl">

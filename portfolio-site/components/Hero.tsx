@@ -1,8 +1,11 @@
 import Image from "next/image";
 
 import ContactIconLinks from "@/components/homepage/ContactIconLinks";
+import { featuredProjects } from "@/components/homepage/content";
 
 export default function Hero() {
+  const firstProject = featuredProjects[0];
+
   return (
     <section
       id="top"
@@ -10,7 +13,7 @@ export default function Hero() {
       aria-describedby="hero-summary"
       className="homepage-core homepage-core--hero relative flex-1 pt-[18px] sm:pt-[14px] md:pt-[30px]"
     >
-      <div className="homepage-content-width relative flex min-h-[calc(148svh-4rem)] flex-col justify-between gap-24 pb-[720px] pt-0 sm:min-h-[calc(154svh-5rem)] sm:gap-28 sm:pb-[810px] md:pt-28 lg:min-h-[calc(166svh-6rem)] lg:gap-32 lg:pt-36">
+      <div className="homepage-content-width relative flex min-h-[calc(128svh-4rem)] flex-col justify-between gap-24 pb-16 pt-0 sm:min-h-[calc(134svh-5rem)] sm:gap-28 sm:pb-20 md:pt-28 lg:min-h-[calc(140svh-6rem)] lg:gap-32 lg:pb-24 lg:pt-36">
         <header className="max-w-[82rem]">
           <ContactIconLinks
             className="mb-14 flex flex-col items-start gap-7 md:hidden"
@@ -26,25 +29,31 @@ export default function Hero() {
             id="hero-heading"
             className="homepage-hero-theme-text homepage-type-display mt-10 max-w-[82rem] text-[color:var(--hero-heading)] sm:mt-12"
           >
-            I lead product design work across search, discovery, and AI at
-            marketplace scale.
+            <span className="block">I design search,</span>{" "}
+            <span className="block">discovery, and</span>{" "}
+            <span className="block">AI product systems</span>{" "}
+            <span className="block">for complex</span>{" "}
+            <span className="block">marketplaces.</span>
           </h1>
         </header>
 
         <div className="flex max-w-[72rem] flex-col gap-12 sm:gap-14">
           <div>
-            <p className="homepage-hero-theme-text homepage-type-display max-w-[70rem] text-[color:var(--hero-supporting)]">
-              Principal Product Designer and AI Design Lead at AutoScout24
+            <p className="homepage-hero-theme-text homepage-type-display max-w-[21rem] text-[color:var(--hero-supporting)] sm:max-w-[70rem]">
+              <span className="block">Principal Product</span>{" "}
+              <span className="block">Designer and AI</span>{" "}
+              <span className="block">Design Lead at</span>{" "}
+              <span className="block">AutoScout24</span>
             </p>
 
             <p
               id="hero-summary"
-              className="homepage-hero-theme-text homepage-type-subhead mt-12 max-w-[42rem] text-[color:var(--hero-summary)] sm:mt-14"
+              className="homepage-hero-theme-text homepage-type-subhead mt-12 max-w-[20rem] text-[color:var(--hero-summary)] sm:mt-14 sm:max-w-[42rem]"
             >
-              At AutoScout24, I shape buyer journeys across web and app for a
-              marketplace with over 30M monthly users, helping people search,
-              compare, and enquire with more clarity while helping teams ship
-              clearer, more effective product experiences.
+              I help teams turn messy product systems into clearer user
+              decisions, measurable marketplace outcomes, and responsible AI
+              patterns that can scale across web and app for a marketplace with
+              over 30M monthly users.
             </p>
           </div>
 
@@ -62,28 +71,19 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="pointer-events-none absolute inset-x-0 bottom-9">
-          <div className="max-w-[82rem]">
-            <p className="homepage-type-work-marker flex flex-wrap items-baseline gap-x-3 gap-y-2 text-[#101010]">
-              <span>Selected works</span>
-              <span
-                aria-hidden="true"
-                className="homepage-type-work-marker-icon"
-              >
-                ↓
-              </span>
+        {firstProject ? (
+          <div className="mt-5 max-w-[82rem] sm:mt-6 lg:mt-7">
+            <p className="homepage-type-selected-work-date text-[#101010]">
+              {firstProject.period}
             </p>
-
-            <div className="mt-14">
-              <p className="homepage-type-selected-work-date text-[#101010]">
-                2022-present
-              </p>
-              <p className="homepage-hero-theme-text homepage-type-selected-work-title mt-4 text-[color:var(--selected-work-meta)] sm:mt-5">
-                AutoScout24
-              </p>
-            </div>
+            <p className="homepage-type-project-title mt-4 max-w-4xl text-[#101010] sm:mt-5">
+              {firstProject.context}
+            </p>
+            <p className="homepage-type-project-title mt-1 max-w-4xl text-[color:var(--selected-work-project)] sm:mt-2">
+              {firstProject.displayTitle}
+            </p>
           </div>
-        </div>
+        ) : null}
       </div>
     </section>
   );
