@@ -153,6 +153,7 @@ export default function SmartConnectedCarAppPage() {
           eyebrow="The Problem"
           title="Design the companion app before the car existed"
           intro="The brief was not only to design screens. The team needed a coherent product model for pairing, access, remote commands, charging, climate, status, service, and account management around a future electric vehicle and its surrounding systems."
+          className="border-t-0"
         >
           <BulletList items={constraints} />
         </CaseStudySection>

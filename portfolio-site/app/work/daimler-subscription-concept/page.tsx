@@ -85,6 +85,7 @@ export default function DaimlerSubscriptionConceptPage() {
           eyebrow="The Problem"
           title="Clarifying a new subscription model end to end"
           intro="The brief was as much about clarifying the product as designing the interface."
+          className="border-t-0"
         >
           <CaseStudyProse>
             <p>

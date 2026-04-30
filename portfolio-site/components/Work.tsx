@@ -51,7 +51,7 @@ function WorkProject({
 
   return (
     <li
-      id={project.id}
+      id={isFirstProject ? undefined : project.id}
       className="scroll-mt-24 bg-[#FBFBFB]"
     >
       <article
@@ -162,7 +162,6 @@ function WorkProject({
 export default function Work() {
   return (
     <section
-      id="work"
       aria-labelledby="work-heading"
       className="homepage-surface--light"
     >

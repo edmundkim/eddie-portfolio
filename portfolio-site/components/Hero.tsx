@@ -41,8 +41,8 @@ export default function Hero() {
           <div>
             <p className="homepage-hero-theme-text homepage-type-display max-w-[21rem] text-[color:var(--hero-supporting)] sm:max-w-[70rem]">
               <span className="block">Principal Product</span>{" "}
-              <span className="block">Designer and AI</span>{" "}
-              <span className="block">Design Lead at</span>{" "}
+              <span className="block">Designer and</span>{" "}
+              <span className="block">AI Design Lead at</span>{" "}
               <span className="block">AutoScout24</span>
             </p>
 
@@ -72,16 +72,21 @@ export default function Hero() {
         </div>
 
         {firstProject ? (
-          <div className="mt-5 max-w-[82rem] sm:mt-6 lg:mt-7">
-            <p className="homepage-type-selected-work-date text-[#101010]">
-              {firstProject.period}
-            </p>
-            <p className="homepage-type-project-title mt-4 max-w-4xl text-[#101010] sm:mt-5">
-              {firstProject.context}
-            </p>
-            <p className="homepage-type-project-title mt-1 max-w-4xl text-[color:var(--selected-work-project)] sm:mt-2">
-              {firstProject.displayTitle}
-            </p>
+          <div id="work" className="scroll-mt-8 sm:scroll-mt-10">
+            <div
+              id={firstProject.id}
+              className="mt-5 max-w-[82rem] scroll-mt-8 sm:mt-6 sm:scroll-mt-10 lg:mt-7"
+            >
+              <p className="homepage-type-selected-work-date text-[#101010]">
+                {firstProject.period}
+              </p>
+              <p className="homepage-type-project-title mt-4 max-w-4xl text-[#101010] sm:mt-5">
+                {firstProject.context}
+              </p>
+              <p className="homepage-type-project-title mt-1 max-w-4xl text-[color:var(--selected-work-project)] sm:mt-2">
+                {firstProject.displayTitle}
+              </p>
+            </div>
           </div>
         ) : null}
       </div>

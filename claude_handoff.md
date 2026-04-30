@@ -1,6 +1,6 @@
 # Claude Handoff: Eddie Kim Portfolio
 
-Last updated: 2026-04-28
+Last updated: 2026-04-30
 
 ## Purpose
 
@@ -64,38 +64,31 @@ Branch:
 - `main`, tracking `origin/main`
 - No local or remote `product` branch was observed during this handoff pass.
 
-Latest committed baseline before the current wrap-up:
+Latest committed baseline before the current production push:
 
-- `cec3f9f Polish homepage reveal and analytics`
+- `54d8407 Wrap portfolio product polish`
 
-This wrap-up pass includes product-relevant edits in:
+This production push includes product-relevant edits in:
 
-- `portfolio-site/RESUME.md`
 - `portfolio-site/app/globals.css`
 - `portfolio-site/app/work/daimler-subscription-concept/page.tsx`
-- `portfolio-site/app/work/declutter-list-page/page.tsx`
 - `portfolio-site/app/work/new-search/page.tsx`
 - `portfolio-site/app/work/smart-connected-car-app/page.tsx`
 - `portfolio-site/app/work/strategic-ai-design-leadership/page.tsx`
-- `portfolio-site/components/About.tsx`
 - `portfolio-site/components/ContactClose.tsx`
 - `portfolio-site/components/Hero.tsx`
-- `portfolio-site/components/Navbar.tsx`
-- `portfolio-site/components/Speaking.tsx`
 - `portfolio-site/components/Work.tsx`
-- `portfolio-site/components/homepage/HomepageTopZone.tsx`
-- `portfolio-site/components/homepage/WorkAssetReveal.tsx`
-- `portfolio-site/components/homepage/content.ts`
+- `portfolio-site/lib/case-study-navigation.ts`
 - `claude_handoff.md`
 
 Intentionally left out of the product commit unless Eddie says otherwise:
 
 - `New` - untracked empty file, likely accidental
 - `Synthesia-cover-letter-Eddie-Kim.docx` - untracked personal document
-- `~$nthesia-cover-letter-Eddie-Kim.docx` - untracked Word temp/lock file
 
 Recent commits:
 
+- `54d8407 Wrap portfolio product polish`
 - `cec3f9f Polish homepage reveal and analytics`
 - `94a8796 Update portfolio favicon`
 - `0c8e126 Update portfolio page title`
@@ -106,6 +99,9 @@ Recent commits:
 
 Main active theme:
 
+- tightening the production polish pass before pushing `main`
+- reducing homepage and case-study side insets while preserving the left-rail visual system
+- making display typography slightly stronger through the shared homepage display weight
 - making the homepage feel more product-led and editorial by connecting the hero directly into the first selected-work entry
 - making selected work read as senior product systems work, not a generic portfolio grid
 - softening public case-study proof where exact metrics or confidential AI product detail should not be exposed
@@ -136,14 +132,17 @@ Current `Hero.tsx` state:
 
 - headline: "I design search, discovery, and AI product systems for complex marketplaces."
 - role line: "Principal Product Designer and AI Design Lead at AutoScout24"
+- the role line uses pure white (`#ffffff`) in the dark hero state
 - summary mentions turning messy product systems into clearer user decisions, measurable marketplace outcomes, and responsible AI patterns at over 30M monthly user scale
 - the previous oversized bottom padding has been reduced
 - the selected-work marker now comes from `featuredProjects[0]`, so changing project order changes the hero handoff copy
+- the `work` anchor and the first project anchor now live on the first selected-work block in the hero
 
 Current `Work.tsx` state:
 
 - Work renders from `featuredProjects`
 - the first project title block appears in the hero, not again in the Work list
+- the first Work list item no longer duplicates the first project `id`, avoiding conflicting anchors
 - each later project gets a separate header band, full-width image band, and content band
 - image backgrounds are now data-driven through optional `project.image.backgroundColor`
 - New Search uses a fade reveal
@@ -242,13 +241,14 @@ Resume:
 
 ## Verification Status
 
-Latest wrap-up checks run on 2026-04-28:
+Latest production-push checks run on 2026-04-30:
 
 - `npm run lint` - passed
 - `npx tsc --noEmit` from `portfolio-site` - passed
 - `npm run build` - passed
+- `npm run start -- -p 3002` from `portfolio-site` - started successfully
 - `curl -I http://127.0.0.1:3002/` against `next start` - passed with HTTP 200
-- Headless Chrome screenshots at 390x844 and 1440x1200 - passed basic hero/mobile overflow smoke check
+- Headless Chrome screenshots at 390x844 and 1440x1200 - passed basic hero/role-line responsive smoke check
 
 There is no explicit `typecheck` script in `portfolio-site/package.json`.
 

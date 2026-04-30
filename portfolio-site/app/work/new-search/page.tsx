@@ -154,8 +154,7 @@ const decisionComparisonImages = [
     image: appsSearchV1Baseline,
     alt: "An older app search baseline with broader filter clutter, heavier visual noise, and weaker structure.",
     caption: "The older app baseline carried heavier noise and weaker structure.",
-    contentClassName:
-      "flex min-h-[28rem] items-start justify-center sm:min-h-[32rem]",
+    contentClassName: "flex items-start justify-center",
     imageClassName:
       "h-auto max-h-[26rem] !w-auto max-w-full sm:max-h-[30rem]",
   },
@@ -164,8 +163,7 @@ const decisionComparisonImages = [
     image: appsSearchV2Intermediate,
     alt: "An intermediate app search direction with layered filter cards that still carried structural friction.",
     caption: "An intermediate direction that still carried structural friction.",
-    contentClassName:
-      "flex min-h-[28rem] items-start justify-center sm:min-h-[32rem]",
+    contentClassName: "flex items-start justify-center",
     imageClassName:
       "h-auto max-h-[26rem] !w-auto max-w-full sm:max-h-[30rem]",
   },
@@ -174,8 +172,7 @@ const decisionComparisonImages = [
     image: appsSearchAfter,
     alt: "The stronger app search baseline with a clearer filter overview and simpler hierarchy.",
     caption: "The clearer baseline the team could validate and extend.",
-    contentClassName:
-      "flex min-h-[28rem] items-start justify-center sm:min-h-[32rem]",
+    contentClassName: "flex items-start justify-center",
     imageClassName:
       "h-auto max-h-[26rem] !w-auto max-w-full sm:max-h-[30rem]",
   },
@@ -193,7 +190,7 @@ export default function NewSearchPage() {
           lede="New Search was a strategic reset of one of AutoScout24's most important journeys. This was not only a filter redesign. It was a reset of how buyers express intent in a marketplace with complex inventory, so they could find relevant cars with less ambiguity while the business gained a stronger foundation for commercial progression and future search improvements."
           facts={heroFacts}
         >
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
+          <div className="mt-12 grid gap-5 md:grid-cols-2 2xl:grid-cols-3">
             {heroHighlights.map((item, index) => (
               <CaseStudyCard
                 key={item.label}
@@ -462,7 +459,7 @@ export default function NewSearchPage() {
           imageClassName="h-auto w-full"
         />
 
-        <CaseStudyEndNav currentSlug="new-search" />
+        <CaseStudyEndNav currentSlug="new-search" showDivider={false} />
       </CaseStudyArticle>
     </CaseStudyShell>
   );

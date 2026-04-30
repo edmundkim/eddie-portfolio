@@ -14,15 +14,15 @@ export type CaseStudyNavigationItem = {
 
 const caseStudyNavigationOrder: CaseStudyNavigationItem[] = [
   {
-    slug: "declutter-list-page",
-    href: "/work/declutter-list-page",
-    title: "Declutter the List Page",
-    context: "AutoScout24",
-  },
-  {
     slug: "new-search",
     href: "/work/new-search",
     title: "New Search",
+    context: "AutoScout24",
+  },
+  {
+    slug: "declutter-list-page",
+    href: "/work/declutter-list-page",
+    title: "Declutter the List Page",
     context: "AutoScout24",
   },
   {

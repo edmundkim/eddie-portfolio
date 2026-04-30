@@ -154,6 +154,7 @@ export default function StrategicAiDesignLeadershipPage() {
           eyebrow="Why This Work Existed"
           title="AI work was accelerating before shared standards existed"
           intro="The challenge was less about one feature and more about preventing inconsistent AI patterns from spreading across the product before there was a reusable model for designing them."
+          className="border-t-0"
         >
           <BulletList items={whyItMattered} />
         </CaseStudySection>
